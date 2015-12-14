@@ -3,6 +3,7 @@
 <meta charset=utf-8 />
 <title>Load GeoJSON from a URL</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src ='config.js'></script>
 <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
 <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
@@ -54,65 +55,6 @@ var locations = [
     { name: 'Восход', latLng: [55.726543, 37.771247] }
 ]
 
-var modes = [
-  { id: 'markers', name: 'Точки'},
-  { id: 'circles', name: '5-мин радиусы'},
-  { id: 'clusters', name: 'Кластеры'},
-  { id: 'grid', name: 'Сетка'},
-  { id: 'heatmap', name: 'Хитмап'}
-];
-
-var layers = [
-  {
-    id: 'libraries',
-    name: 'Библиотеки',
-    style: {
-      'marker-color': '#ff7800',
-      'marker-symbol': 'library'
-    }
-  },
-  {
-    id: 'museums',
-    name: 'Музеи',
-    style: {
-      'marker-color': '#aa4400',
-      'marker-symbol': 'museum'
-    }
-  },
-  {
-    id: 'kindergardens',
-    name: 'Детские сады',
-    style: {
-      'marker-color': '#ff7800',
-      'marker-symbol': 'playground'
-    }
-  },
-  {
-    id: 'libraries',
-    name: 'Библиотеки',
-    style: {
-      'marker-color': '#ff7800',
-      'marker-symbol': 'library'
-    }
-  },
-  {
-    id: 'hospitals_adults',
-    name: 'Взрослые поликлиники',
-    style: {
-      'marker-color': '#ff78FF',
-      'marker-symbol': 'hospital'
-    }
-  },
-  {
-    id: 'hospitals_kids',
-    name: 'Детские поликлиники',
-    style: {
-      'marker-color': '#0078DD',
-      'marker-symbol': 'hospital'
-    }
-  }
-];
-
 var layersMenu = d3.select("#menu"),
     modesMenu = d3.select("#modes"),
     locationsMenu = d3.select("#locations");
@@ -122,7 +64,7 @@ L.mapbox.accessToken = 'pk.eyJ1IjoibWluaWthcm1hIiwiYSI6IkRjTUFYdGsifQ.30RhErOKbQ
   var map = L.mapbox.map('map', 'mapbox.light')
     .setView([55.726543, 37.771247], 15);
 
-L.mapbox.tileLayer('minikarma.5dc2b45e').addTo(map);
+L.mapbox.tileLayer('minikarma.89f1804e').addTo(map);
 
 var clusterGroup = new L.MarkerClusterGroup().addTo(map);
   //map.addLayer(clusterGroup);
@@ -140,6 +82,7 @@ var clusterGroup = new L.MarkerClusterGroup().addTo(map);
           collection.features.forEach(function(feature) {
             feature.properties['marker-symbol'] = 'cinema';
             feature.properties['marker-color'] = '#00aacc';
+            feature.properties['marker-size'] = 'small';
           });
 
           L.geoJson(collection, {
@@ -246,7 +189,7 @@ function getLayer(layer, mode) {
 
       case 'grid':
 
-        var extent = [37.43,55.61,37.75,55.88];
+        var extent = [37.34,55.52,37.89,55.95];
         var cellWidth = 1;
         var units = 'kilometers';
         var squareGrid = turf.squareGrid(extent, cellWidth, units);
