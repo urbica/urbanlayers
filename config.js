@@ -25,6 +25,14 @@ var layers = [
     }
   },
   {
+    id: 'culture_houses',
+    name: 'Дома культуры',
+    style: {
+      'marker-color': '#aaaa77',
+      'marker-symbol': 'music'
+    }
+  },
+  {
     id: 'kindergardens',
     name: 'Детские сады',
     style: {
@@ -49,7 +57,7 @@ var layers = [
     }
   },
   {
-    id: 'hospitals_adults',
+    id: 'adult_clinics',
     name: 'Взрослые поликлиники',
     style: {
       'marker-color': '#aa6633',
@@ -57,11 +65,19 @@ var layers = [
     }
   },
   {
-    id: 'hospitals_kids',
+    id: 'kids_clinics',
     name: 'Детские поликлиники',
     style: {
       'marker-color': '#0078DD',
       'marker-symbol': 'hospital'
+    }
+  },
+  {
+    id: 'milk_kichens',
+    name: 'Молочные кухни',
+    style: {
+      'marker-color': '#444',
+      'marker-symbol': 'water'
     }
   }
 ];
