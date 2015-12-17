@@ -1,9 +1,9 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<title>Load GeoJSON from a URL</title>
+<title>Urban data layers</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-<script src ='config.js'></script>
+<script src ='varshava.js'></script>
 <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
 <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
@@ -62,7 +62,7 @@ var layersMenu = d3.select("#menu"),
 //map initialisation
 L.mapbox.accessToken = 'pk.eyJ1IjoibWluaWthcm1hIiwiYSI6IkRjTUFYdGsifQ.30RhErOKbQvLJ1kOnAl73A';
   var map = L.mapbox.map('map', 'mapbox.light')
-    .setView([55.748798, 37.616298], 12);
+    .setView([55.820162, 37.500531], 14);
 
 L.mapbox.tileLayer('minikarma.89f1804e').addTo(map);
 
@@ -191,10 +191,10 @@ function getLayer(layer, mode) {
 
       case 'grid':
 
-        var extent = [37.34,55.52,37.89,55.95];
+        //var extent = [37.34,55.52,37.89,55.95];
         var cellWidth = 1;
         var units = 'kilometers';
-        var squareGrid = turf.squareGrid(extent, cellWidth, units);
+        var squareGrid = turf.squareGrid(grid_extent, cellWidth, units);
 
 
         var sourcePoints = collection; //geojsonData.getGeoJSON();

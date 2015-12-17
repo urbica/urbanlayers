@@ -9,27 +9,27 @@ var modes = [
 
 var layers = [
   {
-    id: 'libraries',
-    name: 'Библиотеки',
+    id: 'varshava_0',
+    name: 'Без категории',
     style: {
-      'marker-color': '#ff7800',
-      'marker-symbol': 'library'
+      'marker-color': '#999999',
+      'marker-symbol': 'circle-stroked'
     }
   },
   {
-    id: 'museums',
-    name: 'Музеи',
+    id: 'varshava_1',
+    name: 'Oбразовательные учреждения (общее, профессиональное)',
     style: {
       'marker-color': '#aa4400',
-      'marker-symbol': 'museum'
+      'marker-symbol': 'college'
     }
   },
   {
-    id: 'culture_houses',
-    name: 'Дома культуры',
+    id: 'varshava_2',
+    name: 'Учреждения дополнительного образования',
     style: {
-      'marker-color': '#aaaa77',
-      'marker-symbol': 'music'
+      'marker-color': '#99aa33',
+      'marker-symbol': 'chemist'
     }
   },
   {
