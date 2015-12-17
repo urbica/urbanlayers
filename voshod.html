@@ -4,6 +4,8 @@
 <title>Urban data layers</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src ='voshod.js'></script>
+<link href='urbanlayers.css' rel='stylesheet' />
+
 <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
 <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
@@ -15,23 +17,6 @@
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
-
-<style>
-  body { margin:0; padding:0; font-family: sans-serif; }
-  #map { position:absolute; top:0; bottom:0; width:100%; }
-  #menu { position: absolute; top: 20px; right: 20px; width: 350px; z-index: 2202020; padding: 5px;  background: #ffffff; }
-  #modes { position: absolute; top: 20px; left: 50px; z-index: 2202020; padding: 5px;  background: #ffffff; }
-  .menu-item { padding: 10px; cursor: pointer; }
-  .menu-item-selected { padding: 10px; background: #ededed; cursor: pointer; }
-
-  #modes .menu-item,   #modes .menu-item-selected { display: inline-block; }
-
-  #locations { position: absolute; bottom: 30px; right: 20px; z-index: 2202020; padding: 5px;  background: #ffffff; }
-  .location-item { display: inline-block;  padding: 5px; cursor: pointer; }
-  .popup { max-height: 250px; overflow-y: auto; }
-
-
-</style>
 </head>
 <body>
 <div id='map'></div>
