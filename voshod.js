@@ -1,5 +1,5 @@
-var start_point = [55.820162, 37.500531];
-var grid_extent = [37.453,55.799,37.521,55.841];
+var start_point = [55.726543, 37.771247];
+var grid_extent = [37.689,55.690,37.803,55.759];
 
 var modes = [
   { id: 'markers', name: 'Точки'},
@@ -11,7 +11,7 @@ var modes = [
 
 var layers = [
   {
-    id: 'varshava_0',
+    id: 'voshod_0',
     name: 'Без категории',
     style: {
       'marker-color': '#999999',
@@ -19,7 +19,7 @@ var layers = [
     }
   },
   {
-    id: 'varshava_1',
+    id: 'voshod_1',
     name: 'Образование',
     style: {
       'marker-color': '#aa4400',
@@ -27,7 +27,7 @@ var layers = [
     }
   },
   {
-    id: 'varshava_2',
+    id: 'voshod_2',
     name: 'Доп. образование',
     style: {
       'marker-color': '#99aa33',
@@ -35,7 +35,7 @@ var layers = [
     }
   },
   {
-    id: 'varshava_3',
+    id: 'voshod_3',
     name: 'Еда',
     style: {
       'marker-color': '#ff7800',
@@ -43,7 +43,7 @@ var layers = [
     }
   },
   {
-    id: 'varshava_4',
+    id: 'voshod_4',
     name: 'Продукты',
     style: {
       'marker-color': '#CC3300',
@@ -51,7 +51,7 @@ var layers = [
     }
   },
   {
-    id: 'varshava_5',
+    id: 'voshod_5',
     name: 'Непродукты',
     style: {
       'marker-color': '#8878FF',
@@ -59,7 +59,7 @@ var layers = [
     }
   },
   {
-    id: 'varshava_6',
+    id: 'voshod_6',
     name: 'Бытовые услуги',
     style: {
       'marker-color': '#ff78FF',
@@ -67,7 +67,7 @@ var layers = [
     }
   },
   {
-    id: 'varshava_7',
+    id: 'voshod_7',
     name: 'Медицина',
     style: {
       'marker-color': '#0078DD',
@@ -75,7 +75,7 @@ var layers = [
     }
   },
   {
-    id: 'varshava_8',
+    id: 'voshod_8',
     name: 'Спорт',
     style: {
       'marker-color': '#F44',
@@ -83,7 +83,7 @@ var layers = [
     }
   },
   {
-    id: 'varshava_9',
+    id: 'voshod_9',
     name: 'Культура',
     style: {
       'marker-color': '#3AA',
@@ -91,7 +91,7 @@ var layers = [
     }
   },
   {
-    id: 'varshava_10',
+    id: 'voshod_10',
     name: 'Банки',
     style: {
       'marker-color': '#F44',
@@ -99,7 +99,7 @@ var layers = [
     }
   },
   {
-    id: 'varshava_11',
+    id: 'voshod_11',
     name: 'Инфраструктура',
     style: {
       'marker-color': '#888',
