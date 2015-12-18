@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script src="turf.min.js" charset="utf-8"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://yandex.st/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU&coordorder=longlat"></script>
+
+<!-- <script src="jsonp.js"></script> -->
+
+
+<style>
+
+  #searchBar {
+    position: absolute;
+    z-index: 1909090;
+    top: 10px;
+    left: 50px;
+    background: #fff;
+    padding: 10px;
+  }
+
+  html, body, #map {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+
+</style>
+<body>
+<div id='searchBar'><input type='text' value='aптека' id='searchInput'><button id='searchBtn'>Поиск</button></div>
+<div id='map'></div>
+<!--
+https://search-maps.yandex.ru/v1/?apikey=6a6d6520-a9d5-4d64-889e-de25e17bbe9d&text=аптеки&lang=ru_RU
+ & [ll=<центр области поиска>]
+ & [spn=<размеры области поиска>]
+ & [rspn=<не искать за пределами области поиска>]
+ & [type=<типы объектов>]
+ & [results=<количество результатов>]
+ & [skip=<количество пропускаемых результатов>]
+ & [callback=<имя функции>]
+-->
+<script>
+
+ymaps.ready(function() {
+
+
+
+//var start = [37.771247, 55.726543]; //восход
+var start = [37.500531,55.820162]; //варшава
+
+var params = {
+  apikey: '6a6d6520-a9d5-4d64-889e-de25e17bbe9d',
+  text: 'аптеки',
+  lang: 'ru_RU',
+  ll: '37.500531,55.820162',
+  spn: '0.05,0.05',
+  results: 200,
+  callback: 'processData'
+};
+
+var zonesColors = {
+  '5': '#253494',
+  '10': '#2c7fb8',
+  '15': '#41b6c4',
+  '20': '#7fcdbb',
+  '30': '#c7e9b4',
+  '45': '#ffffcc',
+  '60': '#ffffcc'
+}
+
+var jsonData; //global source data
+
+function getURL(params) {
+  var url = 'https://search-maps.yandex.ru/v1/?';
+
+  Object.keys(params).forEach(function(k) {
+    url += '&' + k + '=' + params[k];
+  });
+  return url;
+}
+
+
+
+	//создаём карту с центром в Москве, на 11 масштабе с дефолтным набором элементов управления
+	var map = new ymaps.Map('map', {
+		center: start,
+		zoom: 15,
+		controls: ['typeSelector']
+	});
+
+
+  zones = new ymaps.GeoObjectCollection(null, {	});
+  map.geoObjects.add(zones);
+
+
+  var CustomLayoutClass = ymaps.templateLayoutFactory.createClass(
+   '<ul>' +
+       '{% for key, value in properties.hash %}' +
+           '<li>{{ key }} {{ value }}</li>' +
+       '{% endfor %}' +
+   '</ul>'
+  );
+
+
+	//создаём геоколлекцию, с заданными параметрами значка метки
+	collection = new ymaps.GeoObjectCollection(null, {
+  	 preset: 'islands#circleDotIcon',
+     iconColor: '#555',
+     balloonContentLayout: CustomLayoutClass
+   }, {
+
+   });
+  map.geoObjects.add(collection);
+
+
+
+
+
+  var zonesJson;
+  jQuery.getJSON('data/varshava_isolines.geojson', function(json) {
+  //добавляем геообъекты в коллекцию
+  //console.log(json);
+
+  //store zones into global
+  zonesJson = json;
+
+  json.features.forEach(function(feature) {
+    console.log(feature.geometry.coordinates);
+
+
+    var opacity = 1 - Math.sqrt(feature.properties['time_max'])/10;
+    console.log(feature.properties['time_max']);
+
+    var polygon = new ymaps.Polygon(feature.geometry.coordinates[0], {
+    hintContent: feature.properties['time_max'],
+    balloonContent: feature.properties['time_max']
+    }, {
+    fillColor: zonesColors[feature.properties['time_max']],
+    // Делаем полигон прозрачным для событий карты.
+    interactivityModel: 'default#transparent',
+    strokeOpacity: 0.5,
+    strokeColor: '#555',
+    strokeWidth: 0.5,
+    opacity: opacity
+    });
+    map.geoObjects.add(polygon);
+  });
+
+  });
+
+
+  var searchInput = d3.select("#searchInput");
+  var searchBtn = d3.select("#searchBtn").on('click', function() {
+    params.text = searchInput.property("value");
+    requestData();
+    });
+
+    function requestData() {
+    // Using YQL and JSONP
+    $.ajax({
+      url: "https://search-maps.yandex.ru/v1/?",
+      // The name of the callback parameter, as specified by the YQL service
+      jsonp: "callback",
+      dataType: "jsonp",
+      data: params,
+
+      // Work with the response
+      success: function(response) {
+          jsonData = response.data;
+          processData(jsonData); // server response
+      }
+    });
+
+    }
+
+
+  function processData(data) {
+
+    collection.removeAll();
+
+    //
+    data.features.forEach(function(feature) {
+      jQuery.extend(feature.properties, feature.properties.CompanyMetaData);
+    //  feature.properties['time_max'] = -1;
+      //console.log(feature.properties, feature.properties.CompanyMetaData);
+    });
+
+    //добавляем геообъекты в коллекцию
+    ymaps.geoQuery(data).addTo(collection);
+//    collection.events.add('click', function (e) { console.log(e.get('type')); });
+
+    tagged = turf.tag(data, zonesJson, 'time_max', 'time_max');
+    console.log(tagged);
+
+  }
+
+});
+
+</script>
