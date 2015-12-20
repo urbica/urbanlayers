@@ -1,0 +1,152 @@
+
+
+  * {
+    font-family: sans-serif;
+    font-size: 13px;
+  }
+
+  html, body {
+    font-family: sans-serif, arial;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  #map {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    margin: 0;
+  }
+
+  #searchBar {
+    position: absolute;
+    z-index: 1909090;
+    top: 10px;
+    margin-left: -360px;
+    width: 720px;
+    left: 50%;
+/*    background: #fff; */
+  }
+
+  #searchInput {
+    width: 520px;
+    line-height: 24px;
+    height: 24px;
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: 3px;
+    font-size: 14px;
+    margin-top: -2px;
+  }
+
+  #searchForm {
+    padding: 10px;
+    line-height: 30px;
+    vertical-align: bottom;
+    text-align: center;
+    height: 30px;
+  }
+
+  #searchFilters {
+    text-align: center;
+  }
+
+  #searchTimes {
+    display: inline-block;
+  }
+
+
+  #searchLocations {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  #panelContainer {
+    display: block;
+    position: absolute;
+    left: 50%;
+    width: 720px;
+    margin-left: -360px;
+    padding: 10px;
+    bottom: 30px;
+    z-index: 1919;
+    background: #fff;
+
+  }
+
+  #hoursStats {
+    display: inline-block;
+    width: 560px;
+    max-width: 560px;
+  }
+
+  #distancesStats {
+    display: inline-block;
+    width: 140px;
+    max-width: 140px;
+  }
+
+  .location {
+    display: inline-block;
+    background: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .location-selected {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #444;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .time {
+    display: inline-block;
+    padding: 5px 10px;
+    cursor: pointer;
+    text-align: center;
+    min-width: 20px;
+    background: #fff;
+  }
+
+  .time-selected {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #444;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    min-width: 20px;
+  }
+
+  .dayLabel {
+    font-family: sans-serif;
+    font-size: 10px;
+  }
+
+  .tooltip {
+    position: absolute;
+    text-align: center;
+    /* width: 60px;
+    height: 28px; */
+    padding: 5px;
+    font: 12px sans-serif;
+    background: #dedede;
+    border: 0px;
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 2000;
+  }
+
+  .axis text {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }

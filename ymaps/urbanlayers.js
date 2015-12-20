@@ -1,126 +1,11 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<script src="turf.min.js" charset="utf-8"></script>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="http://yandex.st/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
-<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU&coordorder=longlat"></script>
 
-<!-- <script src="jsonp.js"></script> -->
+var locations = [
+  { name: "Варшава", ll: [37.500531,55.820162], prefix: 'varshava' },
+  { name: "Восход", ll: [37.771247,55.726543], prefix: 'voshod' }
+];
 
-
-<style>
-
-
-  * {
-    font-family: sans-serif;
-  }
-  #searchBar {
-    position: absolute;
-    z-index: 1909090;
-    top: 10px;
-    left: 50px;
-    background: #fff;
-    padding: 10px;
-  }
-
-  html, body {
-    font-family: sans-serif, arial;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-  }
-
-  #map {
-    display: block;
-    width: 100%;
-    height: 100%;
-    min-height: 450px;
-    margin: 0;
-  }
-
-  #pageContainer {
-    display: block;
-    flex-direction: column;
-  }
-
-  #mapContainer {
-
-    width: 100%;
-    height: 100%;
-    min-height: 400px;
-    background: #f0f0f0;
-  }
-
-  #panelContainer {
-    display: block;
-    height: 200px;
-    padding: 20px;
-  }
-
-  #hoursStats, #distancesStats {
-    display: inline-block;
-
-
-  }
-
-  .dayLabel {
-    font-family: sans-serif;
-    font-size: 14px;
-  }
-
-  .tooltip {
-    position: absolute;
-    text-align: center;
-    /* width: 60px;
-    height: 28px; */
-    padding: 5px;
-    font: 12px sans-serif;
-    background: #dedede;
-    border: 0px;
-    border-radius: 2px;
-    pointer-events: none;
-  }
-
-  .axis text {
-    font: 10px sans-serif;
-  }
-
-  .axis path,
-  .axis line {
-    fill: none;
-    stroke: #000;
-    shape-rendering: crispEdges;
-  }
-
-
-</style>
-<body>
-<div id='searchBar'><input type='text' value='ресторан' id='searchInput'><button id='searchBtn'>Поиск</button></div>
-
-<div id='pageContainer'>
-<div id='mapContainer'>
-  <div id='map'></div>
-</div>
-<div id='panelContainer'>
-  <div id='distancesStats'></div>
-  <div id='hoursStats'></div>
-  <div id='daysStats'></div>
-</div>
-</div>
-
-<!--
-https://search-maps.yandex.ru/v1/?apikey=6a6d6520-a9d5-4d64-889e-de25e17bbe9d&text=аптеки&lang=ru_RU
- & [ll=<центр области поиска>]
- & [spn=<размеры области поиска>]
- & [rspn=<не искать за пределами области поиска>]
- & [type=<типы объектов>]
- & [results=<количество результатов>]
- & [skip=<количество пропускаемых результатов>]
- & [callback=<имя функции>]
--->
-<script>
-
-
+currentLocation = 0;
+currentTime = 60;
 
 ymaps.ready(function() {
 
@@ -133,11 +18,13 @@ var xAxis = d3.svg.axis()
       .scale(x)
       .orient("bottom");
 
+var locationsMenu = d3.select("#searchLocations");
+var timesMenu = d3.select("#searchTimes");
 
 
 var hoursDiv = d3.select("#hoursStats");
 var distancesDiv = d3.select("#distancesStats")
-var hoursChart = hoursDiv.append("svg").attr("width", 800).attr("height", 200);
+var hoursChart = hoursDiv.append("svg").attr("width", 560).attr("height", 118);
 
 // Define the div for the tooltip
 var tooltip = d3.select("body").append("div")
@@ -158,6 +45,7 @@ var params = {
   callback: 'processData'
 };
 
+var zonesTimes = [5,10,15,20,30,45,60];
 var zonesColors = {
   '5': '#253494',
   '10': '#2c7fb8',
@@ -171,16 +59,6 @@ var zonesColors = {
 var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 var jsonData, filteredData, zonesJson, filteredFeatures = []; //global source data
-
-function getURL(params) {
-  var url = 'https://search-maps.yandex.ru/v1/?';
-
-  Object.keys(params).forEach(function(k) {
-    url += '&' + k + '=' + params[k];
-  });
-  return url;
-}
-
 
 	//создаём карту с центром в Москве, на 11 масштабе с дефолтным набором элементов управления
 	var map = new ymaps.Map('map', {
@@ -224,75 +102,124 @@ function getURL(params) {
     var object = e.get('target');
     console.log(object);
   });
-
   map.geoObjects.add(collection);
 
-  jQuery.getJSON('data/varshava_isolines_single.geojson', function(json) {
-  //добавляем геообъекты в коллекцию
-  //console.log(json);
 
-  //store zones into global
-  zonesJson = json;
-
-  json.features.forEach(function(feature) {
-
-  if(feature.properties['time_max']<=35) {
-
-    var opacity = 1 - feature.properties['time_max']/35;
-    //console.log(opacity);
-    var polygon = new ymaps.Polygon(feature.geometry.coordinates[0], {
-    hintContent: feature.properties['time_max'],
-    balloonContent: feature.properties['time_max']
-    }, {
-    fillColor: zonesColors[feature.properties['time_max']],
-    // Делаем полигон прозрачным для событий карты.
-    interactivityModel: 'default#transparent',
-    strokeOpacity: 0.5,
-    strokeColor: '#555',
-    strokeWidth: 0.5,
-    opacity: opacity
-    });
-    map.geoObjects.add(polygon);
-
-  }
-
+  locations.forEach(function(l,i) {
+    locationsMenu.append("div")
+      .attr("class", "location")
+      .attr("id", l.prefix)
+      .text(l.name)
+      .on('click', function() {
+        changeLocation(i);
+      });
   });
 
-
-
-  //temporary
-  //requestData();
-
+  zonesTimes.forEach(function(t) {
+    timesMenu.append("div")
+      .attr("class", function() {
+        if(t == currentTime) return "time-selected";
+          else return "time";
+      })
+      .attr("id", "time-"+t)
+      .text(t)
+      .on('click', function() {
+        changeTimeFilter(t);
+      });
   });
+
 
 
   var searchInput = d3.select("#searchInput");
-  var searchBtn = d3.select("#searchBtn").on('click', function() {
-    params.text = searchInput.property("value");
-    requestData();
+
+  searchInput.on('keydown', function() {
+      if(d3.event.keyCode == 13) {
+        params.text = searchInput.property("value");
+        requestData();
+      }
     });
+
+    function changeTimeFilter(t) {
+      //log(t);
+
+      zonesTimes.forEach(function(l) {
+        d3.select("#time-"+l).attr("class", "time");
+      });
+      d3.select("#time-"+t).attr("class", "time-selected");
+
+      currentTime = t;
+
+      if(jsonData) drawData();
+    }
+
+    function changeLocation(loc) {
+
+      console.log(locations[loc]);
+
+        locations.forEach(function(l) {
+          d3.select("#"+l.prefix).attr("class", "location");
+        });
+        d3.select("#"+locations[loc].prefix).attr("class", "location-selected");
+
+        //loading json zones
+        jQuery.getJSON('data/' + locations[loc].prefix + '_zones.geojson', function(json) {
+
+        //store zones into global
+        zonesJson = json;
+        zones.removeAll();
+
+        json.features.forEach(function(feature) {
+        if(feature.properties['time_max']<=35) {
+          var opacity = 1 - feature.properties['time_max']/35;
+          //console.log(opacity);
+          var polygon = new ymaps.Polygon(feature.geometry.coordinates[0], {
+          hintContent: feature.properties['time_max'],
+          balloonContent: feature.properties['time_max']
+          }, {
+          fillColor: zonesColors[feature.properties['time_max']],
+          interactivityModel: 'default#transparent',
+          strokeOpacity: 0.5,
+          strokeColor: '#555',
+          strokeWidth: 0.5,
+          opacity: opacity
+          });
+          zones.add(polygon);
+        }
+
+        });
+
+        //re-request data
+
+//        requestData();
+        params.ll = locations[loc].ll[0] + ',' + locations[loc].ll[1];
+        map.setCenter(locations[loc].ll, 14);
+        requestData();
+
+
+      });
+
+    }
 
     function requestData() {
     // Using YQL and JSONP
     $.ajax({
       url: "https://search-maps.yandex.ru/v1/?",
-      // The name of the callback parameter, as specified by the YQL service
       jsonp: "callback",
       dataType: "jsonp",
       data: params,
 
       // Work with the response
       success: function(response) {
-          jsonData = response.data;
+
 
           //adding CompanyMetaData to the features
-          jsonData.features.forEach(function(feature,i) {
+          response.data.features.forEach(function(feature,i) {
             jQuery.extend(feature.properties, feature.properties.CompanyMetaData);
+            //feature.properties['time_max'] = '100';
           });
 
-          jsonData = turf.tag(jsonData, zonesJson, 'time_max', 'time_max');
-
-          drawData(); // server response
+          jsonData = turf.tag(response.data, zonesJson, 'time_max', 'time_max');
+          drawData(); // render data
       }
     });
 
@@ -304,13 +231,21 @@ function getURL(params) {
     clusterer.removeAll();
 
     filteredData = jsonData;
+    console.log(jsonData.features.length);
 
-    var filteredFeatures = filteredData.features.filter(function (feature) {
-      return feature.properties['time_max'] <= 35;
+
+    var filteredFeatures;
+//    filteredData.features.forEach(function(f) {});
+
+
+    filteredFeatures = filteredData.features.filter(function (feature) {
+      return feature.properties['time_max'] <= currentTime;
     });
 
+
     //setting filtered features
-    filteredData.features = filteredFeatures;
+    //filteredData.features = filteredFeatures;
+
 
     var hoursStats = [];
     days.forEach(function(d) {
@@ -322,8 +257,6 @@ function getURL(params) {
 
     var fr,to, total = filteredFeatures.length;
 
-
-
     filteredFeatures.forEach(function(feature) {
 
       //calculate days array
@@ -331,10 +264,8 @@ function getURL(params) {
         hoursCalculated ++;
 
         feature.properties.Hours.Availabilities.forEach(function(a) {
-          console.log(a);
           if(a['Everyday']) {
             if(a['TwentyFourHours']) {
-              //console.log('24/7');
               days.forEach(function(d) {
                 for(h=0; h<24; h++) {
                   hoursStats[d][h]++;
@@ -346,7 +277,6 @@ function getURL(params) {
                   fr = +inrvl.from.substr(0,2);
                   to = +inrvl.to.substr(0,2);
                   if(to == 0) { to = 24; }
-                  //console.log('fr: ' + fr + ' to: ' + to);
                   days.forEach(function(d) {
                     for(h=fr; h<to; h++) { hoursStats[d][h]++; }
                   });
@@ -355,12 +285,11 @@ function getURL(params) {
             }
           } else {
             days.forEach(function(d) {
-              if(a[d]) {
+              if(a[d] && a.Intervals) {
                 a.Intervals.forEach(function(inrvl) {
                   fr = +inrvl.from.substr(0,2);
                   to = +inrvl.to.substr(0,2);
                   if(to == 0) { to = 24; }
-                  //console.log('fr: ' + fr + ' to: ' + to);
                     for(h=fr; h<to; h++) { hoursStats[d][h]++; }
                 });
               }
@@ -388,20 +317,20 @@ function getURL(params) {
         time_min: (feature.properties['time_max']-5)
       }, {
       // Задаем стиль метки (метка в виде круга).
-      preset: "islands#dotCircleIcon",
+      iconLayout: 'default#image',
+      iconImageHref: 'dot.svg',
+      iconImageSize: [18, 18],
+      iconImageOffset: [-9, -9]
+      //preset: "islands#dotCircleIcon",
       // Задаем цвет метки (в формате RGB).
-      iconColor: zonesColors[feature.properties['time_max']]
+      //iconColor: zonesColors[feature.properties['time_max']]
       });
       clusterer.add(placemark);
     });
 
-    //stats debug output
-    console.log('all: ' + filteredFeatures.length + ' with hours: ' + hoursCalculated);
-    console.log('distances: ' + distanceStats);
-    console.log(hoursStats);
-
+    //stats
     drawHours(hoursStats,hoursCalculated);
-    drawDistances(distanceStats,filteredFeatures.length);
+    drawDistances(distanceStats);
 
     //tagging objects inside
     //ymaps.geoQuery(filteredData).addTo(collection);
@@ -427,7 +356,7 @@ function getURL(params) {
 
     hoursChart.append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(80,140)")
+        .attr("transform", "translate(80,98)")
         .call(xAxis);
 
     var daysAxis = hoursChart.append("g");
@@ -437,7 +366,7 @@ function getURL(params) {
 
       daysAxis.append("text")
         .attr("x", 10 )
-        .attr("y", (id*20+16))
+        .attr("y", (id*14+10))
         .attr("class", "dayLabel")
         .text(day);
 
@@ -446,11 +375,11 @@ function getURL(params) {
       //  console.log(day + ': ' + ih + ' — ' + hourStat);
         blocks
           .append("rect")
-          .attr("width", 19)
-          .attr("height", 19)
-          .attr("transform", function(d, i) { return "translate(" + (ih*20) + "," + (id*20) + ")"; })
+          .attr("width", 20.1)
+          .attr("height", 13.5)
+          .attr("transform", function(d, i) { return "translate(" + (ih*20) + "," + (id*14) + ")"; })
           .style("opacity", hourStat/total)
-          .style("fill", "#009090")
+          .style("fill", "#00AAAA")
           .on("mouseover", function(d) {
             tooltip
               .style("opacity", .9)
@@ -465,17 +394,50 @@ function getURL(params) {
     });
   }
 
- function drawDistances(distances, total) {
-   var html = 'Общее число: ' + total + '&nbsp;&nbsp;&nbsp;&nbsp;';
-   //html += '<br/> ' + ''
+ function drawDistances(distances) {
+   distancesDiv.text("");
+   var blocks = distancesDiv.append("svg").attr("width", 140).attr("height", 108);
+   var barBlocks = blocks.append("g");
+
+   blocks.selectAll("svg");
+
+   var dd = 0;
+   var scale = 100/d3.max(distances);
    for(dist in distances) {
-     html += dist + '&nbsp;мин: ' + distances[dist] + "&nbsp;&nbsp;";
-//     console.log('dist: ' + dist + ': ' + distances[dist]);
+     barBlocks.append("rect")
+      .style("fill", "#00AAAA")
+      .attr("width", distances[dist]*scale)
+      .attr("height", 13.5)
+      .attr("transform", "translate(20, "+ dd*14 +")")
+      .on("mouseover", function(d) {
+        tooltip
+          .style("opacity", .9)
+          .text(dist + "': " + distances[dist] )
+            .style("left", (d3.event.pageX) + "px")
+            .style("top", (d3.event.pageY - 28) + "px");
+        })
+      .on("mouseout", function(d) {
+        tooltip.style("opacity", 0);
+      });
+
+      barBlocks.append("text")
+        .attr("x", 0)
+        .attr("y", (dd*14+10))
+        .attr("class", "dayLabel")
+        .text(dist + "'");
+
+        barBlocks.append("text")
+          .attr("x", distances[dist]*scale+24)
+          .attr("y", (dd*14+8))
+          .attr("class", "dayLabel")
+          .text(distances[dist]);
+
+      dd++;
    }
-   distancesDiv.html(html);
+
  }
 
+//starting
+changeLocation(currentLocation);
 
 });
-
-</script>

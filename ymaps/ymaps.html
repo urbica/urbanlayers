@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link href='urbanlayers.css' rel='stylesheet' />
+<script src="turf.min.js" charset="utf-8"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://yandex.st/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU&coordorder=longlat"></script>
+
+<!-- <script src="jsonp.js"></script> -->
+
+<body>
+<div id='searchBar'>
+  <div id='searchForm'>
+    <span>
+      <div id='searchLocations'></div>
+    </span>
+    <span>
+      <div id='searchTimes'></div>
+    </span>
+    <span>
+      <input type='text' value='ресторан' id='searchInput'>
+    </span>
+
+  </div>
+</div>
+
+<div id='map'></div>
+
+<div id='panelContainer'>
+  <div id='distancesStats'></div>
+  <div id='hoursStats'></div>
+  <div id='daysStats'></div>
+</div>
+
+<!--
+https://search-maps.yandex.ru/v1/?apikey=6a6d6520-a9d5-4d64-889e-de25e17bbe9d&text=аптеки&lang=ru_RU
+ & [ll=<центр области поиска>]
+ & [spn=<размеры области поиска>]
+ & [rspn=<не искать за пределами области поиска>]
+ & [type=<типы объектов>]
+ & [results=<количество результатов>]
+ & [skip=<количество пропускаемых результатов>]
+ & [callback=<имя функции>]
+-->
+<script src="urbanlayers.js" charset="utf-8"></script>
