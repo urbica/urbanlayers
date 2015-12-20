@@ -5,7 +5,7 @@ var locations = [
 ];
 
 currentLocation = 0;
-currentTime = 60;
+currentTime = 30;
 
 ymaps.ready(function() {
 
