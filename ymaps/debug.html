@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Load GeoJSON from a URL</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
+<style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+<body>
+<div id='map'></div>
+
+<script>
+L.mapbox.accessToken = 'pk.eyJ1IjoibWluaWthcm1hIiwiYSI6IkRjTUFYdGsifQ.30RhErOKbQvLJ1kOnAl73A';
+var map = L.mapbox.map('map', 'mapbox.streets')
+    .setView([55.744537,37.625224], 12);
+
+var featureLayer =
+L.mapbox.featureLayer()
+    .loadURL('data/varshava_isolines.geojson')
+    .on('ready', function(e) {
+
+      var source = e.target.getGeoJSON();
+//      console.log(source);
+
+      source.features.forEach(function(feature,i) {
+        console.log(feature.properties[''].coordinates);
+
+
+
+
+      });
+
+    })
+    .addTo(map);
+
+
+
+</script>
+</body>
+</html>
