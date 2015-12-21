@@ -231,7 +231,7 @@ var jsonData, filteredData, zonesJson, filteredFeatures = []; //global source da
     clusterer.removeAll();
 
     filteredData = jsonData;
-    console.log(jsonData.features.length);
+    console.log(jsonData.features);
 
 
     var filteredFeatures;
@@ -277,8 +277,14 @@ var jsonData, filteredData, zonesJson, filteredFeatures = []; //global source da
                   fr = +inrvl.from.substr(0,2);
                   to = +inrvl.to.substr(0,2);
                   if(to == 0) { to = 24; }
+
                   days.forEach(function(d) {
-                    for(h=fr; h<to; h++) { hoursStats[d][h]++; }
+                    if(fr<to) {
+                      for(h=fr; h<to; h++) { hoursStats[d][h]++; }
+                    } else {
+                      for(h=0; h<to; h++) { hoursStats[d][h]++; }
+                      for(h=fr; h<24; h++) { hoursStats[d][h]++; }
+                    }
                   });
                 });
               }
@@ -290,7 +296,12 @@ var jsonData, filteredData, zonesJson, filteredFeatures = []; //global source da
                   fr = +inrvl.from.substr(0,2);
                   to = +inrvl.to.substr(0,2);
                   if(to == 0) { to = 24; }
+                  if(fr<to) {
                     for(h=fr; h<to; h++) { hoursStats[d][h]++; }
+                  } else {
+                    for(h=0; h<to; h++) { hoursStats[d][h]++; }
+                    for(h=fr; h<24; h++) { hoursStats[d][h]++; }
+                  }
                 });
               }
             });

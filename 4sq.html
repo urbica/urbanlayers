@@ -1,0 +1,245 @@
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Urban data layers</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src ='4sq.js'></script>
+<link href='urbanlayers.css' rel='stylesheet' />
+
+<script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-heat/v0.1.3/leaflet-heat.js'></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/turf/v2.0.2/turf.min.js'></script>
+
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+</head>
+<body>
+<div id='map'></div>
+<div id='menu'></div>
+<div id='modes'></div>
+<!-- <div id='locations'></div> -->
+
+
+<script>
+
+//var start = [37.771247, 55.726543]; //восход
+//var start = [37.500531,55.820162]; //варшава
+
+//base config statements
+var geojsonData,
+    currentLayer,
+    currentModeId = 'markers';
+
+var locations = [
+    { name: 'Варшава', latLng: [55.820162, 37.500531] },
+    { name: 'Восход', latLng: [55.726543, 37.771247] }
+]
+
+var layersMenu = d3.select("#menu"),
+    modesMenu = d3.select("#modes"),
+    locationsMenu = d3.select("#locations");
+
+//map initialisation
+L.mapbox.accessToken = 'pk.eyJ1IjoibWluaWthcm1hIiwiYSI6IkRjTUFYdGsifQ.30RhErOKbQvLJ1kOnAl73A';
+  var map = L.mapbox.map('map', 'mapbox.light')
+    .setView(start_point, 14);
+
+L.mapbox.tileLayer('minikarma.89f1804e').addTo(map);
+
+var clusterGroup = new L.MarkerClusterGroup().addTo(map);
+  //map.addLayer(clusterGroup);
+
+  var gridLayer = L.mapbox.featureLayer().addTo(map);
+  var circlesLayer = L.mapbox.featureLayer().addTo(map);
+  var clusterLayer = L.mapbox.featureLayer().addTo(map);
+  var heatFeatureLayer = L.mapbox.featureLayer().addTo(map);
+  var markersLayer = L.mapbox.featureLayer().addTo(map);
+  var heatMap;
+
+
+
+    d3.json('data/cinema_points.geojson', function(collection) {
+          collection.features.forEach(function(feature) {
+            feature.properties['marker-symbol'] = 'cinema';
+            feature.properties['marker-color'] = '#00aacc';
+            feature.properties['marker-size'] = 'small';
+          });
+
+          L.geoJson(collection, {
+            pointToLayer: L.mapbox.marker.style,
+            onEachFeature: function (feature, layer) {
+              layer.bindPopup(feature.properties.name);
+            }
+          })
+          .addTo(map);
+  });
+
+
+function rebuildMenu() {
+  layersMenu.text("");
+  layers.forEach(function(layer) {
+    layersMenu.append("div")
+      .attr("class", function() {
+        if(layer.id == currentLayer.id) return "menu-item-selected";
+          else return "menu-item"
+      })
+      .text(layer.name)
+      .on('click', function() {
+        getLayer(layer, currentModeId);
+      });
+  });
+}
+
+rebuildModes();
+
+function rebuildModes() {
+  modesMenu.text("");
+  modes.forEach(function(mode) {
+    modesMenu.append("div")
+      .attr("class", function() {
+        if(mode.id == currentModeId) return "menu-item-selected";
+          else return "menu-item"
+      })
+      .text(mode.name)
+      .on('click', function() {
+        getLayer(currentLayer, mode.id);
+      });
+  });
+}
+
+//adding bookmarked locations
+  locations.forEach(function(location) {
+    locationsMenu.append("div")
+      .attr("class", "location-item")
+      .text(location.name)
+      .on('click', function() {
+        map.setView(location.latLng, 14);
+      });
+  })
+
+function getLayer(layer, mode) {
+
+  currentLayer = layer;
+  currentModeId = mode;
+
+  rebuildMenu();
+  rebuildModes();
+
+
+  //clearLayers (all)
+  gridLayer.clearLayers();
+  circlesLayer.clearLayers();
+  markersLayer.clearLayers();
+  clusterGroup.clearLayers();
+  heatFeatureLayer.clearLayers();
+
+  d3.json('data/'+ layer.id + '.geojson', function(collection) {
+
+    collection.features.forEach(function(f,i) {
+      for(var prop in layer.style) {
+        f.properties[prop] = layer.style[prop];
+      }
+    });
+
+    geojsonData = L.geoJson(collection, {
+      pointToLayer: L.mapbox.marker.style,
+      onEachFeature: function (feature, layer) {
+        layer.bindPopup(getPropertiesPopup(feature.properties));
+      },
+      style: function(feature) { return feature.properties; }
+    });
+
+    //rendering the data on the map
+    switch (currentModeId) {
+      case 'markers':
+        geojsonData.addTo(markersLayer);
+        //markersLayer.addTo(map);
+        break;
+      case 'clusters':
+        geojsonData.addTo(clusterGroup);
+        //clusterGroup.addTo(map);
+        break;
+      case 'circles':
+        geojsonData.eachLayer(function(feature, layer) {
+        L.circle(feature.getLatLng(), 450,  {
+          fillColor: currentLayer.style['marker-color'], stroke: 0, fillOpacity: 0.5
+        })
+        .addTo(circlesLayer);
+
+        });
+        break;
+
+      case 'grid':
+
+        //var extent = [37.34,55.52,37.89,55.95];
+        var cellWidth = 0.1;
+        var units = 'kilometers';
+        var squareGrid = turf.squareGrid(grid_extent, cellWidth, units);
+
+
+        var sourcePoints = collection; //geojsonData.getGeoJSON();
+        //setting id for each cell
+        squareGrid.features.forEach(function(f,i) {
+          f.properties.stroke = 0;
+          f.properties.fill =  layer.style['marker-color'];
+          f.properties['fill-opacity'] = 1;
+          f.properties['idPoly'] = i;
+        });
+
+        //spatial join grid cells and bike points
+        var tagged = turf.tag(sourcePoints, squareGrid, 'idPoly', 'idPoly');
+
+        var filtered, total;
+          squareGrid.features.forEach(function(cell,i) {
+            //filtering points on cell
+            filtered = turf.filter(tagged, 'idPoly', i);
+            cell.properties['fill-opacity'] = (filtered.features.length/20);
+            cell.properties['title'] = filtered.features.length;
+          });
+
+        L.mapbox.featureLayer(squareGrid).addTo(gridLayer);
+
+
+
+        break;
+      case 'heatmap':
+        heatMap = L.heatLayer([], { maxZoom: 14 })
+        geojsonData.eachLayer(function(layer) {
+          heatMap.addLatLng(layer.getLatLng());
+        })
+        heatMap.addTo(heatFeatureLayer);
+//        geojsonData.addTo(heatFeatureLayer);
+        break;
+
+
+    }
+
+
+  });
+}
+
+function getPropertiesPopup(props) {
+  var s = '<div class=popup>';
+  for(p in props) {
+    s = s + p + ': ' + props[p] + '<br/>';
+  }
+  s = s + '<div>';
+  return s;
+}
+
+
+//setting the current layer
+currentLayer = layers[0];
+
+//initial layer
+getLayer(currentLayer, currentModeId);
+
+
+</script>
+</body>
+</html>
