@@ -188,8 +188,8 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
           balloonContent: balloonContent
           }, {
             iconLayout: 'default#image',
-            iconImageHref: 'observation.svg',
-            iconImageSize: [20, 20],
+            iconImageHref: 'observation2.svg',
+            iconImageSize: [25, 22],
             iconImageOffset: [-10, -10]
           });
           observationsPoints.add(placemark);
