@@ -250,11 +250,23 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
           json.features.forEach(function(f) {
             //console.log(f);
 
-            var balloonContent; // = '<div class="observationBallon">' + f.properties['Description'] + '</div>';
+            var balloonContent, transportType, lineColor = []; // = '<div class="observationBallon">' + f.properties['Description'] + '</div>';
 
             f.properties['@relations'].forEach(function(r) {
               balloonContent += '<div><b>' + r.reltags.ref + '(' + r.reltags.route + ')</b>' + r.reltags.name;
+              transportType = r.reltags.route;
             });
+
+            lineColor = "#555";
+
+            switch (transportType) {
+              case 'bus':
+                lineColor  = "#239";
+                break;
+              case 'tram':
+                lineColor  = "#932";
+                break;
+            }
 
 /*
             if(f.geometry.type == "Point") {
@@ -283,7 +295,7 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
               balloonContentHeader: f.properties['Name'],
               balloonContent: balloonContent
               }, {
-                strokeColor: '#236',
+                strokeColor: lineColor,
                 strokeWidth: 3,
                 opacity: 0.5
               });
