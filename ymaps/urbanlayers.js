@@ -91,17 +91,28 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
   zones = new ymaps.GeoObjectCollection(null, {	});
   map.geoObjects.add(zones);
 
-  observationsPoly = new ymaps.GeoObjectCollection(null, {	});
+  var observationsPoly = new ymaps.GeoObjectCollection(null, {	});
   map.geoObjects.add(observationsPoly);
 
-  observationsPoints = new ymaps.GeoObjectCollection(null, {
+  var transportLines = new ymaps.GeoObjectCollection(null, {	});
+  map.geoObjects.add(transportLines);
+
+  var transportPoints = new ymaps.GeoObjectCollection(null, {	});
+  map.geoObjects.add(transportPoints);
+
+  var observationsPoints = new ymaps.GeoObjectCollection(null, {
   //	 balloonContentLayout: observationPointTemplate
   });
   map.geoObjects.add(observationsPoints);
 
 
+  var objectManager = new ymaps.ObjectManager({ clusterize: false }),
+      linesT = [];
+
+  map.geoObjects.add(objectManager);
+
 	//создаём геоколлекцию, с заданными параметрами значка метки
-	collection = new ymaps.GeoObjectCollection(null, {
+	var collection = new ymaps.GeoObjectCollection(null, {
   	 preset: 'islands#circleDotIcon',
      iconColor: '#555',
      balloonContentLayout: companyInfoTemplate
@@ -195,25 +206,26 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
           observationsPoints.add(placemark);
         }
 
-        /*
+/*
         if(f.geometry.type == "Polygon") {
-          console.log(f);
+        //  console.log(f);
           var polygon = new ymaps.Polygon(f.geometry.coordinates[0], {
           hintContent: f.properties['Name'],
           balloonContentHeader: f.properties['Name'],
           balloonContent: balloonContent
           }, {
-            fillColor: '#555',
+            fillColor: '#555555',
+            fillOpacity: 1,
             interactivityModel: 'default#transparent',
-            strokeOpacity: 0.5,
-            strokeColor: '#555',
-            strokeWidth: 0.5,
+            strokeOpacity: 1,
+            strokeColor: '#555555',
+            strokeWidth: 2,
             opacity: 0.5
           });
           observationsPoly.add(polygon);
         }
 
-        */
+*/
 
       });
 
@@ -222,6 +234,68 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
       });
 
     }
+
+
+//loadTransport('varshava')
+
+    function loadTransport(prefix) {
+
+          jQuery.getJSON('data/' + prefix + '_transport.geojson', function(json) {
+
+            //jQuery.getJSON('data/voshod_transport2.geojson', function(json) {
+
+            transportLines.removeAll();
+            transportPoints.removeAll();
+
+          json.features.forEach(function(f) {
+            //console.log(f);
+
+            var balloonContent; // = '<div class="observationBallon">' + f.properties['Description'] + '</div>';
+
+            f.properties['@relations'].forEach(function(r) {
+              balloonContent += '<div><b>' + r.reltags.ref + '(' + r.reltags.route + ')</b>' + r.reltags.name;
+            });
+
+/*
+            if(f.geometry.type == "Point") {
+
+              var placemark = new ymaps.Placemark(f.geometry.coordinates, {
+              hintContent: f.properties['Name'],
+              balloonContentHeader: f.properties['Name'],
+              balloonContent: balloonContent
+              }, {
+                iconLayout: 'default#image',
+                iconImageHref: 'observation.svg',
+                iconImageSize: [20, 20],
+                iconImageOffset: [-10, -10]
+              });
+              transportPoints.add(placemark);
+            } else {
+              console.log(f.geometry);
+            }
+*/
+
+
+            if(f.geometry.type == "LineString") {
+
+              var polyline = new ymaps.Polyline(f.geometry.coordinates, {
+              hintContent: f.properties['Name'],
+              balloonContentHeader: f.properties['Name'],
+              balloonContent: balloonContent
+              }, {
+                strokeColor: '#236',
+                strokeWidth: 3,
+                opacity: 0.5
+              });
+              transportLines.add(polyline);
+
+            }
+
+            });
+
+          });
+
+        }
 
     function changeLocation(loc) {
 
@@ -244,15 +318,15 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
           var opacity = 1 - feature.properties['time_max']/35;
           //console.log(opacity);
           var polygon = new ymaps.Polygon(feature.geometry.coordinates[0], {
-          hintContent: feature.properties['time_max'],
-          balloonContent: feature.properties['time_max']
+          //hintContent: feature.properties['time_max']
+          //balloonContent: feature.properties['time_max']
           }, {
           fillColor: zonesColors[feature.properties['time_max']],
-          interactivityModel: 'default#transparent',
+          interactivityModel: 'default#silent',
           strokeOpacity: 0.5,
           strokeColor: '#555',
           strokeWidth: 0.5,
-          opacity: opacity
+          opacity: opacity*0.6
           });
           zones.add(polygon);
         }
@@ -264,7 +338,10 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
         //loading observations layer
         loadObservations(locations[loc].prefix);
 
-//        requestData();
+        //loading transport layer
+        loadTransport(locations[loc].prefix);
+
+        //requestData();
         params.ll = locations[loc].ll[0] + ',' + locations[loc].ll[1];
         map.setCenter(locations[loc].ll, 14);
         requestData();
