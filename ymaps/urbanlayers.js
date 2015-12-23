@@ -206,25 +206,28 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
           observationsPoints.add(placemark);
         }
 
+            /*
 
         if(f.geometry.type == "Polygon") {
           console.log(f);
           var polygon = new ymaps.Polygon(f.geometry.coordinates[0], {
-          hintContent: f.properties['Name'],
-          balloonContentHeader: f.properties['Name'],
-          balloonContent: balloonContent
+          //hintContent: f.properties['Name'],
+          //balloonContentHeader: f.properties['Name'],
+          //balloonContent: balloonContent
           }, {
+
             fillColor: '#555555',
             fillOpacity: 1,
-            interactivityModel: 'default#transparent',
+            interactivityModel: 'default#silent',
             strokeOpacity: 1,
             strokeColor: '#555555',
             strokeWidth: 2,
             opacity: 0.5
+
           });
           observationsPoly.add(polygon);
         }
-
+            */
 
       });
 
@@ -282,7 +285,7 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
               });
               transportPoints.add(placemark);
             } else {
-              console.log(f.geometry);
+              //console.log(f.geometry);
             }
 
 
