@@ -24,7 +24,7 @@ var timesMenu = d3.select("#searchTimes");
 
 var hoursDiv = d3.select("#hoursStats");
 var distancesDiv = d3.select("#distancesStats")
-var hoursChart = hoursDiv.append("svg").attr("width", 560).attr("height", 118);
+var hoursChart = hoursDiv.append("svg").attr("width", 560).attr("height", 88);
 
 // Define the div for the tooltip
 var tooltip = d3.select("body").append("div")
@@ -445,7 +445,7 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
 
     hoursChart.append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(80,98)")
+        .attr("transform", "translate(80,70)")
         .call(xAxis);
 
     var daysAxis = hoursChart.append("g");
@@ -455,7 +455,7 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
 
       daysAxis.append("text")
         .attr("x", 10 )
-        .attr("y", (id*14+10))
+        .attr("y", (id*10+10))
         .attr("class", "dayLabel")
         .text(day);
 
@@ -465,8 +465,8 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
         blocks
           .append("rect")
           .attr("width", 20.1)
-          .attr("height", 13.5)
-          .attr("transform", function(d, i) { return "translate(" + (ih*20) + "," + (id*14) + ")"; })
+          .attr("height", 9.5)
+          .attr("transform", function(d, i) { return "translate(" + (ih*20) + "," + (id*10) + ")"; })
           .style("opacity", hourStat/total)
           .style("fill", "#00AAAA")
           .on("mouseover", function(d) {
@@ -485,7 +485,7 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
 
  function drawDistances(distances) {
    distancesDiv.text("");
-   var blocks = distancesDiv.append("svg").attr("width", 140).attr("height", 108);
+   var blocks = distancesDiv.append("svg").attr("width", 140).attr("height", 88);
    var barBlocks = blocks.append("g");
 
    blocks.selectAll("svg");
@@ -496,8 +496,8 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
      barBlocks.append("rect")
       .style("fill", "#00AAAA")
       .attr("width", distances[dist]*scale)
-      .attr("height", 13.5)
-      .attr("transform", "translate(20, "+ dd*14 +")")
+      .attr("height", 11.5)
+      .attr("transform", "translate(20, "+ dd*12 +")")
       .on("mouseover", function(d) {
         tooltip
           .style("opacity", .9)
@@ -511,13 +511,13 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
 
       barBlocks.append("text")
         .attr("x", 0)
-        .attr("y", (dd*14+10))
+        .attr("y", (dd*12+8))
         .attr("class", "dayLabel")
         .text(dist + "'");
 
         barBlocks.append("text")
           .attr("x", distances[dist]*scale+24)
-          .attr("y", (dd*14+8))
+          .attr("y", (dd*12+8))
           .attr("class", "dayLabel")
           .text(distances[dist]);
 
