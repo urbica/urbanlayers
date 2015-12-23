@@ -21,17 +21,21 @@
   }
 
   #searchBar {
-    position: absolute;
-    z-index: 1909090;
-    top: 10px;
-    margin-left: -360px;
-    width: 720px;
-    left: 50%;
 /*    background: #fff; */
+  line-height: 30px;
+  }
+
+  #searchForm {
+    display: inline-block;
+    padding: 10px;
+    line-height: 30px;
+    vertical-align: bottom;
+    text-align: center;
+    height: 30px;
   }
 
   #searchInput {
-    width: 520px;
+    width: 220px;
     line-height: 24px;
     height: 24px;
     border: 1px solid rgba(0,0,0,0.2);
@@ -40,16 +44,13 @@
     margin-top: -2px;
   }
 
-  #searchForm {
-    padding: 10px;
-    line-height: 30px;
-    vertical-align: bottom;
-    text-align: center;
-    height: 30px;
-  }
+
 
   #searchFilters {
-    text-align: center;
+    line-height: 30px;
+    padding: 5px;
+    text-align: left;
+    display: inline-block;
   }
 
   #searchTimes {
@@ -60,6 +61,11 @@
   #searchLocations {
     display: inline-block;
     margin-right: 10px;
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10101010;
   }
 
   #panelContainer {
@@ -104,7 +110,7 @@
 
   .time {
     display: inline-block;
-    padding: 5px 10px;
+    padding: 2px 10px;
     cursor: pointer;
     text-align: center;
     min-width: 20px;
@@ -113,7 +119,7 @@
 
   .time-selected {
     display: inline-block;
-    padding: 5px 10px;
+    padding: 2px 10px;
     background: #444;
     color: #fff;
     cursor: pointer;
@@ -149,4 +155,9 @@
     fill: none;
     stroke: #000;
     shape-rendering: crispEdges;
+  }
+
+  .observationBallon {
+    max-height: 300px;
+    overflow-x: auto;
   }

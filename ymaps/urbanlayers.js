@@ -58,7 +58,7 @@ var zonesColors = {
 
 var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-var jsonData, filteredData, zonesJson, filteredFeatures = []; //global source data
+var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; //global source data
 
 	//создаём карту с центром в Москве, на 11 масштабе с дефолтным набором элементов управления
 	var map = new ymaps.Map('map', {
@@ -67,10 +67,10 @@ var jsonData, filteredData, zonesJson, filteredFeatures = []; //global source da
 		controls: ['typeSelector']
 	});
 
-
-  zones = new ymaps.GeoObjectCollection(null, {	});
-  map.geoObjects.add(zones);
-
+  var observationPointTemplate = ymaps.templateLayoutFactory.createClass(
+           '<h3>{{ properties.Name}}</h3>' +
+           '<div> {{ properties.Description }} </div>'
+  );
 
   var companyInfoTemplate = ymaps.templateLayoutFactory.createClass(
            '<h3>{{ properties.name|default:"Заголовок" }}</h3>' +
@@ -87,6 +87,17 @@ var jsonData, filteredData, zonesJson, filteredFeatures = []; //global source da
         });
   map.geoObjects.add(clusterer);
 
+
+  zones = new ymaps.GeoObjectCollection(null, {	});
+  map.geoObjects.add(zones);
+
+  observationsPoly = new ymaps.GeoObjectCollection(null, {	});
+  map.geoObjects.add(observationsPoly);
+
+  observationsPoints = new ymaps.GeoObjectCollection(null, {
+  //	 balloonContentLayout: observationPointTemplate
+  });
+  map.geoObjects.add(observationsPoints);
 
 
 	//создаём геоколлекцию, с заданными параметрами значка метки
@@ -152,6 +163,66 @@ var jsonData, filteredData, zonesJson, filteredFeatures = []; //global source da
       if(jsonData) drawData();
     }
 
+
+    function loadObservations(prefix) {
+
+      jQuery.getJSON('data/' + prefix + '_observations.geojson', function(json) {
+
+      //store zones into global
+      observationsJson = json;
+      observationsPoly.removeAll();
+      observationsPoints.removeAll();
+
+      // Неточечные объекты добавим на карту как есть.
+//      result.search('geometry.type != "Point"').addToMap(map);
+
+      observationsJson.features.forEach(function(f) {
+        //console.log(f);
+
+        var balloonContent = '<div class="observationBallon">' + f.properties['Description'] + '</div>';
+
+        if(f.geometry.type == "Point") {
+          var placemark = new ymaps.Placemark(f.geometry.coordinates, {
+          hintContent: f.properties['Name'],
+          balloonContentHeader: f.properties['Name'],
+          balloonContent: balloonContent
+          }, {
+            iconLayout: 'default#image',
+            iconImageHref: 'observation.svg',
+            iconImageSize: [20, 20],
+            iconImageOffset: [-10, -10]
+          });
+          observationsPoints.add(placemark);
+        }
+
+        /*
+        if(f.geometry.type == "Polygon") {
+          console.log(f);
+          var polygon = new ymaps.Polygon(f.geometry.coordinates[0], {
+          hintContent: f.properties['Name'],
+          balloonContentHeader: f.properties['Name'],
+          balloonContent: balloonContent
+          }, {
+            fillColor: '#555',
+            interactivityModel: 'default#transparent',
+            strokeOpacity: 0.5,
+            strokeColor: '#555',
+            strokeWidth: 0.5,
+            opacity: 0.5
+          });
+          observationsPoly.add(polygon);
+        }
+
+        */
+
+      });
+
+
+
+      });
+
+    }
+
     function changeLocation(loc) {
 
       console.log(locations[loc]);
@@ -190,6 +261,9 @@ var jsonData, filteredData, zonesJson, filteredFeatures = []; //global source da
 
         //re-request data
 
+        //loading observations layer
+        loadObservations(locations[loc].prefix);
+
 //        requestData();
         params.ll = locations[loc].ll[0] + ',' + locations[loc].ll[1];
         map.setCenter(locations[loc].ll, 14);
@@ -199,6 +273,10 @@ var jsonData, filteredData, zonesJson, filteredFeatures = []; //global source da
       });
 
     }
+
+
+
+
 
     function requestData() {
     // Using YQL and JSONP

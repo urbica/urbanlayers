@@ -7,10 +7,10 @@ var data = [],
     cellWidth = 0.05,
     buffer = 2,
     units = 'kilometers',
-    outputFile = "_50m_2km",
+    outputFile = "debug_50m_2km",
     current = 0,
     sum = 0,
-    loc = 4; //current location
+    loc = 3; //current location
 
     var locations = [
       { name: "Варшава", ll: [37.500531,55.820162], prefix: 'varshava' },

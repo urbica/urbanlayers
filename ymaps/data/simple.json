@@ -1,0 +1,18 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "Name": "Point 1", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ 61.171875, 53.330873, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Point 2", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ 43.2421875, 61.1007888, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Point 3", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ 42.0996094, 56.848972, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Point 4", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ 51.6796875, 60.5869673, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Point 5", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ 45.1757813, 60.15244220000001, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Point 6", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ 47.9003906, 52.7495937, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Polygon 7", "Description": "" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 39.7265625, 55.3291444, 0.0 ], [ 39.375, 53.5403074, 0.0 ], [ 43.0664063, 53.3833284, 0.0 ], [ 47.5488281, 54.9271419, 0.0 ], [ 45.7910156, 56.2677611, 0.0 ], [ 43.2421875, 55.5286305, 0.0 ], [ 39.7265625, 55.3291444, 0.0 ] ] ] } },
+{ "type": "Feature", "properties": { "Name": "Point 8", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ 37.5013161, 55.8205732, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Point 9", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ 37.4995136, 55.8241412, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Line 10", "Description": "" }, "geometry": { "type": "LineString", "coordinates": [ [ 37.5128174, 55.8251536, 0.0 ], [ 37.5095558, 55.8216339, 0.0 ], [ 37.50947, 55.8194159, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "Name": "Polygon 11", "Description": "" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 37.5063801, 55.8211518, 0.0 ], [ 37.5034618, 55.8238519, 0.0 ], [ 37.5003719, 55.8236108, 0.0 ], [ 37.4982262, 55.821875, 0.0 ], [ 37.4989128, 55.8194641, 0.0 ], [ 37.5034618, 55.8192712, 0.0 ], [ 37.5063801, 55.8211518, 0.0 ] ] ] } }
+]
+}

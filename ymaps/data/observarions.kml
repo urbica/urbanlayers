@@ -1,0 +1,1792 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://www.opengis.net/kml/2.2'>
+	<Document>
+		<name>Наблюдения и интервью около Восхода и Варшавы</name>
+		<description><![CDATA[Фиксируем значимые результаты наблюдений, основные тезисы интервью, выявленных потенциальных партнеров и конкурентов. Не стесняйтесь оставлять комментарии в несколько строк]]></description>
+		<Folder>
+			<name>Untitled layer</name>
+			<Placemark>
+				<name>ВОСХОД!!!</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.771157,55.7266267,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Общежитие 10 ВШЭ</name>
+				<description><![CDATA[Закрытое сообщество. Район не знают. Живут с сентября. Из интервью студента, члена студсовета: "Кто живет? Сколько человек? Сколько времени проводят в районе?<br>Что есть в общежитии? Чего не хватает (см. Блок «Кино»)?<br>- Живем с сентября (до этого общежитие было заселено студентами другого отделения, с сентября Вышка переселила, т.е. все новые). Живут магистры и немного бакалавров. Цикл проживания 2 года. Почти все учатся по вечерам, на районе с 9 вечера до 4 дня. Есть этаж приезжих студентов. Проводим с ними английские клубы. Живет 250 человек, всего. Комнаты по 3-2-1 человек. Комнаты распределяются случайным образом, коррупции в этом плане нет. Каждый этаж одинаков, есть учебные комнаты, душ, кухня, туалеты. Остальное спальные комнаты. Скоро будет спорт-зал. Помещение для спорт-зала выбили студенты, через руководство ВШЭ. Скоро будут переносить оборудование, тренажеры."]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.78287290000001,55.722077,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Музей Радио</name>
+				<description><![CDATA[Уникальный для Москвы музей. Держится на инициативе Директора музея и приближенных сотрудников. Большая тематическая экспозиция, начиная от профессиональной радио-аппаратуры военных лет, заканчивая потребительской радио техникой.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7553588,55.7269288,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Подземный переход в парк</name>
+				<description><![CDATA[В будние дни - популярный маршрут мам с колясками]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7762532,55.7301067,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Закрытый Дом творчества</name>
+				<description><![CDATA[Закрыт весной 2015 "на ремонт". Из-за чего создался прецедент повышения спроса на дополнительное образование для детей от 4 до 18 лет. При ориентации на эту ситуацию, стоит учитывать, что кружки проводились, в своем большинстве, на бесплатной основе. Жители вернакулярного района не привыкли платить за услуги подобного рода.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7775407,55.72607090000001,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>"Мертвый" пешеходный маршрут</name>
+				<description><![CDATA[Вдоль линии НИИ. Основной поток, при этом не сильный (15 человек за 20 минут) отмечен в сторону метро РП в выходной день в 16 часов. Поток в глубь района составляет 3 человека за то же время.]]></description>
+				<styleUrl>#line-000000-1</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.7699447,55.7231827,0.0 37.7785921,55.7203185,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Проектируемое соединение</name>
+				<styleUrl>#line-000000-1-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.7636361,55.7176838,0.0 37.76016,55.7144807,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Проектируемое соединение</name>
+				<styleUrl>#line-000000-1-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.7625418,55.71376750000001,0.0 37.7687645,55.715206,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Возможное жилищное строительство "Кварталы 21/19"</name>
+				<description><![CDATA[Расположен на бывшей территории завода "Молния". План сдачи участка IV квартал 2016 года. На официальном сайте точной информации о сдаче и ходе проекта нет. Цены: 1-комн(40кв.м)-5000000. 3-комн(73кв.м)-9500000]]></description>
+				<styleUrl>#poly-93D7E8-1-76</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<tessellate>1</tessellate>
+							<coordinates>37.7418995,55.7260105,0.0 37.7428651,55.7235694,0.0 37.751298,55.724935,0.0 37.749838800000006,55.7273034,0.0 37.7418995,55.7260105,0.0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Возможное жилищное строительство "SREDA"</name>
+				<description><![CDATA[Концепция закрытого комьюнити комфорт-класса]]></description>
+				<styleUrl>#poly-93D7E8-1-76</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<tessellate>1</tessellate>
+							<coordinates>37.73644920000001,55.7280526,0.0 37.74322990000001,55.7287292,0.0 37.7427149,55.7299375,0.0 37.735955700000005,55.7306504,0.0 37.73644920000001,55.7280526,0.0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>ЖК Волгоградский</name>
+				<description><![CDATA[Молодой район (10 лет), изобилующий количеством коммерческий функций, предоставляемых молодым семьям. "Образцово-показательный" с точки зрения управы. Ведется борьба с нарушениями правил парковки, нелегальной торговлей и т.д. Проводятся работы по благоустройству. Показательным в этом случае является то, что в районе проживают сотрудники посольства Королевства Саудовская Аравия. В районе в основном проживает upper-middle класс. Жители готовы платить за качественные услуги.]]></description>
+				<styleUrl>#poly-9FC3FF-1-76</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<tessellate>1</tessellate>
+							<coordinates>37.7430153,55.7208261,0.0 37.7488518,55.7105279,0.0 37.7625418,55.71376750000001,0.0 37.7430153,55.7208261,0.0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Магазин "Книги"</name>
+				<description><![CDATA[Долгожитель, сотрудники работают с 60х годов]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7718276,55.7257416,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Фонтан</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7716827,55.7264636,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Здание кинотеатра</name>
+				<styleUrl>#poly-000000-1-76-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<tessellate>1</tessellate>
+							<coordinates>37.4998999,55.8204466,0.0 37.5003237,55.8199523,0.0 37.5008494,55.820097,0.0 37.5004148,55.8205943,0.0 37.4998999,55.8204466,0.0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Ярмарка</name>
+				<description><![CDATA[Сложившая практика на протяжении 12 лет, пятница — воскресенье с 9 до 20. Сезонная, на зимние месяцы торговцы ищут альтернативные крытые помещения]]></description>
+				<styleUrl>#poly-000000-1-76</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<tessellate>1</tessellate>
+							<coordinates>37.7714467,55.7263639,0.0 37.7718651,55.726243100000005,0.0 37.7720475,55.7264908,0.0 37.7716613,55.726587499999994,0.0 37.7714467,55.7263639,0.0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Пристройка и летняя веранда Граблей</name>
+				<styleUrl>#poly-000000-1-76-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<tessellate>1</tessellate>
+							<coordinates>37.5001198,55.82019340000001,0.0 37.4999535,55.8201573,0.0 37.50024319999999,55.8198107,0.0 37.500388,55.8198017,0.0 37.50105860000001,55.8199825,0.0 37.5007957,55.820314,0.0 37.5006777,55.820283800000006,0.0 37.5008494,55.820097,0.0 37.5003237,55.8199523,0.0 37.5001198,55.82019340000001,0.0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Общественный туалет</name>
+				<styleUrl>#poly-000000-1-76-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<tessellate>1</tessellate>
+							<coordinates>37.5007957,55.82051890000001,0.0 37.500865499999996,55.8204285,0.0 37.5011122,55.8205069,0.0 37.50102639999999,55.8205912,0.0 37.5007957,55.82051890000001,0.0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Центральная библиотека</name>
+				<description><![CDATA[Библиотека находится в отдельном двухэтажном здании. Не пользуется широкой популярностью, однако, там проходят на постоянной основе клубы по интересам, которые посещают уже сложившиеся сообщества жителей, в основном пенсионеры.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7742469,55.7271916,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Научно-исследовательский, проектно-конструкторский и технологический институт бетона и железобетона (НИИЖБ) им. А.А. Гвоздева</name>
+				<description><![CDATA[Входит в НИЦ строительство. Лаборатории возглавляют молодые ученые. ]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7750087,55.7217748,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Парк Кусково</name>
+				<description><![CDATA[Многие жители считают "своей" территорией. Исторически связан с рязанским районом. Сюда ходят гулять многие молодые мамы. Место входит в их каждодневный маршрут.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7877331,55.7330064,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>МГГУ Шолохова</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.76474120000001,55.7271463,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Единственный "пешеходный" маршрут</name>
+				<description><![CDATA[Соединяющий Волгоградский и остальную часть]]></description>
+				<styleUrl>#line-000000-1</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.7602458,55.7258896,0.0 37.7509546,55.7179618,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Чихачевка</name>
+				<description><![CDATA[упоминался как  единственный культурноый центр в районе]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7836347,55.7172245,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>МРАК</name>
+				<description><![CDATA[Не комфортная зона около выхода из метро. Нестационарный рынок, с большим обилием "Шаурмы", торговли фруктами. Работают в основном мигранты. Из наблюдений: кража на рынке, громкое поведение пьяных жителей, группа скинхедов, в составе 40 человек.]]></description>
+				<styleUrl>#poly-000000-1-76</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<tessellate>1</tessellate>
+							<coordinates>37.7944922,55.7177925,0.0 37.7933764,55.7180101,0.0 37.7912521,55.71772,0.0 37.7942991,55.7172366,0.0 37.7944922,55.7177925,0.0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Остановка 63 троллейбуса</name>
+				<description><![CDATA[около получаса от Солянки]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7712107,55.7224214,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Детская площадка</name>
+				<description><![CDATA[новая и вполне пристойная, но днем на ней никого не было]]></description>
+				<styleUrl>#poly-000000-1-76</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<tessellate>1</tessellate>
+							<coordinates>37.7712536,55.7269349,0.0 37.771178500000005,55.7268745,0.0 37.7713072,55.726832200000004,0.0 37.771403799999995,55.7268986,0.0 37.7712536,55.7269349,0.0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Остановки транспорта </name>
+				<description><![CDATA[автобусы до станций метро Текстильщики и Таганская) и маршрутки (до платформы Чухлинка)]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7709425,55.7263065,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>В этом здании до ремонта жили цыгане</name>
+				<description><![CDATA[сейчас пустует, сдается]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7697086,55.7263246,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Молочник</name>
+				<description><![CDATA[фургон, с которого продают молоко. График неизвестен, но приезжает регулярно]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7708244,55.726508900000006,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Маршрут "местных"</name>
+				<description><![CDATA[ведет вглубь жилого массива, днем много школьников, одних и с матерями, пенсионеров ]]></description>
+				<styleUrl>#line-000000-1</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.7709693,55.7264485,0.0 37.7708513,55.7266388,0.0 37.7710122,55.7268231,0.0 37.7709424,55.7269741,0.0 37.7710015,55.7270799,0.0 37.7709424,55.7269711,0.0 37.7707922,55.7269741,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Популярная детская площадка</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.5011498,55.8190693,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>К/т Рассвет</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.5180423,55.8241231,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Несанкционированный переход дороги</name>
+				<styleUrl>#line-000000-1-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.7708352,55.7263549,0.0 37.7707976,55.7262914,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Внешний фасад </name>
+				<description><![CDATA[южный и восточный фасады можно считать внешними. По ощущениям наблюдателя и концентрации потоков пользователей, фронтальной частью является торец здания, обнесенный террасой. ]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7713341,55.726382,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Несанкционированная парковка</name>
+				<description><![CDATA[зона отгрузки, которая используется в качестве парковки]]></description>
+				<styleUrl>#poly-000000-1-76</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<tessellate>1</tessellate>
+							<coordinates>37.7708727,55.7265905,0.0 37.7708191,55.7265482,0.0 37.7709934,55.7264832,0.0 37.7710551,55.726527,0.0 37.7708727,55.7265905,0.0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Внутренняя сторона</name>
+				<description><![CDATA[западный фасад кинотеатра становится частью внутреннего, интимного пространства двора, откуда открывается проход в глубину жилого массива и где маловероятно присутствие чужаков (за исключением учеников школы № 777 и их родителей). Только на этом фасаде есть следы граффити, впрочем, закрашенные краской в тон облицовки.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7709344,55.7266932,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Короткий путь по террасе</name>
+				<description><![CDATA[пенсионеры часто «срезают» путь, поднимаясь на крыльцо кинотеатра и проходя по нему от западного к восточному торцу здания или в обратном направлении. ]]></description>
+				<styleUrl>#line-000000-1</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.771524500000005,55.7264817,0.0 37.7713984,55.7264999,0.0 37.7713287,55.7264455,0.0 37.7711168,55.726508900000006,0.0 37.771047,55.7264288,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Популярный маршрут</name>
+				<styleUrl>#line-000000-1-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.7709693,55.7264485,0.0 37.7717632,55.7261917,0.0 37.7716613,55.7259803,0.0 37.7721387,55.7258292,0.0 37.771275,55.72503170000001,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Line 41</name>
+				<styleUrl>#line-000000-1-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.7717632,55.7261917,0.0 37.7718222,55.726379,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Популярный маршрут</name>
+				<description><![CDATA[По наблюдениям — многие пешеходы огибают здание, проходя как минимум вдоль двух фасадов кинотеатра]]></description>
+				<styleUrl>#line-000000-1</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.7717632,55.7261917,0.0 37.7720797,55.7266418,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Место остановки</name>
+				<description><![CDATA[Остановки были зафиксированы у юго-восточного угла кинотеатра (социальная функция — останавливаются поговорить, встречают знакомых)]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7713931,55.726333700000005,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Дневной опрос</name>
+				<description><![CDATA[Респонденты старше 50 лет: это кинотеатр и ему нужно вернуть функцию кинотеатра или сделать его киноконцертным залом («чтобы показывали фильмы и приглашали артистов»), «и вообще все бы ходили». Люди более молодого возраста менее определенны — кафе, «что-то для детей», «спортивный центр с необычными секциями» Если откроется магазин, то он прогорит.  Хотели бы «приятное место» или просто «что-то с окнами». Все: ничего не происходит, некуда пойти с детьми, очень не хватает культурного центра. Люди пожилого возраста с сожалением вспоминали закрывшийся ДК 40-летия октября, спортивные школы и клубы.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7707708,55.726447,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Веранда</name>
+				<description><![CDATA[Здесь на веранде довольно долго общались пара девушек]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7713716,55.7265573,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Пристройка</name>
+				<description><![CDATA[Она не проницаема, создается ощущение, что здание обойти нельзя]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7718759,55.7270542,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Место встречи</name>
+				<description><![CDATA[Здесь в темноте выпивала группа молодых людей, вышедших их магазина "Пятерочка"]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7712858,55.7267702,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Маршрут Пятерочка-Дом или наоборот</name>
+				<styleUrl>#line-000000-1-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.7698052,55.72635640000001,0.0 37.769883,55.7264304,0.0 37.7698427,55.7265769,0.0 37.7692258,55.7267974,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>С работы/прогулки в Пятерочку</name>
+				<styleUrl>#line-000000-1-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.769883,55.7264304,0.0 37.7702102,55.7264666,0.0 37.7713931,55.726086,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Из магазина домой</name>
+				<styleUrl>#line-000000-1-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.7702102,55.7264666,0.0 37.7703577,55.7264983,0.0 37.7710122,55.7268231,0.0 37.770988,55.7267974,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Маршрут инструментальный (домой) и прогулочный</name>
+				<styleUrl>#line-000000-1-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.7717257,55.7261162,0.0 37.7692848,55.7268926,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Место ожидания</name>
+				<description><![CDATA[Здесь могут стоять люди - ждут мужа/друга/жену/подругу из магазина]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7697891,55.726376,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Вечерний опрос</name>
+				<description><![CDATA[Женщина 46-55: гуляет в районе с собакой, ходит в парк Косино. Ей всего хватает, но локальный кинотеатр, куда не нужно ехать далеко нужен.                                           Женщина 46-55: также бывает в Косино. Хотелось бы больше спорта, концертов в том же кинотеатре  Сделать 1-2 зала с возможностью показывать фильмы и давать концерты                                                                     Женщина моложе 18: ходит тут, гуляет. Все есть - магазины, библиотека. В бывшем Восходе стоит показывать кино, может и мини-каточек сделать.                                             Мужчина 36-45: проводит время дома, в Косино или не в р-не. Хотелось бы ярмарку, раньше рынок был. Центр детского творчества сделать. Кино или развлекательный центр для детей - с автоматами, развлечениями.                                Женщина 36-45: в свободное время на даче, в районе ходит в магазины. В кафе Кобзарь справляют ДР. Стоит сделать в Восходе 3D кино.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7698588,55.7263609,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Возможная часть "района"</name>
+				<styleUrl>#poly-4186F0-1-76-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<tessellate>1</tessellate>
+							<coordinates>37.7707386,55.7339246,0.0 37.7709961,55.7331031,0.0 37.79537200000001,55.7234848,0.0 37.7975178,55.7243066,0.0 37.80919020000001,55.73131510000001,0.0 37.8130531,55.7334897,0.0 37.81579970000001,55.7382737,0.0 37.8096199,55.7421875,0.0 37.801981,55.740593,0.0 37.7707386,55.7339246,0.0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Крупный транспортный узел </name>
+				<description><![CDATA[Трамваи]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.4986982,55.8190301,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Крупный БЦ</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.4979687,55.8214893,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Территория БЦ</name>
+				<styleUrl>#poly-000000-1-76-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<tessellate>1</tessellate>
+							<coordinates>37.5002861,55.8232251,0.0 37.50934120000001,55.8251054,0.0 37.504878,55.8290828,0.0 37.4980974,55.8259491,0.0 37.5002861,55.8232251,0.0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Объект: ТРЦ Метрополис</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.4971533,55.8229117,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Объект: ГБОУ Гармония</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.4982691,55.8169265,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Объект: Центр творчества Войковский</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.500962,55.8195606,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Объект: скейт-площадка</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.5029683,55.8212241,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Объект: Автобусная остановка</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.4999106,55.8207299,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Северный выход из метро</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.4978399,55.8200608,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Строгановка</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.4983764,55.8074555,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Кампус МАИ</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.5027108,55.8104218,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Автопарковка</name>
+				<description><![CDATA[Вся территория с этой стороны заставлена машинами, к кинотеатру не пройти]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.4996746,55.8204255,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Переход к Метрополису</name>
+				<description><![CDATA[наземный, регулируется светофором. Ожидание около минуты]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.4987036,55.82051890000001,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Летняя веранда Грабли</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.5001788,55.8200157,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Поток: пешеходный транзит через парк</name>
+				<styleUrl>#line-000000-8-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.5009084,55.8185901,0.0 37.4992347,55.820549,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Поток: Основной вал пешеходного траффика</name>
+				<styleUrl>#line-000000-17-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.4982047,55.820283800000006,0.0 37.4992347,55.820549,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Поток: Аллея ведущая в парк</name>
+				<styleUrl>#line-000000-1-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.500012500000004,55.819651,0.0 37.5016916,55.8200699,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Поток: Маршрут до остановки</name>
+				<description><![CDATA[высокая интенсивность]]></description>
+				<styleUrl>#line-000000-5</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.4992347,55.820549,0.0 37.4999106,55.8207299,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Поток: Маршрут к ТРЦ</name>
+				<description><![CDATA[очень высокая интенсивность]]></description>
+				<styleUrl>#line-000000-11</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.4988484,55.8204586,0.0 37.4983549,55.8210312,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Поток: к трамваям</name>
+				<styleUrl>#line-000000-5-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.4982047,55.8202417,0.0 37.497915,55.8197534,0.0 37.498548,55.8190482,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Забор вокруг парка</name>
+				<styleUrl>#line-DB4436-1-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.4992025,55.820434500000005,0.0 37.4988592,55.8203682,0.0 37.4991274,55.8199885,0.0 37.4987841,55.8194581,0.0 37.4997497,55.8182887,0.0 37.5008011,55.81856,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Забор вокруг парка</name>
+				<styleUrl>#line-DB4436-1-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.5005758,55.8209227,0.0 37.50314,55.8215616,0.0 37.5041378,55.82041040000001,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Забор вокруг парка</name>
+				<styleUrl>#line-DB4436-1-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>37.5042021,55.8202959,0.0 37.5047815,55.8195666,0.0 37.5010157,55.8186022,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Наблюдение: Пожилые люди</name>
+				<description><![CDATA[В районе не отдыхают, никуда не ходят. Наверное были бы не против восстановления кинотеатра в Варшаве, но вообще-то им всё равно, они туда не ходят.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.5020134,55.8198378,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Наблюдение: молодые мамы</name>
+				<description><![CDATA[Никакого досуга внутри района для себя не мыслят. Хочется, конечно, больше детских функций и развлечений.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.5016809,55.8203923,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Наблюдение: Офисные сотрудники</name>
+				<description><![CDATA[Приходят поесть во время бизнес-ланча]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.5003076,55.8203562,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Наблюдение: Местные жители</name>
+				<description><![CDATA[Приходят погулять в парк, зайти на детскую площадку. В районе ещё ходят в Покровское-Стрешнево и ездят в Тимирязевский парк. В Варшаву не заходят.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.5015414,55.8193978,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>НИЦ Строительство</name>
+				<description><![CDATA[Объединение научно-исследовательских институтов. Развивающаяся компания (в отличии от большинства заводов, стараются найти новые практики, внедриться в новую экономику).]]></description>
+				<styleUrl>#poly-000000-1-76</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<tessellate>1</tessellate>
+							<coordinates>37.7736354,55.7252008,0.0 37.7713609,55.7229289,0.0 37.7785492,55.7204515,0.0 37.780931,55.7228806,0.0 37.7736354,55.7252008,0.0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Центральный научно-исследовательский институт строительных конструкций (ЦНИИСК) им. В.А. Кучеренко</name>
+				<description><![CDATA[Входит в НИЦ Строительство]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7774978,55.72095910000001,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Научно-исследовательский,проектно-изыскательский и конструкторско-технологический институт оснований и подземных сооружений (НИИОСП) им. Н.М. Герсеванова</name>
+				<description><![CDATA[Входит в НИЦ Строительство]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7731204,55.7224093,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Интервью с молодой мамой</name>
+				<description><![CDATA[Жительница района, озабочена образованием своих детей. Водила их на секции при доме творчества. Услугами была удовлетворена. При этом, сейчас в услугах есть потребность, связанная с неудобством расположения подобных организаций на территории района. Готова платить за кружки минимальную цену.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7743006,55.728107,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Территория ВНИИМЕТМАШ</name>
+				<description><![CDATA[В 2015 году сменился генеральный директор. Имеется концепция развития территории в технополис (технопарк, индустриальный парк, образовательный центр).]]></description>
+				<styleUrl>#poly-000000-1-76</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<tessellate>1</tessellate>
+							<coordinates>37.75550369999999,55.7262884,0.0 37.7522421,55.7236299,0.0 37.74597640000001,55.722759800000006,0.0 37.747220999999996,55.7210437,0.0 37.751083400000006,55.7196659,0.0 37.7541304,55.722590600000004,0.0 37.7551174,55.7241374,0.0 37.75687690000001,55.7258775,0.0 37.75550369999999,55.7262884,0.0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Территория промзоны</name>
+				<description><![CDATA[В ГенПлане Москвы обозначена как многофункциональная застройка, имеющая возможность жилого строительства. Однако, выявленных планов жилищной застройки не выявлено.]]></description>
+				<styleUrl>#poly-000000-1-76</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<tessellate>1</tessellate>
+							<coordinates>37.7604818,55.7255634,0.0 37.751812900000004,55.7182397,0.0 37.7629709,55.71420270000001,0.0 37.7811241,55.7189891,0.0 37.7686787,55.722759800000006,0.0 37.7604818,55.7255634,0.0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Закрытый ДК 40-летия Октября и Стадион "Комета"</name>
+				<description><![CDATA[Социальная инфраструктура, находившаяся на балансе завода "Молния". Полностью закрылись в конце 90х годов. В ДК какое-то время работал клуб "Эстакада", пользующийся популярностью у местной молодежи. ]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7582932,55.7282943,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Место ожидания автобуса до метро</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7729273,55.7255513,0.0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Вернакулярные районы</name>
+			<Placemark>
+				<name>Вернакулярный район Войковский</name>
+				<styleUrl>#poly-CCCCCC-1-76-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<tessellate>1</tessellate>
+							<coordinates>37.4865214,55.8150875,0.0 37.5302088,55.8155698,0.0 37.52462990000001,55.82005439999999,0.0 37.529608,55.82569560000001,0.0 37.5311529,55.8307575,0.0 37.5133003,55.8344691,0.0 37.5023999,55.8279615,0.0 37.4925294,55.8241528,0.0 37.48197230000001,55.826708,0.0 37.472273599999994,55.8135443,0.0 37.4865214,55.8150875,0.0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Вернакулярный район Рязанки</name>
+				<description><![CDATA[Отсутствие понятной для "прохожего" навигации. В районе легко потеряться, отсутствуют заметные ориентиры, узлы. При этом можно легко определить границы района, сформированные благодаря антропогенному воздействию на среду.]]></description>
+				<styleUrl>#poly-F9F7A6-1-76</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<tessellate>1</tessellate>
+							<coordinates>37.7592182,55.7360982,0.0 37.753896399999995,55.73469670000001,0.0 37.749433,55.7306853,0.0 37.7490037,55.730105300000005,0.0 37.775526899999996,55.72150100000001,0.0 37.78672850000001,55.7195068,0.0 37.7916641,55.7239665,0.0 37.7592182,55.7360982,0.0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Кафе кобзарь</name>
+				<description><![CDATA[Ближайший и неприятный сосед. Кафе мало популярно у местных жителей, при этом является единственным крупным питейным заведением вернакулярного района. Но это не добавляет ему популярности. Место не востребовано в будние дни (все натурные замеры не выявили ни единого клиента). При этом, место отталкивает эстетически. Опасный сосед в условиях реновации кинотеатра.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.7717471,55.7266328,0.0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Untitled layer</name>
+		</Folder>
+		<Folder>
+			<name>Untitled layer</name>
+		</Folder>
+		<Folder>
+			<name>Слой без названия</name>
+		</Folder>
+		<Folder>
+			<name>Слой без названия</name>
+		</Folder>
+		<Folder>
+			<name>Слой без названия</name>
+		</Folder>
+		<Folder>
+			<name>Untitled layer</name>
+		</Folder>
+		<Folder>
+			<name>Варшава Костя</name>
+			<Placemark>
+				<name>Место ожидания у метро</name>
+				<description><![CDATA[<img src="https://pp.vk.me/c629131/v629131983/22f88/N67IIgQ3iOQ.jpg" height="200" width="auto" /><br><br>Основной поток в сторону кинотеатра формируется на выходе из метро Войковская. Часть из людей, которые направляются в сторону кинотеатра вдоль Старопетровского пр-да, - пассажиры трамвая, которые идут прямо по путям. Основные функции. 90% транзит. 5% - ожидание у площади перед выходом из метро Войковская, 5% - использование сервисов и услуг у метро (салоны связи, фаст-фуд) и прогулка по парку Воровского.]]></description>
+				<styleUrl>#poly-000000-1-76</styleUrl>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>https://pp.vk.me/c629131/v629131983/22f88/N67IIgQ3iOQ.jpg</value>
+					</Data>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<tessellate>1</tessellate>
+							<coordinates>37.4978453,55.8200367,0.0 37.4979687,55.8198891,0.0 37.498430000000006,55.8200006,0.0 37.498285200000005,55.8201995,0.0 37.498435400000005,55.8202326,0.0 37.49830660000001,55.8203562,0.0 37.4979043,55.820250699999995,0.0 37.498017,55.82010600000001,0.0 37.4978453,55.8200367,0.0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Интервью1</name>
+				<description><![CDATA[одна девушка, 19 лет, русская, средний класс, ждала друзей у выхода из метро, бывает здесь 1-2 раза в месяц, сама живет на Петровско-Разумовской, сюда добирается на автобусе, бывает здесь, чтобы встретиться и погулять с друзьями, в основном идут в Метрополис, про Варшаву немного слышала, считает, что кинотеатр закрыт, в районе не хватает (она не знает) парков, где бы можно было бы (спокойно) погулять. (парк Воровского – мелкий, а Покровское-Стрешнево изолирован).]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.498253,55.8201678,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Фото потока из метро</name>
+				<description><![CDATA[<img src="https://pp.vk.me/c629131/v629131983/22e9c/m3jfO4yMtCo.jpg" height="200" width="auto" /><br><br>]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>https://pp.vk.me/c629131/v629131983/22e9c/m3jfO4yMtCo.jpg</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.4981081,55.8201482,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>64 чел/мин</name>
+				<description><![CDATA[В результате замера потока в этом месте средняя интенсивность потока в обе стороны составила – 64 чел/минута.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.4983308,55.8203155,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>19 чел/мин</name>
+				<description><![CDATA[Если проводить замер чуть дальше от выхода из метро, после пешеходного перехода в сторону Метрополиса, то интенсивность потока резко падает – до 19 чел/минута. То есть, 2/3 потока от метро Войковская – посетители Метрополиса, 1/3 – пассажиры автобусных маршрутов.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.4991649,55.8205325,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Фото потока к Метрополису</name>
+				<description><![CDATA[<img src="https://pp.vk.me/c629131/v629131983/22ed2/3oQb7_P841U.jpg" height="200" width="auto" /><br><br>По составу: 1) посетители Метрополиса в основном неплохо одеты, слушают музыку, пользуются смартфонами, молоды – представители среднего класса, при этом еще не отличаются самостоятельным экономическим поведением; 2) пассажиры автобусов проще одеты, старше, для них стоят магазины дисконт-одежды, ломбарды, салоны связи и шаурма – представители высшего низшего класса и низшего класса.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>https://pp.vk.me/c629131/v629131983/22ed2/3oQb7_P841U.jpg</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.4985722,55.8207766,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Тыльная сторона кафе </name>
+				<description><![CDATA[<img src="https://pp.vk.me/c629131/v629131983/22ee6/weEG9XYAmrw.jpg" height="200" width="auto" /><br><br>Само здание перегружено вывесками и пристройками. Все это создает впечатление того, что кинотеатр «врезается» в территорию парка, а многочисленные кафе с верандами понемногу но верно расползаются по его территории дальше. Причем тыльные и боковые стороны здания носят технический характер, из-за чего проход в парк осуществляется по узкому коридору с нависающими над головой кондиционерами.]]></description>
+				<styleUrl>#poly-000000-1-76</styleUrl>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>https://pp.vk.me/c629131/v629131983/22ee6/weEG9XYAmrw.jpg</value>
+					</Data>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<tessellate>1</tessellate>
+							<coordinates>37.5004148,55.8205943,0.0 37.500688399999994,55.820308,0.0 37.5008118,55.82033810000001,0.0 37.5008547,55.8202688,0.0 37.5010371,55.820308000000004,0.0 37.50096200000001,55.8204164,0.0 37.5008601,55.8203954,0.0 37.5007474,55.8205069,0.0 37.5007957,55.8205581,0.0 37.5007099,55.8206606,0.0 37.5004148,55.8205943,0.0</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Площадка для игры в городки</name>
+				<description><![CDATA[<img src="https://pp.vk.me/c629131/v629131983/22edc/mn5USygoURw.jpg" height="200" width="auto" /><br><br>]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>https://pp.vk.me/c629131/v629131983/22edc/mn5USygoURw.jpg</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.5040358,55.8200669,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Интервью2</name>
+				<description><![CDATA[- две женщины, 55 лет, русские, средний класс, гуляли по парку Воровского, проживают у закрытого кинотеатра Рассвет в Коптево (ул. Клары Цеткин), сюда добираются на трамвае (4 остановки до метро), но чаще пешком по трамвайным путям («мы уже привыкли»). Вспоминают, что в Варшаве был хороший концертный зал, очень хотели бы, чтобы он здесь опять появился. По поводу кино, сейчас много малых кинозалов с небольшими экранами («можно и дома остаться смотреть»), а в Варшаве был большой экран – этого не хватает. Кафе хорошо, но их слишком много. Насчет репертуара: важно проводить кинофестивали, можно на иностранных язык с субтитрами, можно как и последний новинки, так и старые мультики с прицелом на семейную аудиторию. Из того, что волнует, надеются, что в этом году в парке сделают каток (последний раз был в позапрошлом году – 2013). Вообще парк воспринимается как главная ценность. Тем не менее, его бы хорошо наполнить сервисами, которые характерны для центральных парков («тогда бы нам не пришлось бы никуда ездить»). Раньше ставили столы для настольного тенниса, проводили выставки («почему бы часть Серова из ЦДХ не выставлять здесь?»). Транспортная доступность в районе очень хорошая, пробок у трамвая нет. Торговли и рынков хватает (рынок у кинотеатра Рассвет). Если появится культурное наполнение в Варшаве, то потребуется информационная поддержка в виде бумажного вестника или информационных столбов-афиш. В целом район жителей устраивает, ничего бы не меняли. Из плюсов см выше: Транспортная доступность в районе очень хорошая, пробок у трамвая нет. Торговли и рынков хватает (рынок у кинотеатра Рассвет). Минусы видимо не проговаривают/не замечают: плохое состояние некоторых дорог (например, Коптевский путепровод), обилие промышленных зон, слабые и неблагоустроенные пешеходные связки.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.5010264,55.8203592,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Интервью3</name>
+				<description><![CDATA[- две женщины, 45 лет, русские, низший средний класс, шли пешком от Старопетровского пр-да в парк Воровского, здесь бывают почти каждый день, пользуются метро и парком, по поводу кинотеатра считают, что нынешние его использование (кафе) единственно реалистичный и рентабельный сценарий, их всё устраивает, но отмечают, что слишком много торговли и развлечений, а самое ключевая ценность – парк, который ни в коем случае нельзя трогать.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.5006884,55.821863,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Фото из автобуса</name>
+				<description><![CDATA[<img src="https://pp.vk.me/c629131/v629131983/22ea5/MhQX3zbQy9s.jpg" height="200" width="auto" /><br><br>Вид из окна автобуса при переезде пустующей МКЖД.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>https://pp.vk.me/c629131/v629131983/22ea5/MhQX3zbQy9s.jpg</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.5086975,55.8318185,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Фото из автобуса</name>
+				<description><![CDATA[<img src="https://pp.vk.me/c629131/v629131983/22f91/WbufwAJHekc.jpg" height="200" width="auto" /><br><br>90 автобус из Головинского и Коптевского района, мимо Коптевского путепровода]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>https://pp.vk.me/c629131/v629131983/22f91/WbufwAJHekc.jpg</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.5094056,55.8314088,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Фото общие впечатления</name>
+				<description><![CDATA[<img src="https://pp.vk.me/c629131/v629131983/22eb7/fZ5JoGzPLww.jpg" height="200" width="auto" /><br><br>Территория очень транзитная и неказистая, оазисы благоустройства связаны исключительно с ТЦ Метрополис и возникают лишь по пути к нему, остальное (магазины, площади, дорожки) вызывают скорее угнетающее ощущение, они не страшные, но никому не нужные и опускаются в восприятии прохожими. Выходя из метро, это все не так сильно бросается в глаза, как при подъезде со стороны Коптево на автобусе или трамвае. Ярким пятном на фоне обще торгового Шанхая был аниматор Пингвин, который неустанно прыгал и танцевал на протяжении 2 часов наблюдения у входа в магазин одежды. Приятное впечатление оставляется парк Воровского, который неплохо оснащен, активно и пассивно используется, однако состояние некоторых лавочек неудовлетворительное.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>https://pp.vk.me/c629131/v629131983/22eb7/fZ5JoGzPLww.jpg</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.4987707,55.820424,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Фото внутренняя территория</name>
+				<description><![CDATA[<img src="https://pp.vk.me/c629131/v629131983/22f04/9CyVL-nqZJk.jpg" height="200" width="auto" /><br><br>Внутри кинотеатра основную площадь занимает двухэтажная комбинация Il Патио и Планеты Суши, с северного торца есть пристройка, которая ведет на второй этаж к чайхане «В гости» и вход в подвал – магазин спортивной экипировки «Сплав». С южного торца – вход в торговые помещения первого этажа (две туристические фирмы, маникюр, парикмахерская, сервис центр Samsung и магазин с игрушечными машинками (!!!)), лестница на второй этаж, ведущая к пабу Temple Bar (есть смычка с чайханой). А также есть летняя веранда кафе Грабли, которое расположено там же на первом этаже с отдельным входом. <br>Важно отметить, что на здании с южного торца есть довольно старая вывеска «Кинотеатр», которая уводит на второй этаж. При вопросе, а где собственно кинотеатр, официант подсказывает, что большой экран достался Temple Bar, на нем идут спортивные трансляции.<br>Оценка численности посетителей в 15.00 вс: <br>Il Патио и Планеты Суши – около 50 человек<br>Чайхана «В гости» - 15 человек<br>Temple Bar – 15 человек<br>Грабли – 30 человек<br>Туристические фирмы, маникюр, парикмахерская – 5 человек<br>Итого посетителей в здании – 115 человек.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>https://pp.vk.me/c629131/v629131983/22f04/9CyVL-nqZJk.jpg</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.5002083,55.8201844,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Фото фасад кинотеатра из автобуса</name>
+				<description><![CDATA[<img src="https://pp.vk.me/c629131/v629131983/22f6d/njI2uMeoiDc.jpg" height="200" width="auto" /><br><br>Здание кинотеатра Варшава обращено фасадом на Старопетровский пр-д, от которого его отделяет несколько хаотичная парковка для посетителей кафе, с северного торца здание граничит с парком Воровского, с южного – опоясано пристроенными помещениями для кафе и летних веранд, которые также выходят на территорию парка.<br>Прямо напротив выхода из кинотеатра располагаются автобусные остановки, а через дорогу – многочисленные маршрутные такси. От выхода из метро Войковская до кинотеатра дорога занимает 2-4 минуты. Остановки трамвая находятся в дальнем углу парка, из-за чего добраться от них до кинотеатра потребует минут 5-7.<br>Само здание перегружено вывесками и пристройками. Все это создает впечатление того, что кинотеатр «врезается» в территорию парка, а многочисленные кафе с верандами понемногу но верно расползаются по его территории дальше. Причем тыльные и боковые стороны здания носят технический характер, из-за чего проход в парк осуществляется по узкому коридору с нависающими над головой кондиционерами.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>https://pp.vk.me/c629131/v629131983/22f6d/njI2uMeoiDc.jpg</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.4997336,55.8208218,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Фото посетители</name>
+				<description><![CDATA[<img src="https://pp.vk.me/c629131/v629131983/22f76/FxzC3oHlFXA.jpg" height="200" width="auto" /><br><br>В результате можно сказать, что посетители кафе и магазинов, находящихся внутри кинотеатра, являются преимущественно жителями Войковского и соседних районов, так как москвичи из других районов с похожими запросами ориентированы исключительно на Метрополис. Часть из них – молодёжь, мужчины и женщины в возрасте от 22 до 35 лет, которые посещают заведения питания и встречаются там с друзьями. Другая часть – преимущественно женщины в возрасте 45 лет и старше, которые гуляют в парке Воровского.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>https://pp.vk.me/c629131/v629131983/22f76/FxzC3oHlFXA.jpg</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.4982825,55.8202778,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Фото шашки</name>
+				<description><![CDATA[<img src="https://pp.vk.me/c629131/v629131983/22f2c/LKaYdH-1hew.jpg" height="200" width="auto" /><br><br>]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>https://pp.vk.me/c629131/v629131983/22f2c/LKaYdH-1hew.jpg</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.5029576,55.8210493,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Фото врезка в парк/пристройки</name>
+				<description><![CDATA[<img src="https://pp.vk.me/c629131/v629131983/22f64/xiE5heNyzOs.jpg" height="200" width="auto" /><br><br>]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>https://pp.vk.me/c629131/v629131983/22f64/xiE5heNyzOs.jpg</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.4998999,55.8199523,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Фото детская площадка</name>
+				<description><![CDATA[<img src="https://pp.vk.me/c629131/v629131983/22f36/_PogmlQbhn4.jpg" height="200" width="auto" /><br><br>Помимо ожидания другая интересная активность происходит в парке. Люди гуляют с детьми, дети лепят снеговиков, молодежь качается на качелях, люди старшего возраста играют в городки на специальной площадке, возможно собираются также скейтбордисты на роллердроме.]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>https://pp.vk.me/c629131/v629131983/22f36/_PogmlQbhn4.jpg</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.5014234,55.8191266,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Фото тренажер</name>
+				<description><![CDATA[<img src="https://pp.vk.me/c629131/v629131983/22f22/WaD3g8Xkfjk.jpg" height="200" width="auto" /><br><br>]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>https://pp.vk.me/c629131/v629131983/22f22/WaD3g8Xkfjk.jpg</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>37.5037301,55.8205069,0.0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Слой без названия</name>
+		</Folder>
+		<Style id='icon-503-DB4436-normal'>
+			<IconStyle>
+				<color>ff3644DB</color>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+				</Icon>
+				<hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
+				</hotSpot>
+			</IconStyle>
+			<LabelStyle>
+				<scale>0.0</scale>
+			</LabelStyle>
+		</Style>
+		<Style id='icon-503-DB4436-highlight'>
+			<IconStyle>
+				<color>ff3644DB</color>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+				</Icon>
+				<hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
+				</hotSpot>
+			</IconStyle>
+			<LabelStyle>
+				<scale>1.1</scale>
+			</LabelStyle>
+		</Style>
+		<StyleMap id='icon-503-DB4436'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#icon-503-DB4436-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#icon-503-DB4436-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id='icon-503-DB4436-nodesc-normal'>
+			<IconStyle>
+				<color>ff3644DB</color>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+				</Icon>
+				<hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
+				</hotSpot>
+			</IconStyle>
+			<LabelStyle>
+				<scale>0.0</scale>
+			</LabelStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<Style id='icon-503-DB4436-nodesc-highlight'>
+			<IconStyle>
+				<color>ff3644DB</color>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+				</Icon>
+				<hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
+				</hotSpot>
+			</IconStyle>
+			<LabelStyle>
+				<scale>1.1</scale>
+			</LabelStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<StyleMap id='icon-503-DB4436-nodesc'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#icon-503-DB4436-nodesc-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#icon-503-DB4436-nodesc-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id='line-000000-1-normal'>
+			<LineStyle>
+				<color>ff000000</color>
+				<width>1</width>
+			</LineStyle>
+		</Style>
+		<Style id='line-000000-1-highlight'>
+			<LineStyle>
+				<color>ff000000</color>
+				<width>2.0</width>
+			</LineStyle>
+		</Style>
+		<StyleMap id='line-000000-1'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#line-000000-1-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#line-000000-1-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id='line-000000-1-nodesc-normal'>
+			<LineStyle>
+				<color>ff000000</color>
+				<width>1</width>
+			</LineStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<Style id='line-000000-1-nodesc-highlight'>
+			<LineStyle>
+				<color>ff000000</color>
+				<width>2.0</width>
+			</LineStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<StyleMap id='line-000000-1-nodesc'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#line-000000-1-nodesc-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#line-000000-1-nodesc-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id='line-000000-11-normal'>
+			<LineStyle>
+				<color>ff000000</color>
+				<width>11</width>
+			</LineStyle>
+		</Style>
+		<Style id='line-000000-11-highlight'>
+			<LineStyle>
+				<color>ff000000</color>
+				<width>17.0</width>
+			</LineStyle>
+		</Style>
+		<StyleMap id='line-000000-11'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#line-000000-11-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#line-000000-11-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id='line-000000-17-nodesc-normal'>
+			<LineStyle>
+				<color>ff000000</color>
+				<width>17</width>
+			</LineStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<Style id='line-000000-17-nodesc-highlight'>
+			<LineStyle>
+				<color>ff000000</color>
+				<width>26.0</width>
+			</LineStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<StyleMap id='line-000000-17-nodesc'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#line-000000-17-nodesc-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#line-000000-17-nodesc-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id='line-000000-5-normal'>
+			<LineStyle>
+				<color>ff000000</color>
+				<width>5</width>
+			</LineStyle>
+		</Style>
+		<Style id='line-000000-5-highlight'>
+			<LineStyle>
+				<color>ff000000</color>
+				<width>8.0</width>
+			</LineStyle>
+		</Style>
+		<StyleMap id='line-000000-5'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#line-000000-5-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#line-000000-5-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id='line-000000-5-nodesc-normal'>
+			<LineStyle>
+				<color>ff000000</color>
+				<width>5</width>
+			</LineStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<Style id='line-000000-5-nodesc-highlight'>
+			<LineStyle>
+				<color>ff000000</color>
+				<width>8.0</width>
+			</LineStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<StyleMap id='line-000000-5-nodesc'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#line-000000-5-nodesc-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#line-000000-5-nodesc-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id='line-000000-8-nodesc-normal'>
+			<LineStyle>
+				<color>ff000000</color>
+				<width>8</width>
+			</LineStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<Style id='line-000000-8-nodesc-highlight'>
+			<LineStyle>
+				<color>ff000000</color>
+				<width>12.0</width>
+			</LineStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<StyleMap id='line-000000-8-nodesc'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#line-000000-8-nodesc-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#line-000000-8-nodesc-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id='line-DB4436-1-nodesc-normal'>
+			<LineStyle>
+				<color>ff3644DB</color>
+				<width>1</width>
+			</LineStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<Style id='line-DB4436-1-nodesc-highlight'>
+			<LineStyle>
+				<color>ff3644DB</color>
+				<width>2.0</width>
+			</LineStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<StyleMap id='line-DB4436-1-nodesc'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#line-DB4436-1-nodesc-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#line-DB4436-1-nodesc-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id='poly-000000-1-76-normal'>
+			<LineStyle>
+				<color>ff000000</color>
+				<width>1</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>4C000000</color>
+				<fill>1</fill>
+				<outline>1</outline>
+			</PolyStyle>
+		</Style>
+		<Style id='poly-000000-1-76-highlight'>
+			<LineStyle>
+				<color>ff000000</color>
+				<width>2.0</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>4C000000</color>
+				<fill>1</fill>
+				<outline>1</outline>
+			</PolyStyle>
+		</Style>
+		<StyleMap id='poly-000000-1-76'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#poly-000000-1-76-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#poly-000000-1-76-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id='poly-000000-1-76-nodesc-normal'>
+			<LineStyle>
+				<color>ff000000</color>
+				<width>1</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>4C000000</color>
+				<fill>1</fill>
+				<outline>1</outline>
+			</PolyStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<Style id='poly-000000-1-76-nodesc-highlight'>
+			<LineStyle>
+				<color>ff000000</color>
+				<width>2.0</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>4C000000</color>
+				<fill>1</fill>
+				<outline>1</outline>
+			</PolyStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<StyleMap id='poly-000000-1-76-nodesc'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#poly-000000-1-76-nodesc-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#poly-000000-1-76-nodesc-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id='poly-4186F0-1-76-nodesc-normal'>
+			<LineStyle>
+				<color>ffF08641</color>
+				<width>1</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>4CF08641</color>
+				<fill>1</fill>
+				<outline>1</outline>
+			</PolyStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<Style id='poly-4186F0-1-76-nodesc-highlight'>
+			<LineStyle>
+				<color>ffF08641</color>
+				<width>2.0</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>4CF08641</color>
+				<fill>1</fill>
+				<outline>1</outline>
+			</PolyStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<StyleMap id='poly-4186F0-1-76-nodesc'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#poly-4186F0-1-76-nodesc-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#poly-4186F0-1-76-nodesc-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id='poly-93D7E8-1-76-normal'>
+			<LineStyle>
+				<color>ffE8D793</color>
+				<width>1</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>4CE8D793</color>
+				<fill>1</fill>
+				<outline>1</outline>
+			</PolyStyle>
+		</Style>
+		<Style id='poly-93D7E8-1-76-highlight'>
+			<LineStyle>
+				<color>ffE8D793</color>
+				<width>2.0</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>4CE8D793</color>
+				<fill>1</fill>
+				<outline>1</outline>
+			</PolyStyle>
+		</Style>
+		<StyleMap id='poly-93D7E8-1-76'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#poly-93D7E8-1-76-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#poly-93D7E8-1-76-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id='poly-9FC3FF-1-76-normal'>
+			<LineStyle>
+				<color>ffFFC39F</color>
+				<width>1</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>4CFFC39F</color>
+				<fill>1</fill>
+				<outline>1</outline>
+			</PolyStyle>
+		</Style>
+		<Style id='poly-9FC3FF-1-76-highlight'>
+			<LineStyle>
+				<color>ffFFC39F</color>
+				<width>2.0</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>4CFFC39F</color>
+				<fill>1</fill>
+				<outline>1</outline>
+			</PolyStyle>
+		</Style>
+		<StyleMap id='poly-9FC3FF-1-76'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#poly-9FC3FF-1-76-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#poly-9FC3FF-1-76-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id='poly-CCCCCC-1-76-nodesc-normal'>
+			<LineStyle>
+				<color>ffCCCCCC</color>
+				<width>1</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>4CCCCCCC</color>
+				<fill>1</fill>
+				<outline>1</outline>
+			</PolyStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<Style id='poly-CCCCCC-1-76-nodesc-highlight'>
+			<LineStyle>
+				<color>ffCCCCCC</color>
+				<width>2.0</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>4CCCCCCC</color>
+				<fill>1</fill>
+				<outline>1</outline>
+			</PolyStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<StyleMap id='poly-CCCCCC-1-76-nodesc'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#poly-CCCCCC-1-76-nodesc-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#poly-CCCCCC-1-76-nodesc-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id='poly-F9F7A6-1-76-normal'>
+			<LineStyle>
+				<color>ffA6F7F9</color>
+				<width>1</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>4CA6F7F9</color>
+				<fill>1</fill>
+				<outline>1</outline>
+			</PolyStyle>
+		</Style>
+		<Style id='poly-F9F7A6-1-76-highlight'>
+			<LineStyle>
+				<color>ffA6F7F9</color>
+				<width>2.0</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>4CA6F7F9</color>
+				<fill>1</fill>
+				<outline>1</outline>
+			</PolyStyle>
+		</Style>
+		<StyleMap id='poly-F9F7A6-1-76'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#poly-F9F7A6-1-76-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#poly-F9F7A6-1-76-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+	</Document>
+</kml>
