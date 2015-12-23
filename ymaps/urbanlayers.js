@@ -206,9 +206,9 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
           observationsPoints.add(placemark);
         }
 
-/*
+
         if(f.geometry.type == "Polygon") {
-        //  console.log(f);
+          console.log(f);
           var polygon = new ymaps.Polygon(f.geometry.coordinates[0], {
           hintContent: f.properties['Name'],
           balloonContentHeader: f.properties['Name'],
@@ -225,7 +225,6 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
           observationsPoly.add(polygon);
         }
 
-*/
 
       });
 
@@ -268,7 +267,7 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
                 break;
             }
 
-/*
+
             if(f.geometry.type == "Point") {
 
               var placemark = new ymaps.Placemark(f.geometry.coordinates, {
@@ -277,15 +276,15 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
               balloonContent: balloonContent
               }, {
                 iconLayout: 'default#image',
-                iconImageHref: 'observation.svg',
-                iconImageSize: [20, 20],
-                iconImageOffset: [-10, -10]
+                iconImageHref: 'stop.svg',
+                iconImageSize: [12, 12],
+                iconImageOffset: [-6, -6]
               });
               transportPoints.add(placemark);
             } else {
               console.log(f.geometry);
             }
-*/
+
 
 
             if(f.geometry.type == "LineString") {
