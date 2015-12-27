@@ -159,7 +159,7 @@ d3.tsv("data/data.csv", function(d,i) {
 
       L.geoJson(districtsCentroids, {
         onEachFeature: function(feature, layer) {
-          //layer.bindPopup((feature.properties.Label + ': ' + feature.properties.value));
+          layer.bindPopup((feature.properties.Label + ': ' + feature.properties.value));
           layer.setIcon(L.divIcon(feature.properties.icon));
         },
 //        style: function(feature) { return feature.properties; },
