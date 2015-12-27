@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Механика Москвы</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.mapbox.com/mapbox.js/plugins/turf/v2.0.2/turf.min.js'></script>
+<script src='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
+
+<style>
+  * { font-family: Helvetica, sans-serif;}
+  body { margin:0; padding:0; }
+  #map { display: block; width: 100%; height: 100%; min-height: 500px; min-width: 700px; }
+  #page { width: 100%; height: 100%; display: flex; flex-direction: row; }
+  #questionsArea { width: 25%; height: 100%; overflow-y: auto; }
+  #mapArea { width: 75%; height: 100%; }
+  .question { padding: 10px; cursor: pointer; font-size: 12px; }
+  .question-selected { padding: 10px; border: 2px solid #555; font-size: 12px; }
+  .label { padding: 5px; color: #fff; text-shadow: 0px 0px 2px rgba(0,0,0,0.70); font-size: 14px; }
+
+  #questionHeader { text-align: center; position: absolute; width: 700px; margin-right: -350px; right: 37%; top: 20px; z-index: 30404; color: #fff; }
+  #questionText { font-size: 16px; margin-bottom: 10px; text-shadow: 0px 0px 4px rgba(0,0,0,0.70); }
+  #questionMeasure { font-size: 12px; text-shadow: 0px 0px 2px rgba(0,0,0,0.70); }
+
+
+</style>
+<body>
+  <div id='questionHeader'>
+    <div id='questionText'></div>
+    <div id='questionMeasure'></div>
+  </div>
+  <div id='page'>
+    <div id='questionsArea'>
+      <div id='topicsMenu'></div>
+    </div>
+    <div id='mapArea'><div id='map'></div></div>
+  </div>
+
+<script src="d3.min.js"></script>
+
+<script>
+
+d3.select("#page").style("height", window.innerHeight + "px");
+
+var questionsArea = d3.select("#questionsArea"),
+    questionText = d3.select("#questionText"),
+    questionMeasure = d3.select("#questionMeasure");
+
+
+L.mapbox.accessToken = 'pk.eyJ1IjoibWluaWthcm1hIiwiYSI6IkRjTUFYdGsifQ.30RhErOKbQvLJ1kOnAl73A';
+var map = L.mapbox.map('map', 'mapbox.dark')
+    .setView([55.744537,37.625224], 11);
+
+
+var sourceDataLayer;
+var dataLayer = L.mapbox.featureLayer().addTo(map);
+var labelsLayer = L.mapbox.featureLayer().addTo(map);
+
+var opacityCategories = [0.2,0.4,0.6,0.8,1];
+
+var current = 0,
+    questions = [],
+    districtsGeometry,
+    districtsCentroids,
+    dIdx = [], //districts index
+    topics = ['Благоустройство','Безопасность','Культура','Образование','Здравоохранение','Экология','Транспорт'];
+
+//load data
+d3.tsv("data/data.csv", function(d,i) {
+  questions.push(d);
+  questionsArea.append("div")
+    .text(d.question)
+    .attr("class", "question")
+    .attr("id", "q"+i)
+    .on('click', function() {
+      getAnswer(i);
+    });
+  },
+   function(d){
+    // data imported
+    console.log('table data loaded');
+    console.log(questions.length);
+
+    //loading districtsGeometry
+      d3.json("data/districts.geojson", function(json) {
+
+
+        var centroids = [];
+
+        //creating districts index
+        json.features.forEach(function(f,i) {
+          dIdx.push(f.properties['Source_Id']);
+          f.properties['value'] = 0;
+
+          //creating centroid feature
+          var centroid = turf.centroid(f);
+          centroid.properties = f.properties;
+          centroids.push(centroid);
+        });
+
+        districtsGeometry = json;
+        districtsCentroids = {
+          "type": "FeatureCollection",
+          "features": centroids
+        };
+
+        //getting first answer
+        getAnswer(current);
+
+      });
+	  });
+
+  function getAnswer(c) {
+    //clear all layers
+    dataLayer.clearLayers();
+    labelsLayer.clearLayers();
+    d3.select("#q"+current).attr("class", "question");
+    current = c;
+    d3.select("#q"+c).attr("class", "question-selected");
+
+    questionText.text(questions[c].question);
+    questionMeasure.text(questions[c].measure);
+
+
+    var categories = getCategories(questions[c]);
+
+
+    //process styles //questions[c]
+    districtsGeometry.features.forEach(function(f,i) {
+      var v = questions[c]['d' + dIdx[i]];
+        f.properties['color'] = '#00FFFF';
+        f.properties['opacity'] = getClassifiedOpacity(v,categories);
+        f.properties['value'] = +v;
+        f.properties['fillOpacity'] = getClassifiedOpacity(v,categories);
+        f.properties['fillColor'] = '#00DDDD';
+        f.properties['weight'] = 0.5;
+    });
+
+    districtsCentroids.features.forEach(function(f,i) {
+      var v = questions[c]['d' + f.properties['Source_Id']];
+      f.properties['value'] = v;
+      f.properties['icon'] = {
+        "className": "label", // class name to style
+        "html": v, // add html content inside the marker
+        "iconSize": null // size of icon, use null to set the size in CSS
+      }
+    });
+
+      //adding districts geometry to the map
+      L.geoJson(districtsGeometry, {
+        onEachFeature: function(feature, layer) {
+          layer.bindPopup((feature.properties.Label + ': ' + feature.properties.value));
+        },
+        style: function(feature) { return feature.properties; },
+        filter: function(feature) { return (feature.properties['Level'] == 2); } //show only districts
+      })
+      .addTo(dataLayer);
+
+      //adding districts labels to the map
+
+      L.geoJson(districtsCentroids, {
+        onEachFeature: function(feature, layer) {
+          //layer.bindPopup((feature.properties.Label + ': ' + feature.properties.value));
+          layer.setIcon(L.divIcon(feature.properties.icon));
+        },
+//        style: function(feature) { return feature.properties; },
+        filter: function(feature) { return (feature.properties['Level'] == 2); } //show only districts
+      })
+      .addTo(labelsLayer);
+
+  }
+
+function getCategories(questions) {
+  var min,max,delta,step;
+  var values = [];
+  var categories = [];
+
+  for(i=0; i<143; i++) {
+      values.push(questions['d'+i]);
+  }
+
+  max = +d3.max(values);
+  min = +d3.min(values);
+  delta = +max-min;
+  step = +delta/4;
+
+  for(j=0; j<=4; j++) {
+    categories.push((min+step*j));
+  }
+  console.log(categories);
+  return categories;
+}
+
+function getClassifiedOpacity(value,categories) {
+  var opacity = 0;
+  var opacityIndex = 0;
+  for(c=0; c < categories.length; c++) {
+    if(value>categories[c]) {
+      opacityIndex = c;
+    }
+  }
+  opacity = opacityCategories[opacityIndex];
+  return opacity;
+}
+
+function getClassifiedColor(value,categories) {
+  return "#00FFFF";
+}
+
+
+</script>
+</body>
+</html>

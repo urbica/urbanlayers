@@ -4,8 +4,8 @@ var turf = require('turf');
 
 var data = [],
     orderedData = [],
-    cellWidth = 0.05,
-    buffer = 2,
+    cellWidth = 0.05, //cell width
+    buffer = 2, //area size
     units = 'kilometers',
     outputFile = "debug_50m_2km",
     current = 0,
