@@ -7,20 +7,25 @@
 <link href='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
 
 <style>
-  * { font-family: Helvetica, sans-serif;}
+  * { font-family: Helvetica, sans-serif; font-size: 13px; }
   body { margin:0; padding:0; }
   #map { display: block; width: 100%; height: 100%; min-height: 500px; min-width: 700px; }
   #page { width: 100%; height: 100%; display: flex; flex-direction: row; }
   #questionsArea { width: 25%; height: 100%; overflow-y: auto; }
   #mapArea { width: 75%; height: 100%; }
-  .question { padding: 10px; cursor: pointer; font-size: 12px; }
-  .question-selected { padding: 10px; border: 2px solid #555; font-size: 12px; }
-  .label { padding: 5px; color: #fff; text-shadow: 0px 0px 2px rgba(0,0,0,0.70); font-size: 14px; }
-
+  #legendArea { padding: 5px; text-align: center; position: absolute; bottom: 25px; right: 37%; margin-right: -65px; width: 130px; background: rgba(0,0,0,0.7); }
+  .question { padding: 10px; cursor: pointer; font-size: 12px; border: 2px solid #FFF;  margin: 2px;  }
+  .question-selected { padding: 10px; cursor: pointer; border: 2px solid #555; font-size: 12px; margin: 2px; }
+  .label { opacity: 0.8; width: 30px; height: 20px; margin-left: -15px; margin-top: -10px; padding: 5px; color: #fff; text-shadow: 0px 0px 2px rgba(0,0,0,0.70); font-size: 12px; }
+  .legend-min, .legend-max, .legend-graph { font-size: 12px; color: #fff; display: inline-block; height: 25px; line-height: 25px;  }
+  .legend-min { margin-right: 5px; margin-top: -5px; }
+  .legend-max { margin-left: 5px; margin-top: -5px; }
+  .topic { cursor: pointer; display: inline-block; padding: 5px; }
+  .topic-selected { cursor: pointer; display: inline-block; padding: 5px; color: #fff; background: #333; }
   #questionHeader { text-align: center; position: absolute; width: 700px; margin-right: -350px; right: 37%; top: 20px; z-index: 30404; color: #fff; }
   #questionText { font-size: 16px; margin-bottom: 10px; text-shadow: 0px 0px 4px rgba(0,0,0,0.70); }
   #questionMeasure { font-size: 12px; text-shadow: 0px 0px 2px rgba(0,0,0,0.70); }
-
+  #topicsMenu { padding: 10px; }
 
 </style>
 <body>
@@ -31,9 +36,11 @@
   <div id='page'>
     <div id='questionsArea'>
       <div id='topicsMenu'></div>
+      <div id='questionsList'></div>
     </div>
     <div id='mapArea'><div id='map'></div></div>
   </div>
+  <div id='legendArea'></div>
 
 <script src="d3.min.js"></script>
 
@@ -41,39 +48,65 @@
 
 d3.select("#page").style("height", window.innerHeight + "px");
 
-var questionsArea = d3.select("#questionsArea"),
-    questionText = d3.select("#questionText"),
-    questionMeasure = d3.select("#questionMeasure");
-
-
-L.mapbox.accessToken = 'pk.eyJ1IjoibWluaWthcm1hIiwiYSI6IkRjTUFYdGsifQ.30RhErOKbQvLJ1kOnAl73A';
-var map = L.mapbox.map('map', 'mapbox.dark')
-    .setView([55.744537,37.625224], 11);
-
-
-var sourceDataLayer;
-var dataLayer = L.mapbox.featureLayer().addTo(map);
-var labelsLayer = L.mapbox.featureLayer().addTo(map);
-
-var opacityCategories = [0.2,0.4,0.6,0.8,1];
 
 var current = 0,
+    currentTopic = 0,
     questions = [],
     districtsGeometry,
     districtsCentroids,
     dIdx = [], //districts index
     topics = ['Благоустройство','Безопасность','Культура','Образование','Здравоохранение','Экология','Транспорт'];
 
+var questionsList = d3.select("#questionsList"),
+    questionText = d3.select("#questionText"),
+    questionMeasure = d3.select("#questionMeasure"),
+    legendArea = d3.select("#legendArea"),
+    topicsMenu = d3.select("#topicsMenu");
+
+
+L.mapbox.accessToken = 'pk.eyJ1IjoibWluaWthcm1hIiwiYSI6IkRjTUFYdGsifQ.30RhErOKbQvLJ1kOnAl73A';
+var map = L.mapbox.map('map', 'mapbox.dark')
+    .setView([55.744537,37.625224], 11);
+
+var sourceDataLayer,
+    dataLayer = L.mapbox.featureLayer().addTo(map),
+    labelsLayer = L.mapbox.featureLayer().addTo(map);
+
+map.on('zoomend', function() {
+  checkZoom(map.getZoom());
+});
+
+var opacityCategories = [0.2,0.4,0.6,0.8,0.9],
+    colorCategories = [
+        '#009999','#00AAAA','#00CCCC','#00EEEE','#00FFFF'
+]
+
+//build topicsMenu
+for(var t = 0; t < topics.length; t++) {
+  topicsMenu.append("div")
+    .attr("id", "t"+t)
+    .attr("class", "topic")
+    .on("click", function(e) {
+      //changeTopic(t);
+      var ts = d3.select(this).attr("id");
+      ts = ts.replace("t", "");
+      changeTopic(ts);
+     })
+    .text(topics[t]);
+}
+
 //load data
 d3.tsv("data/data.csv", function(d,i) {
   questions.push(d);
-  questionsArea.append("div")
+
+/*  questionsList.append("div")
     .text(d.question)
     .attr("class", "question")
     .attr("id", "q"+i)
     .on('click', function() {
       getAnswer(i);
     });
+    */
   },
    function(d){
     // data imported
@@ -103,8 +136,9 @@ d3.tsv("data/data.csv", function(d,i) {
           "features": centroids
         };
 
-        //getting first answer
-        getAnswer(current);
+        //starting app
+        changeTopic(currentTopic);
+        //getAnswer(current);
 
       });
 	  });
@@ -127,12 +161,12 @@ d3.tsv("data/data.csv", function(d,i) {
     //process styles //questions[c]
     districtsGeometry.features.forEach(function(f,i) {
       var v = questions[c]['d' + dIdx[i]];
-        f.properties['color'] = '#00FFFF';
-        f.properties['opacity'] = getClassifiedOpacity(v,categories);
+        f.properties['color'] = '#FFFFFF';
+        f.properties['opacity'] = 0.25;
         f.properties['value'] = +v;
         f.properties['fillOpacity'] = getClassifiedOpacity(v,categories);
-        f.properties['fillColor'] = '#00DDDD';
-        f.properties['weight'] = 0.5;
+        f.properties['fillColor'] = getClassifiedColor(v,categories);
+        f.properties['weight'] = 1;
     });
 
     districtsCentroids.features.forEach(function(f,i) {
@@ -151,7 +185,7 @@ d3.tsv("data/data.csv", function(d,i) {
           layer.bindPopup((feature.properties.Label + ': ' + feature.properties.value));
         },
         style: function(feature) { return feature.properties; },
-        filter: function(feature) { return (feature.properties['Level'] == 2); } //show only districts
+        filter: function(feature) { return (feature.properties['Level'] >= 2); } //show only districts
       })
       .addTo(dataLayer);
 
@@ -161,11 +195,17 @@ d3.tsv("data/data.csv", function(d,i) {
         onEachFeature: function(feature, layer) {
           layer.bindPopup((feature.properties.Label + ': ' + feature.properties.value));
           layer.setIcon(L.divIcon(feature.properties.icon));
+          console.log(feature.properties['name'] + ': ' + feature.properties['way_area']);
         },
 //        style: function(feature) { return feature.properties; },
-        filter: function(feature) { return (feature.properties['Level'] == 2); } //show only districts
+        filter: function(feature) { return (feature.properties['Level'] >= 2); } //show only districts
       })
       .addTo(labelsLayer);
+
+      //building legend
+      getLegend(categories);
+
+      checkZoom(map.getZoom());
 
   }
 
@@ -203,8 +243,79 @@ function getClassifiedOpacity(value,categories) {
 }
 
 function getClassifiedColor(value,categories) {
-  return "#00FFFF";
+  var color = colorCategories[0],
+      colorIndex = 0;
+  for(c=0; c < categories.length; c++) {
+    if(value>categories[c]) {
+      colorIndex = c;
+    }
+  }
+  color = colorCategories[colorIndex];
+  return color;
 }
+
+function getLegend(categories) {
+
+  legendArea.text("");
+
+  legendArea.append("div")
+    .attr("class", "legend-min")
+    .text(d3.min(categories));
+
+  var legend = legendArea.append("div").attr("class", "legend-graph")
+    .append("svg").attr("width", 72).attr("height", 25);
+
+  for(var c = 0; c < (categories.length-1); c++) {
+    console.log(c);
+    legend.append("rect")
+      .attr("width", 15)
+      .attr("height", 15)
+      .attr("x", 18*c)
+      .attr("y", 10)
+      .style("fill", getClassifiedColor(categories[c],categories));
+  }
+
+  legendArea.append("div")
+    .attr("class", "legend-max")
+    .text(d3.max(categories));
+
+}
+
+
+function checkZoom(z) {
+  var labels = d3.selectAll(".label");
+  if(z<11) labels.style("display", "none"); else labels.style("display", "block");
+
+}
+
+function changeTopic(t) {
+  console.log(t);
+  questionsList.text("");
+  var sq;
+
+  //higlighting the menu item
+  d3.select("#t"+currentTopic).attr("class", "topic");
+  d3.select("#t"+t).attr("class", "topic-selected");
+  currentTopic = t;
+
+  for(q in questions) {
+
+    if(questions[q].topic == topics[t]) {
+    if(!sq) sq = q;
+    questionsList.append("div")
+      .text(questions[q].question)
+      .attr("class", "question")
+      .attr("id", "q"+q)
+      .on('click', function() {
+        var s = d3.select(this).attr("id");
+        s = s.replace("q", "");
+        getAnswer(s);
+      });
+    }
+  }
+  getAnswer(sq);
+}
+
 
 
 </script>
