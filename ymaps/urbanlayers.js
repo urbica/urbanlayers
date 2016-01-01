@@ -9,7 +9,6 @@ currentTime = 30;
 
 ymaps.ready(function() {
 
-
 var x = d3.scale.linear()
     .domain([0,23])
     .range([0,480]);
@@ -40,7 +39,7 @@ var params = {
   text: 'ресторан',
   lang: 'ru_RU',
   ll: '37.500531,55.820162',
-  spn: '0.05,0.05',
+  spn: '0.5,0.5',
   results: 200,
   callback: 'processData'
 };
