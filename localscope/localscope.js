@@ -97,7 +97,7 @@ var map = new ymaps.Map('map', {
   map.geoObjects.add(dataLayer);
 
   var searchInput = d3.select("#searchInput");
-  var timeSlider = d3.select("#timeSlider").on("input", function() {
+  var timeSlider = d3.select("#timeSlider").on("change", function() {
     timeIndicator.text(timeSlider.property("value"));
     filter.minutes = timeSlider.property("value");
     processData();
