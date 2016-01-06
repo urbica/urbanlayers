@@ -9,7 +9,7 @@ var xAxis = d3.svg.axis()
       .scale(x)
       .orient("bottom");
 
-var hoursChart = d3.select("#hoursStats").append("svg").attr("width", 560).attr("height", 88);
+var hoursChart = d3.select("#graph").append("svg").attr("width", 420).attr("height", 90);
 
 // Define the div for the tooltip
 var tooltip = d3.select("body").append("div")
@@ -17,14 +17,12 @@ var tooltip = d3.select("body").append("div")
     .style("opacity", 0);
 
 
-var start = [37.633877,55.75436];
-//viewport area in coordinates
-//var extent = [[37.51,55.65],[-37.70,55.81]];
+var start = [37.633877,55.75436]; //starting point
 
 //specifying projection
 var projection = d3.geo.mercator()
 	.center(start)
-	.scale(50000);
+	.scale(40000);
 
 
 var params = {
@@ -36,52 +34,51 @@ var params = {
   results: 200
 };
 
-var filter = {
-  minutes: 15
-};
+  var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  var daysLabels = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'
+//    'en': {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']},
+//    {'ru': ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']}
+  ];
 
-var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-var zones = [5,10,15,20,25,30];
 
-var jsonData, //source loaded data
-    filteredData, filteredFeatures; //data after filters
 
-var hoursStats, pointsScope, pointsCloud, distancesStats;
+  var jsonData, //source loaded data
+      filteredFeatures; //data after filters
+
+  var hoursStats, fr,to, total; //vars for time graps
+
+//poniter params
+  var distance = 1350, //in meters
+      minDistance = 90,
+      maxDistance = 2700,
+      bearing = 90,
+      units = 'kilometers',
+      minX, maxX, currentX;
 
 	//creating the map
-var map = new ymaps.Map('map', {
-	center: start,
-	zoom: 15,
-	controls: ['typeSelector']
-});
-
-  var zonesLayer = new ymaps.GeoObjectCollection(null,{
-    fillColor: "#555",
-    fillOpacity: 0.05,
-    strokeColor: "#555",
-    strokeWidth: 1,
-    strokeOpacity: 0.3
+  var map = new ymaps.Map('map', {
+	   center: start,
+	    zoom: 14,
+	    controls: ['typeSelector']
   });
-  map.geoObjects.add(zonesLayer);
+
+  var circle = new ymaps.Circle([start,distance], { }, {
+  fillColor: "#555",
+  fillOpacity: 0,
+  strokeColor: "#F0F",
+  strokeWidth: 3,
+  strokeOpacity: 1
+  });
+  map.geoObjects.add(circle);
+
 
   var companyInfoTemplate = ymaps.templateLayoutFactory.createClass(
              '<h3>{{ properties.name|default:"Заголовок" }}</h3>' +
-             '~ {{ properties.distance }} м' +
-             ' '
-    );
+             '~ {{ properties.distance }} м');
 
   var dataLayer = new ymaps.ObjectManager({
       clusterize: false
     });
-
-  // Можно задавать опции напрямую в дочерние коллекции.
-  /*
-    dataLayer.clusters.options.set({
-      preset: 'islands#blackClusterIcons',
-      groupByCoordinates: false,
-      hintContentLayout: ymaps.templateLayoutFactory.createClass('Группа объектов')
-    });
-  */
 
 
   dataLayer.objects.options.set({
@@ -96,39 +93,80 @@ var map = new ymaps.Map('map', {
 //  dataLayer.objects.options.set('preset', 'islands#greenDotIcon');
   map.geoObjects.add(dataLayer);
 
-  var searchInput = d3.select("#searchInput");
-  var timeSlider = d3.select("#timeSlider").on("change", function() {
-    timeIndicator.text(timeSlider.property("value"));
-    filter.minutes = timeSlider.property("value");
+  function getPosition(dist) {
+    return (turf.destination(turf.point(start), dist/1000, bearing, units)).geometry.coordinates;
+  }
+
+  function getPositionX(dist) {
+    return (turf.destination(turf.point(start), dist/1000, bearing, units)).geometry.coordinates[0];
+  }
+
+  function updatePointer() {
+    circle.geometry.setRadius(turf.distance(turf.point(start),turf.point(checkGeometry()))*1000);
+    distance = Math.round(turf.distance(turf.point(start),turf.point(checkGeometry()))*1000);
+    pointer.properties.set('distance', Math.round(distance));
+  }
+
+  function checkGeometry() {
+    var x = dragGeometry[0];
+    if(dragGeometry[0] <= getPositionX(minDistance)) x = getPositionX(minDistance);
+    if(dragGeometry[0] >= getPositionX(maxDistance)) x = getPositionX(maxDistance);
+//    console.log(x);
+    return [x,dragstartGeometry[1]];
+  }
+
+  var dragstartGeometry = getPosition(distance), dragGeometry = getPosition(distance);
+
+
+  // Создание метки со сложной фигурой активной области.
+  var pointerLayout = ymaps.templateLayoutFactory.createClass('<span class="pointer"> {{properties.distance }}&nbsp;м</span>');
+
+  //var formatter = new ymaps.formatter();
+
+  var pointer = new ymaps.Placemark(getPosition(distance), {
+    distance: 100
+  }, {
+    //preset: 'islands#darkBlueCircleIcon',
+    //iconColor: "#FF0099",
+    iconLayout: pointerLayout,
+    iconShape: {
+      type: 'Rectangle',
+      // Прямоугольник описывается в виде двух
+      // точек - верхней левой и нижней правой.
+      coordinates: [[-25, -25], [25, 25]]
+    },
+    draggable: true
+  });
+
+  pointer.events.add("dragstart", function(e) {
+    dragstartGeometry = e.get('target').geometry.getCoordinates();
+    console.log('dragstart');
+  });
+  pointer.events.add("drag", function(e) {
+    var pl = e.get('target');
+    dragGeometry = pl.geometry.getCoordinates();
+    pl.geometry.setCoordinates(checkGeometry());
+//    updatePointer();
     processData();
   });
-  var timeIndicator = d3.select("#timeIndicator");
+  map.geoObjects.add(pointer);
 
-  searchInput.on('keydown', function() {
+
+  var input = d3.select("#input");
+  var indicator = d3.select("#indicator");
+
+  input.on('keydown', function() {
       if(d3.event.keyCode == 13) {
-        params.text = searchInput.property("value");
+        params.text = input.property("value");
         requestData();
       }
     });
 
-  //start
-  requestData();
-
-
   function requestData() {
-
-
 
     //setting new center to search
     start = map.getCenter();
     params.ll = start.join(',');
-
-    zonesLayer.removeAll();
-    zones.forEach(function(z,i) {
-      var circle = new ymaps.Circle([start, z*90], {}, {});
-      //console.log(z*90);
-      zonesLayer.add(circle);
-    });
 
 
     $.ajax({
@@ -140,9 +178,6 @@ var map = new ymaps.Map('map', {
       //response
       success: function(response) {
 
-        //console.log(response);
-
-
           //adding CompanyMetaData to the features
           response.data.features.forEach(function(feature,i) {
             jQuery.extend(feature.properties, feature.properties.CompanyMetaData);
@@ -151,41 +186,29 @@ var map = new ymaps.Map('map', {
           });
           jsonData = response.data;
           processData(); // process loaded data
+          console.log(map.getType());
       }
     });
 
     }
 
   function filterByDistance(f) {
-
-      return (f.properties['distance'] <= filter.minutes*90);
-    }
+      return (f.properties['distance'] <= distance);
+  }
 
   function processData() {
+
+    //updating pointer position
+    updatePointer();
 
     //remove all objects in the collection
     dataLayer.removeAll();
 
-    //dataLayer.add(jsonData);
-
-    console.log(jsonData.features.length);
+    //applying time filter
     filteredFeatures = jsonData.features.filter(filterByDistance);
-    console.log(filteredFeatures.length);
     dataLayer.add(filteredFeatures);
 
-
-
-    //console.log(dataLayer.objects.getAll());
-    //dataLayer.add(jsonData.features);
-    filteredFeatures.forEach(function(f) {
-    //  console.log(f);
-    //  dataLayer.add(f);
-    });
-    console.log(dataLayer.objects.getAll());
-    //clusterer.add(filteredFeatures);
-    //console.log(dataLayer.objects.getAll());
-    //objectManager.removeAll();
-    //objectManager.add(jsonData);
+    indicator.text(filteredFeatures.length);
 
     hoursStats = [];
     days.forEach(function(d) {
@@ -195,8 +218,9 @@ var map = new ymaps.Map('map', {
     distanceStats = [];
     hoursCalculated = 0;
 
-    var fr,to, total = filteredFeatures.length;
+    total = filteredFeatures.length;
 
+    //calculate working hours statistics
     filteredFeatures.forEach(function(feature) {
 
       //calculate days array
@@ -276,51 +300,20 @@ var map = new ymaps.Map('map', {
 
     hoursChart.append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(180,70)")
+        .attr("transform", "translate(80,70)")
         .call(xAxis);
 
     var daysAxis = hoursChart.append("g");
-    var blocks = hoursChart.append("g").attr("transform", "translate(180,0)");
-    var pointsTest = d3.select("#test").append("svg")
-      .attr("width", 100).attr("height", 100)
-    var location = projection(start);
-    projection.center(start);
-    console.log(location);
-
-    hoursChart.append("g")
-      .attr("class", "pointsCloud")
-      .attr("width", 100).attr("height", 100)
-      .attr("transform", "translate(-430,-220)")
-      .selectAll("circle")
-      .data(filteredFeatures)
-      .enter()
-      .append("circle")
-       .attr("cx", function(d) {
-
-         var lon = projection(d.geometry.coordinates)[0];
-         console.log("x: " + lon);
-         return lon;
-       })
-       .attr("cy", function(d) {
-         var lat = projection(d.geometry.coordinates)[1];
-         console.log("y: " + lat);
-         return lat;
-       })
-  	   .style("fill", "#333")
-       .style("opacity", 1)
-  	   .style("stroke-width", 0)
-       .attr("r", 3);
-
-
+    var blocks = hoursChart.append("g").attr("transform", "translate(80,0)");
 
     days.forEach(function(day,id) {
 
       daysAxis.append("text")
-        .attr("transform", "translate(100,0)")
+        .attr("transform", "translate(0,-2)")
         .attr("x", 10 )
         .attr("y", (id*10+10))
         .attr("class", "dayLabel")
-        .text(day);
+        .text(daysLabels[id]);
 
 
       hoursStats[day].forEach(function(hourStat, ih) {
@@ -328,7 +321,7 @@ var map = new ymaps.Map('map', {
         blocks
           .append("rect")
           .attr("width", 9.99)
-          .attr("height", 9.5)
+          .attr("height", 9)
           .attr("transform", function(d, i) { return "translate(" + (ih*10) + "," + (id*10) + ")"; })
           .style("opacity", hourStat/total)
           .style("fill", "#333")
@@ -345,6 +338,10 @@ var map = new ymaps.Map('map', {
       });
     });
   }
+
+
+  //start
+  requestData();
 
 
 });
