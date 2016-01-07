@@ -3,13 +3,13 @@ ymaps.ready(function() {
 
 var x = d3.scale.linear()
     .domain([0,24])
-    .range([0,240]);
+    .range([0,360]);
 
 var xAxis = d3.svg.axis()
       .scale(x)
       .orient("bottom");
 
-var hoursChart = d3.select("#graph").append("svg").attr("width", 420).attr("height", 90);
+var hoursChart = d3.select("#graph").append("svg").attr("width", 400).attr("height", 90);
 
 // Define the div for the tooltip
 var tooltip = d3.select("body").append("div")
@@ -59,15 +59,14 @@ var params = {
   var map = new ymaps.Map('map', {
 	   center: start,
 	    zoom: 14,
-	    controls: ['typeSelector']
+	    controls: [] //['typeSelector']
   });
 
   var circle = new ymaps.Circle([start,distance], { }, {
-  fillColor: "#555",
   fillOpacity: 0,
-  strokeColor: "#F0F",
-  strokeWidth: 3,
-  strokeOpacity: 1
+  strokeColor: "#000",
+  strokeWidth: 2,
+  strokeOpacity: 0.7
   });
   map.geoObjects.add(circle);
 
@@ -102,8 +101,7 @@ var params = {
   }
 
   function updatePointer() {
-    circle.geometry.setRadius(turf.distance(turf.point(start),turf.point(checkGeometry()))*1000);
-    distance = Math.round(turf.distance(turf.point(start),turf.point(checkGeometry()))*1000);
+    circle.geometry.setRadius(distance);
     pointer.properties.set('distance', Math.round(distance));
   }
 
@@ -112,10 +110,10 @@ var params = {
     if(dragGeometry[0] <= getPositionX(minDistance)) x = getPositionX(minDistance);
     if(dragGeometry[0] >= getPositionX(maxDistance)) x = getPositionX(maxDistance);
 //    console.log(x);
-    return [x,dragstartGeometry[1]];
+    return [x,start[1]];
   }
 
-  var dragstartGeometry = getPosition(distance), dragGeometry = getPosition(distance);
+  var dragGeometry = getPosition(distance);
 
 
   // Создание метки со сложной фигурой активной области.
@@ -138,15 +136,11 @@ var params = {
     draggable: true
   });
 
-  pointer.events.add("dragstart", function(e) {
-    dragstartGeometry = e.get('target').geometry.getCoordinates();
-    console.log('dragstart');
-  });
   pointer.events.add("drag", function(e) {
     var pl = e.get('target');
     dragGeometry = pl.geometry.getCoordinates();
     pl.geometry.setCoordinates(checkGeometry());
-//    updatePointer();
+    distance = Math.round(turf.distance(turf.point(start),turf.point(checkGeometry()))*1000);
     processData();
   });
   map.geoObjects.add(pointer);
@@ -167,6 +161,12 @@ var params = {
     //setting new center to search
     start = map.getCenter();
     params.ll = start.join(',');
+
+    //update pointers position
+    circle.geometry.setCoordinates(start,distance);
+//    circle.geometry.setRadius(distance);
+    pointer.geometry.setCoordinates(getPosition(distance));
+
 
 
     $.ajax({
@@ -208,7 +208,13 @@ var params = {
     filteredFeatures = jsonData.features.filter(filterByDistance);
     dataLayer.add(filteredFeatures);
 
-    indicator.text(filteredFeatures.length);
+    indicator.text(function() {
+      if(filteredFeatures.length>0)
+        return "Найдено: " + filteredFeatures.length;
+      else
+        return "Ничего не найдено";
+
+    });
 
     hoursStats = [];
     days.forEach(function(d) {
@@ -298,13 +304,14 @@ var params = {
   function drawGraphs(hoursStats,total) {
     hoursChart.text("");
 
+
     hoursChart.append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(80,70)")
+        .attr("transform", "translate(30,70)")
         .call(xAxis);
 
     var daysAxis = hoursChart.append("g");
-    var blocks = hoursChart.append("g").attr("transform", "translate(80,0)");
+    var blocks = hoursChart.append("g").attr("transform", "translate(30,0)");
 
     days.forEach(function(day,id) {
 
@@ -315,14 +322,15 @@ var params = {
         .attr("class", "dayLabel")
         .text(daysLabels[id]);
 
-
+//      if(hoursStats[day])
       hoursStats[day].forEach(function(hourStat, ih) {
       //  console.log(day + ': ' + ih + ' — ' + hourStat);
+      if(hourStat > 0)
         blocks
           .append("rect")
-          .attr("width", 9.99)
+          .attr("width", 14.99)
           .attr("height", 9)
-          .attr("transform", function(d, i) { return "translate(" + (ih*10) + "," + (id*10) + ")"; })
+          .attr("transform", function(d, i) { return "translate(" + (ih*15) + "," + (id*10) + ")"; })
           .style("opacity", hourStat/total)
           .style("fill", "#333")
           .on("mouseover", function(d) {
