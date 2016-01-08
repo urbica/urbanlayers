@@ -167,6 +167,7 @@ var params = {
 //    circle.geometry.setRadius(distance);
     pointer.geometry.setCoordinates(getPosition(distance));
 
+    dataLayer.removeAll();
 
 
     $.ajax({
