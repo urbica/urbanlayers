@@ -137,9 +137,8 @@ var params = {
   });
 
   pointer.events.add("drag", function(e) {
-    var pl = e.get('target');
-    dragGeometry = pl.geometry.getCoordinates();
-    pl.geometry.setCoordinates(checkGeometry());
+    dragGeometry = pointer.geometry.getCoordinates();
+    pointer.geometry.setCoordinates(checkGeometry());
     distance = Math.round(turf.distance(turf.point(start),turf.point(checkGeometry()))*1000);
     processData();
   });
