@@ -6,13 +6,18 @@
 <script src="d3.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
 <script src="http://yandex.st/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
-<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU&coordorder=longlat"></script>
+<script src="http://api-maps.yandex.ru/2.1/?lang=en_US&coordorder=longlat"></script>
 
 <body>
 <div id='target'></div>
+<div id='info'></div>
 <div id='map'></div>
+<div id='types'>
+  <div id='mapType' class='type-selected'>Map</div>
+  <div id='satType' class='type'>Satellite</div>
+</div>
 <div id='form'>
-    <input type='text' value='ресторан' id='input'>
+    <input type='text' value='cafe' id='input'>
     <span id="indicator"></span>
 </div>
 <div id='panel'>

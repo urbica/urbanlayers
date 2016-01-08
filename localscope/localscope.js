@@ -1,3 +1,11 @@
+var labels = {
+  en_US: { query: 'cafe', m: 'm', map: 'Map', satellite: 'Satellite', found: 'Found', not_found: 'Nothing found', page: 'Page on Yandex.Maps', url: 'http://maps.yandex.com' },
+  ru_RU: { query: 'кафе', m: 'м', map: 'Карта', satellite: 'Спутник', found: 'Найдено', not_found: 'Ничего не найдено', page: 'Страница на Яндекс.Картах', url: 'http://maps.yandex.ru' }
+};
+
+var l = 'en_US'; //default lang
+
+
 
 ymaps.ready(function() {
 
@@ -11,6 +19,10 @@ var xAxis = d3.svg.axis()
 
 var hoursChart = d3.select("#graph").append("svg").attr("width", 400).attr("height", 90);
 
+var mapType = d3.select("#mapType").text(labels[l].map).on('click', function() { reColor('light'); }),
+    satType = d3.select("#satType").text(labels[l].satellite).on('click', function() { reColor('dark'); });
+
+
 // Define the div for the tooltip
 var tooltip = d3.select("body").append("div")
     .attr("class", "tooltip")
@@ -19,27 +31,25 @@ var tooltip = d3.select("body").append("div")
 
 var start = [37.633877,55.75436]; //starting point
 
-//specifying projection
-var projection = d3.geo.mercator()
-	.center(start)
-	.scale(40000);
-
-
 var params = {
   apikey: '6a6d6520-a9d5-4d64-889e-de25e17bbe9d',
-  text: 'ресторан',
-  lang: 'ru_RU',
+  text: labels[l].query, //'ресторан',
+  lang: l, //'ru_RU'
   ll: start.join(),
   spn: '0.1,0.05',
   results: 200
 };
 
   var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-  var daysLabels = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'
-//    'en': {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']},
-//    {'ru': ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']}
-  ];
+  var daysLabels = {
+      'ru_RU': ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
+      'en_US': ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  };
 
+  var colors = {
+    'light': { foreground: '#000', background: "#fff" },
+    'dark': { foreground: '#fff', background: "#000" }
+  };
 
 
   var jsonData, //source loaded data
@@ -72,19 +82,21 @@ var params = {
 
 
   var companyInfoTemplate = ymaps.templateLayoutFactory.createClass(
-             '<h3>{{ properties.name|default:"Заголовок" }}</h3>' +
-             '~ {{ properties.distance }} м');
+             '<h3>{{ properties.name }}</h3>' +
+             '~ {{ properties.distance }} м </br>' +
+             '<a href='+labels[l].url+'/org/{{ properties.CompanyMetaData.id }} target=_blank>' + labels[l].page + '</a>');
 
   var dataLayer = new ymaps.ObjectManager({
       clusterize: false
     });
 
 
+
   dataLayer.objects.options.set({
     hasBalloon: true,
     balloonContentLayout: companyInfoTemplate,
     iconLayout: 'default#image',
-    iconImageHref: 'dot.svg',
+    iconImageHref: 'dot-light.svg',
     iconImageSize: [18, 18],
     iconImageOffset: [-9, -9]
   });
@@ -109,32 +121,26 @@ var params = {
     var x = dragGeometry[0];
     if(dragGeometry[0] <= getPositionX(minDistance)) x = getPositionX(minDistance);
     if(dragGeometry[0] >= getPositionX(maxDistance)) x = getPositionX(maxDistance);
-//    console.log(x);
     return [x,start[1]];
   }
 
   var dragGeometry = getPosition(distance);
 
+  var  pointerLayouts = [];
 
-  // Создание метки со сложной фигурой активной области.
-  var pointerLayout = ymaps.templateLayoutFactory.createClass('<span class="pointer"> {{properties.distance }}&nbsp;м</span>');
+  pointerLayouts['light'] = ymaps.templateLayoutFactory.createClass('<span id="pointer" class="pointer-light"> {{properties.distance }}&nbsp;'+ labels[l].m +'</span>');
+  pointerLayouts['dark'] = ymaps.templateLayoutFactory.createClass('<span id="pointer" class="pointer-dark"> {{properties.distance }}&nbsp;'+ labels[l].m +'</span>');
 
-  //var formatter = new ymaps.formatter();
-
-  var pointer = new ymaps.Placemark(getPosition(distance), {
-    distance: 100
-  }, {
-    //preset: 'islands#darkBlueCircleIcon',
-    //iconColor: "#FF0099",
-    iconLayout: pointerLayout,
-    iconShape: {
-      type: 'Rectangle',
-      // Прямоугольник описывается в виде двух
-      // точек - верхней левой и нижней правой.
-      coordinates: [[-25, -25], [25, 25]]
-    },
-    draggable: true
-  });
+  var  pointer = new ymaps.Placemark(getPosition(distance), {
+        distance: 100
+        }, {
+          iconLayout: pointerLayouts['light'],
+          iconShape: {
+            type: 'Rectangle',
+            coordinates: [[-24, -12], [24, 12]]
+          },
+          draggable: true
+        });
 
   pointer.events.add("drag", function(e) {
     dragGeometry = pointer.geometry.getCoordinates();
@@ -145,7 +151,7 @@ var params = {
   map.geoObjects.add(pointer);
 
 
-  var input = d3.select("#input");
+  var input = d3.select("#input").property("value", labels[l].query);
   var indicator = d3.select("#indicator");
 
   input.on('keydown', function() {
@@ -154,6 +160,25 @@ var params = {
         requestData();
       }
     });
+
+  function reColor(mode) {
+    console.log(mode);
+    if(mode == "light") {
+      map.setType('yandex#map');
+      mapType.attr("class", "type-selected");
+      satType.attr("class", "type");
+    } else {
+      map.setType('yandex#satellite');
+      mapType.attr("class", "type");
+      satType.attr("class", "type-selected");
+    }
+
+    circle.options.set('strokeColor', colors[mode].foreground); //re-coloring circle
+    dataLayer.objects.options.set('iconImageHref', 'dot-'+mode+'.svg');
+    pointer.options.set('iconLayout', pointerLayouts[mode]);
+    d3.select("#pointer").attr("class", "pointer-"+mode);
+  }
+
 
   function requestData() {
 
@@ -210,9 +235,9 @@ var params = {
 
     indicator.text(function() {
       if(filteredFeatures.length>0)
-        return "Найдено: " + filteredFeatures.length;
+        return labels[l].found + ": " + filteredFeatures.length;
       else
-        return "Ничего не найдено";
+        return labels[l].not_found;
 
     });
 
@@ -307,11 +332,11 @@ var params = {
 
     hoursChart.append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(30,70)")
+        .attr("transform", "translate(35,70)")
         .call(xAxis);
 
     var daysAxis = hoursChart.append("g");
-    var blocks = hoursChart.append("g").attr("transform", "translate(30,0)");
+    var blocks = hoursChart.append("g").attr("transform", "translate(35,0)");
 
     days.forEach(function(day,id) {
 
@@ -320,7 +345,7 @@ var params = {
         .attr("x", 10 )
         .attr("y", (id*10+10))
         .attr("class", "dayLabel")
-        .text(daysLabels[id]);
+        .text(daysLabels[l][id]);
 
 //      if(hoursStats[day])
       hoursStats[day].forEach(function(hourStat, ih) {
