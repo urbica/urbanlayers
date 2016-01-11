@@ -2,12 +2,13 @@
 <meta charset="utf-8">
 <title>Механика Москвы</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
 <script src='https://api.mapbox.com/mapbox.js/plugins/turf/v2.0.2/turf.min.js'></script>
 <script src='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
 
 <style>
-  * { font-family: Helvetica, sans-serif; font-size: 13px; }
+  * { font-family: 'Open Sans', sans-serif; font-weight: 400; font-size: 13px; }
   body { margin:0; padding:0; }
   #map { display: block; width: 100%; height: 100%; min-height: 500px; min-width: 700px; }
   #page { width: 100%; height: 100%; display: flex; flex-direction: row; }
@@ -18,13 +19,13 @@
   .question-selected { padding: 10px; cursor: pointer; border: 2px solid #555; font-size: 12px; margin: 2px; }
   .label { pointer-events: none; text-align: center; opacity: 0.8; height: 20px; margin-left: -40px; margin-top: -10px; padding: 5px; color: #fff; text-shadow: 0px 0px 2px rgba(0,0,0,0.70); font-size: 12px; }
   .label-name { pointer-events: none; display: inline-block; line-height: 13px; width: 100%; opacity: 0; transition: opacity 1s ease-out; }
-  .label-value { pointer-events: none; display: inline-block; line-height: 13px; width: 100%; opacity: 0; transition: opacity 1s ease-out; }
+  .label-value { font-weight: 600; pointer-events: none; display: inline-block; line-height: 13px; width: 100%; opacity: 0; transition: opacity 1s ease-out; }
   .legend-min, .legend-max, .legend-graph { font-size: 12px; color: #fff; display: inline-block; height: 25px; line-height: 25px;  }
   .legend-min { margin-right: 5px; margin-top: -5px;  }
   .legend-max { margin-left: 5px; margin-top: -5px;  }
   .topic { cursor: pointer; display: inline-block; padding: 5px; }
   .topic-selected { cursor: pointer; display: inline-block; padding: 5px; color: #fff; background: #333; }
-  #questionHeader { text-align: center; position: absolute; width: 700px; margin-right: -350px; right: 37%; top: 20px; z-index: 30404; color: #fff; }
+  #questionHeader { font-weight: 600; text-align: center; position: absolute; width: 700px; margin-right: -350px; right: 37%; top: 20px; z-index: 30404; color: #fff; }
   #questionText { font-size: 16px; margin-bottom: 10px; text-shadow: 0px 0px 4px rgba(0,0,0,0.70); }
   #questionMeasure { font-size: 12px; text-shadow: 0px 0px 2px rgba(0,0,0,0.70); }
   #topicsMenu { padding: 10px; }
