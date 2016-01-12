@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<title>bike stations</title>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+
+
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+<style>
+
+body,html {
+  margins: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+svg {
+  position: relative;
+}
+
+.direction {
+  fill: none;
+  stroke: #3df;
+  opacity: 0.03
+}
+
+.direction:hover {
+  stroke: #fff;
+  stroke-width: 3;
+  opacity: .7;
+  cursor: pointer;
+
+}
+
+</style>
+</head>
+<body>
+ <div id="map"></div>
+ <script src='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
+ <link href='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
+  <script>
+
+  L.mapbox.accessToken = 'pk.eyJ1IjoibWluaWthcm1hIiwiYSI6IkRjTUFYdGsifQ.30RhErOKbQvLJ1kOnAl73A';
+  var map = L.mapbox.map('map', 'mapbox.dark')
+      .setView([55.744537,37.625224], 12);
+
+
+      var svg = d3.select(map.getPanes().overlayPane).append("svg"),
+          g = svg.append("g").attr("class", "leaflet-zoom-hide");
+
+
+//directions_geom_clear
+
+
+d3.json("directions.geojson", function(error, collection) {
+  if (error) throw error;
+
+  var transform = d3.geo.transform({point: projectPoint}),
+      path = d3.geo.path().projection(transform);
+
+  var feature = g.selectAll("path")
+    .data(collection.features)
+    .enter()
+    .append("path")
+    .attr("class", "direction");
+
+
+
+  map.on("viewreset", reset);
+  reset();
+
+  // Reposition the SVG to cover the features.
+  function reset() {
+    var bounds = path.bounds(collection),
+        topLeft = bounds[0],
+        bottomRight = bounds[1];
+
+    svg .attr("width", bottomRight[0] - topLeft[0])
+        .attr("height", bottomRight[1] - topLeft[1])
+        .style("left", topLeft[0] + "px")
+        .style("top", topLeft[1] + "px");
+
+    g   .attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
+
+    feature.attr("d", path);
+  }
+
+  // Use Leaflet to implement a D3 geometric transformation.
+  function projectPoint(x, y) {
+    var point = map.latLngToLayerPoint(new L.LatLng(y, x));
+    this.stream.point(point.x, point.y);
+  }
+});
+
+
+
+var stationsCirclesLayer = L.mapbox.featureLayer();//.addTo(map);
+var stationsLayer = L.mapbox.featureLayer();//.addTo(map);
+
+L.mapbox.featureLayer()
+  .loadURL('../data/output/stations_all.geojson')
+  .on('ready', function(e) {
+    e.target.eachLayer(function(layer) {
+
+        layer.feature.properties['icon'] = {
+        "className": "label", // class name to style
+        "html": layer.feature.properties.total_departures, // add html content inside the marker
+        "iconSize": null // size of icon, use null to set the size in CSS
+        };
+        //layer.bindPopup(layer.feature.properties['name']);
+        layer.setIcon(L.divIcon(layer.feature.properties.icon));
+        layer.addTo(stationsLayer);
+
+        console.log(layer.getLatLng());
+        L.circleMarker(layer.getLatLng(), {
+          radius: layer.feature.properties['total_departures']/500,
+          fillColor: "#00CC77",
+          stroke: false,
+          fillOpacity: 0.5
+        })
+        .bindPopup(layer.feature.properties['name'])
+        .on('click', function(e) { console.log('click'); })
+        .addTo(stationsCirclesLayer);
+
+
+        })
+  });
+//  .addTo(map);
+
+
+ </script>
+</body>
+</html>
