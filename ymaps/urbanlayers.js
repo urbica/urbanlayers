@@ -4,7 +4,7 @@ var locations = [
   { name: "Восход", ll: [37.771247,55.726543], prefix: 'voshod' }
 ];
 
-currentLocation = 0;
+currentLocation = 1;
 currentTime = 30;
 
 ymaps.ready(function() {
@@ -31,15 +31,16 @@ var tooltip = d3.select("body").append("div")
     .style("opacity", 0);
 
 
-//var start = [37.771247, 55.726543]; //восход
-var start = [37.500531,55.820162]; //варшава
+var start = [37.771247, 55.726543]; //восход
+//var start = [37.500531,55.820162]; //варшава
 
 var params = {
   apikey: '6a6d6520-a9d5-4d64-889e-de25e17bbe9d',
   text: 'ресторан',
   lang: 'ru_RU',
   ll: '37.500531,55.820162',
-  spn: '0.5,0.5',
+  spn: '0.005,0.005',
+  type: 'biz',
   results: 200,
   callback: 'processData'
 };
@@ -379,6 +380,7 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
       // Work with the response
       success: function(response) {
 
+        console.log(response);
 
           //adding CompanyMetaData to the features
           response.data.features.forEach(function(feature,i) {
