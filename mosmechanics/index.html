@@ -29,9 +29,11 @@
   #questionText { font-size: 16px; margin-bottom: 10px; text-shadow: 0px 0px 4px rgba(0,0,0,0.70); }
   #questionMeasure { font-size: 12px; text-shadow: 0px 0px 2px rgba(0,0,0,0.70); }
   #topicsMenu { padding: 10px; }
+  #export { display: none; position: absolute; padding: 10px; z-index: 202020202; width: 100%; height: 100%; left: 0; top: 0; overflow: auto; background: rgba(255,255,255,0.9); }
 
 </style>
 <body>
+  <div id='export'></div>
   <div id='questionHeader'>
     <div id='questionText'></div>
     <div id='questionMeasure'></div>
@@ -64,7 +66,8 @@ var questionsList = d3.select("#questionsList"),
     questionText = d3.select("#questionText"),
     questionMeasure = d3.select("#questionMeasure"),
     legendArea = d3.select("#legendArea"),
-    topicsMenu = d3.select("#topicsMenu");
+    topicsMenu = d3.select("#topicsMenu")
+    exportContent = d3.select("#export");
 
 
 L.mapbox.accessToken = 'pk.eyJ1IjoibWluaWthcm1hIiwiYSI6IkRjTUFYdGsifQ.30RhErOKbQvLJ1kOnAl73A';
@@ -113,8 +116,8 @@ d3.tsv("data/data.csv", function(d,i) {
   },
    function(d){
     // data imported
-    console.log('table data loaded');
-    console.log(questions.length);
+    //console.log('table data loaded');
+    //console.log(questions.length);
 
     //loading districtsGeometry
       d3.json("data/districts.geojson", function(json) {
@@ -142,6 +145,8 @@ d3.tsv("data/data.csv", function(d,i) {
         //starting app
         changeTopic(currentTopic);
         //getAnswer(current);
+        //generateExport();
+
 
       });
 	  });
@@ -158,9 +163,21 @@ d3.tsv("data/data.csv", function(d,i) {
       e.layer.options['opacity'] = 0.8;
     });
     */
+  function generateExport() {
+    var sid;
+    var jsonExport = districtsGeometry;
+    jsonExport.features.forEach(function(feature,idx) {
+      sid = feature.properties['Source_Id'];
+      questions.forEach(function(q,i) {
+        feature.properties['q'+i] = +q['d' + sid];
+      });
+    });
+    exportContent.text(JSON.stringify(jsonExport));
+  }
 
   function getAnswer(c) {
     //clear all layers
+    console.log('question #:' + c);
     dataLayer.clearLayers();
     labelsLayer.clearLayers();
     d3.select("#q"+current).attr("class", "question");
@@ -241,7 +258,6 @@ function getCategories(questions) {
   for(j=0; j<=4; j++) {
     categories.push((min+step*j));
   }
-  console.log(categories);
   return categories;
 }
 
@@ -281,7 +297,6 @@ function getLegend(categories) {
     .append("svg").attr("width", 72).attr("height", 25);
 
   for(var c = 0; c < (categories.length-1); c++) {
-    console.log(c);
     legend.append("rect")
       .attr("width", 15)
       .attr("height", 15)
@@ -306,7 +321,6 @@ function checkZoom(z) {
 }
 
 function changeTopic(t) {
-  console.log(t);
   questionsList.text("");
   var sq;
 
