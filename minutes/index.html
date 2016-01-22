@@ -67,7 +67,7 @@ map.on('style.load', function (e) {
       map.featuresAt(e.point, {radius: 15}, function (err, features) {
           if (err) throw err;
           if(features.length>0) {
-            if(features[0].layer.id == 'points_5' || features[0].layer.id == 'points_10' || features[0].layer.id == 'points_15') {
+            if(features[0].layer.id.substr(0,6) == 'points') {
               var html = '<div><b>' + features[0].properties.address + '</b></h4>' +
                 '<div> ' + features[0].properties.minutes_txt + '</div>'
                 + '<div> ' + features[0].properties.price_txt + '</div>'
