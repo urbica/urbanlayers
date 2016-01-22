@@ -15,6 +15,11 @@
         #m5 { background: #edf8b1; }
         #m10 { background: #0cc78f; }
         #m15 { background: #216fc2; }
+        #out {
+          -webkit-box-shadow:inset 0px 0px 0px 2px #f00;
+          -moz-box-shadow:inset 0px 0px 0px 2px #f00;
+          box-shadow:inset 0px 0px 0px 2px #f00;
+          }
         .items { text-align: center; }
         .item { display: inline-block; }
         .bullet { display: inline-block; margin: 3px 3px 0px 10px;  width: 10px; height: 10px; border-radius: 7px; }
@@ -31,6 +36,9 @@
     <div class='item'><div class='bullet' id='m15'></div><div class='label'>11&nbsp;–&nbsp;15</div></div>
   </div>
   <div class='caption'>минут пешком</div>
+  <div class='items'>
+    <div class='item'><div class='bullet' id='out'></div><div class='label'>точки за пределами</div></div>
+  </div>
   </div>
 <div id='map'></div>
 <script>
@@ -43,6 +51,13 @@ var map = new mapboxgl.Map({
     center: [37.6203631,55.7539372], // starting position
     zoom: 10 // starting zoom
 });
+
+var zones = [5,10,15];
+var colors = [
+  '#edf8b1',
+  '#0cc78f',
+  '#216fc2'];
+
 
 var popup = new mapboxgl.Popup();
 
@@ -72,7 +87,8 @@ map.on('style.load', function (e) {
       map.featuresAt(e.point, {radius: 15}, function (err, features) {
           if (err) throw err;
           if(features.length>0) {
-            if(features[0].layer.id == 'points_5' || features[0].layer.id == 'points_10' || features[0].layer.id == 'points_15') {
+            console.log(features[0].layer.id.substr(0,6));
+            if(features[0].layer.id.substr(0,6) == 'points') {
               d3.select(".mapboxgl-canvas").style({
 					      cursor: "pointer"
 				      });
