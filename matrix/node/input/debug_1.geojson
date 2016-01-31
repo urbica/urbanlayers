@@ -1,0 +1,49 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2015-12-12T08:47:02Z",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "node/59606732",
+      "properties": {
+        "@id": "node/59606732",
+        "colour": "orange",
+        "name": "Шаболовская",
+        "name:en": "Shabolovskaya",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "subway_entrance"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6079907,
+          55.7186586
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/154709089",
+      "properties": {
+        "@id": "node/154709089",
+        "colour": "orange",
+        "description": "северный вестибюль",
+        "name": "Ленинский проспект",
+        "name:en": "Leninsky Prospekt",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "subway_entrance"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5874959,
+          55.7084699
+        ]
+      }
+    }
+  ]
+}

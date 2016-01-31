@@ -1,0 +1,5545 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2015-12-12T08:24:02Z",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "node/60660466",
+      "properties": {
+        "@id": "node/60660466",
+        "colour": "orange",
+        "layer": "-1",
+        "name": "Медведково",
+        "name:be": "Мядзведкава",
+        "name:en": "Medvedkovo",
+        "name:ru": "Медведково",
+        "name:uk": "Медведково",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6614359,
+          55.8871578
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/60660469",
+      "properties": {
+        "@id": "node/60660469",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Бабушкинская",
+        "name:be": "Бабушкінская",
+        "name:en": "Babushkinskaya",
+        "name:ru": "Бабушкинская",
+        "name:uk": "Бабушкінська",
+        "network": "Московский метрополитен",
+        "opening_hours": "05:35-01:00",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6642289,
+          55.8696187
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/68916801",
+      "properties": {
+        "@id": "node/68916801",
+        "colour": "blue",
+        "layer": "-4",
+        "name": "Партизанская",
+        "name:be": "Партызанская",
+        "name:en": "Partizanskaya",
+        "name:ru": "Партизанская",
+        "name:uk": "Партизанська",
+        "network": "Московский метрополитен",
+        "old_name": "Измайловский парк",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.750729,
+          55.788524
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/68937012",
+      "properties": {
+        "@id": "node/68937012",
+        "colour": "blue",
+        "layer": "-4",
+        "name": "Семёновская",
+        "name:be": "Сямёнаўская",
+        "name:en": "Semyonovskaya",
+        "name:ru": "Семёновская",
+        "name:uk": "Семенівська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7215967,
+          55.7832285
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/241158259",
+      "properties": {
+        "@id": "node/241158259",
+        "colour": "lightblue",
+        "name": "Филёвский парк",
+        "name:be": "Філёўскі парк",
+        "name:de": "Filjowski Park",
+        "name:en": "Filyovsky Park",
+        "name:ru": "Филёвский парк",
+        "name:uk": "Фільовський парк",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4834225,
+          55.7394565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/241158281",
+      "properties": {
+        "@id": "node/241158281",
+        "colour": "lightblue",
+        "name": "Багратионовская",
+        "name:be": "Баграціёнаўская",
+        "name:en": "Bagrationovskaya",
+        "name:ru": "Багратионовская",
+        "name:uk": "Багратіонівська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4978443,
+          55.7436954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/241158327",
+      "properties": {
+        "@id": "node/241158327",
+        "colour": "lightblue",
+        "name": "Фили",
+        "name:be": "Філі",
+        "name:en": "Fili",
+        "name:ru": "Фили",
+        "name:uk": "Філі",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5148876,
+          55.7461002
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/241158369",
+      "properties": {
+        "@id": "node/241158369",
+        "colour": "lightblue",
+        "name": "Кутузовская",
+        "name:be": "Кутузаўская",
+        "name:en": "Kutuzovskaya",
+        "name:ru": "Кутузовская",
+        "name:uk": "Кутузовська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.534383,
+          55.7400295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/241158415",
+      "properties": {
+        "@id": "node/241158415",
+        "colour": "lightblue",
+        "name": "Студенческая",
+        "name:be": "Студэнцкая",
+        "name:en": "Studencheskaya",
+        "name:ru": "Студенческая",
+        "name:uk": "Студентська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5483675,
+          55.7388362
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/242546355",
+      "properties": {
+        "@id": "node/242546355",
+        "colour": "blue",
+        "layer": "-4",
+        "name": "Электрозаводская",
+        "name:be": "Электразаводская",
+        "name:cs": "Elektrozavodskaja",
+        "name:de": "Elektrosawodskaja",
+        "name:en": "Elektrozavodskaya",
+        "name:it": "Elektrozavodskaja",
+        "name:pl": "Elektrozawodskaja",
+        "name:pt": "Estação Electrosavodskaia",
+        "name:ru": "Электрозаводская",
+        "name:sv": "Elektrozavodskaja",
+        "name:uk": "Електрозаводська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Электрозаводская (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7038734,
+          55.7820537
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/242546356",
+      "properties": {
+        "@id": "node/242546356",
+        "colour": "blue",
+        "layer": "-4",
+        "name": "Бауманская",
+        "name:be": "Баўманская",
+        "name:en": "Baumanskaya",
+        "name:ru": "Бауманская",
+        "name:uk": "Бауманська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "station": "subway",
+        "transport": "subway",
+        "was:railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6801957,
+          55.7729753
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/242546357",
+      "properties": {
+        "@id": "node/242546357",
+        "colour": "blue",
+        "layer": "-4",
+        "name": "Курская",
+        "name:be": "Курская",
+        "name:en": "Kurskaya",
+        "name:ru": "Курская",
+        "name:uk": "Курська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.658076,
+          55.7581501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/242546475",
+      "properties": {
+        "@id": "node/242546475",
+        "alt_name:en": "Ploschad Revolyutsii;Ploshchad Revolyutsii",
+        "colour": "blue",
+        "layer": "-4",
+        "name": "Площадь Революции",
+        "name:be": "Плошча Рэвалюцыі",
+        "name:de": "Revolutionsplatz",
+        "name:en": "Revolution Square",
+        "name:ru": "Площадь Революции",
+        "name:uk": "Площа Революції",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6219537,
+          55.7567227
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/242546476",
+      "properties": {
+        "@id": "node/242546476",
+        "colour": "blue",
+        "layer": "-4",
+        "name": "Арбатская",
+        "name:be": "Арбацкая",
+        "name:en": "Arbatskaya",
+        "name:ru": "Арбатская",
+        "name:uk": "Арбатська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6068124,
+          55.7521277
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/244036218",
+      "properties": {
+        "@id": "node/244036218",
+        "colour": "blue",
+        "name": "Кунцевская",
+        "name:be": "Кунцаўская",
+        "name:en": "Kuntsevskaya",
+        "name:ru": "Кунцевская",
+        "name:uk": "Кунцевська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4460094,
+          55.7307016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/244036228",
+      "properties": {
+        "@id": "node/244036228",
+        "colour": "blue",
+        "layer": "-4",
+        "name": "Молодёжная",
+        "name:be": "Маладзёжная",
+        "name:en": "Molodyozhnaya",
+        "name:ru": "Молодёжная",
+        "name:uk": "Молодіжна",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4169177,
+          55.7408429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/244036856",
+      "properties": {
+        "@id": "node/244036856",
+        "colour": "lightblue",
+        "name": "Пионерская",
+        "name:be": "Піянерская",
+        "name:en": "Pionerskaya",
+        "name:ru": "Пионерская",
+        "name:uk": "Піонерська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair": "no",
+        "wikipedia": "ru:Пионерская (станция метро, Москва)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4671944,
+          55.7359279
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/252828224",
+      "properties": {
+        "@id": "node/252828224",
+        "colour": "blue",
+        "layer": "-4",
+        "name": "Смоленская",
+        "name:be": "Смаленская",
+        "name:en": "Smolenskaya",
+        "name:ru": "Смоленская",
+        "name:uk": "Смоленьска",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5822787,
+          55.7475017
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/252934400",
+      "properties": {
+        "@id": "node/252934400",
+        "alt_name:uk": "Ковальський міст",
+        "colour": "violet",
+        "layer": "-5",
+        "name": "Кузнецкий Мост",
+        "name:be": "Кузнецкі мост",
+        "name:de": "Kusnezk-Brücke",
+        "name:en": "Kuznetsky Most",
+        "name:ru": "Кузнецкий Мост",
+        "name:uk": "Кузнецький міст",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.626016,
+          55.7607712
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/252934401",
+      "properties": {
+        "@id": "node/252934401",
+        "alt_name:uk": "Китай-місто",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Китай-город",
+        "name:be": "Китай-горад",
+        "name:de": "Kitai-Gorod",
+        "name:en": "Kitay-gorod",
+        "name:fr": "Kitaï-gorod",
+        "name:pl": "Kitajgród",
+        "name:ru": "Китай-город",
+        "name:uk": "Китай-город",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.633321,
+          55.7555181
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/253016890",
+      "properties": {
+        "@id": "node/253016890",
+        "colour": "violet",
+        "layer": "-4",
+        "name": "Таганская",
+        "name:be": "Таганская",
+        "name:en": "Taganskaya",
+        "name:ru": "Таганская",
+        "name:uk": "Таганська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6518535,
+          55.7403822
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/253016891",
+      "properties": {
+        "@id": "node/253016891",
+        "colour": "violet",
+        "layer": "-2",
+        "name": "Пролетарская",
+        "name:be": "Пралетарская",
+        "name:en": "Proletarskaya",
+        "name:ru": "Пролетарская",
+        "name:uk": "Пролетарська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6661457,
+          55.7317659
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/253016892",
+      "properties": {
+        "@id": "node/253016892",
+        "colour": "violet",
+        "layer": "-2",
+        "name": "Волгоградский проспект",
+        "name:be": "Валгаградскі праспект",
+        "name:en": "Volgogradsky Prospekt",
+        "name:ru": "Волгоградский проспект",
+        "name:uk": "Волгоградський проспект",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6867847,
+          55.7253024
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/253016893",
+      "properties": {
+        "@id": "node/253016893",
+        "alt_name:en": "Tekstilschiki",
+        "alt_name:uk": "Текстильники",
+        "colour": "violet",
+        "layer": "-2",
+        "name": "Текстильщики",
+        "name:be": "Тэкстыльшчыкі",
+        "name:en": "Tekstilshchiki",
+        "name:ru": "Текстильщики",
+        "name:uk": "Текстильщики",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7318594,
+          55.7087389
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/253016894",
+      "properties": {
+        "@id": "node/253016894",
+        "colour": "violet",
+        "layer": "-2",
+        "name": "Кузьминки",
+        "name:be": "Кузьмінкі",
+        "name:en": "Kuzminki",
+        "name:ru": "Кузьминки",
+        "name:uk": "Кузьмінки",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7657487,
+          55.7055754
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/253016895",
+      "properties": {
+        "@id": "node/253016895",
+        "alt_name:en": "Vyhino",
+        "colour": "violet",
+        "name": "Выхино",
+        "name:be": "Выхіна",
+        "name:en": "Vykhino",
+        "name:ru": "Выхино",
+        "name:uk": "Вихіно",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.8179174,
+          55.715631
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/253017004",
+      "properties": {
+        "@id": "node/253017004",
+        "colour": "violet",
+        "layer": "-1",
+        "name": "Рязанский проспект",
+        "name:be": "Разанскі праспект",
+        "name:en": "Ryazansky Prospekt",
+        "name:ru": "Рязанский проспект",
+        "name:uk": "Рязанський проспект",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7935753,
+          55.7170907
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/253043175",
+      "properties": {
+        "@id": "node/253043175",
+        "colour": "lightblue",
+        "name": "Арбатская",
+        "name:be": "Арбацкая",
+        "name:de": "Arbatskaja",
+        "name:en": "Arbatskaya",
+        "name:ru": "Арбатская",
+        "name:uk": "Арбатська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6007278,
+          55.7518819
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/253045735",
+      "properties": {
+        "@id": "node/253045735",
+        "colour": "lightblue",
+        "layer": "-4",
+        "name": "Выставочная",
+        "name:be": "Выставачная",
+        "name:en": "Vystavochnaya",
+        "name:ru": "Выставочная",
+        "name:uk": "Виставкова",
+        "network": "Московский метрополитен",
+        "old_name": "Деловой центр",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5414267,
+          55.7501058
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/253228506",
+      "properties": {
+        "@id": "node/253228506",
+        "colour": "lightblue",
+        "layer": "-2",
+        "name": "Александровский сад",
+        "name:be": "Аляксандраўскі Сад",
+        "name:de": "Alexandergarten",
+        "name:en": "Alexander Garden",
+        "name:ru": "Александровский сад",
+        "name:uk": "Олександрівський сад",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6085276,
+          55.752442
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/253229327",
+      "properties": {
+        "@id": "node/253229327",
+        "colour": "blue",
+        "layer": "-4",
+        "name": "Киевская",
+        "name:be": "Кіеўская",
+        "name:en": "Kiyevskaya",
+        "name:ru": "Киевская",
+        "name:uk": "Київська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5667636,
+          55.7447153
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/253375111",
+      "properties": {
+        "@id": "node/253375111",
+        "colour": "lightblue",
+        "layer": "-4",
+        "name": "Киевская",
+        "name:be": "Кіеўская",
+        "name:en": "Kiyevskaya",
+        "name:ru": "Киевская",
+        "name:uk": "Київська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5662127,
+          55.7438529
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/253776238",
+      "properties": {
+        "@id": "node/253776238",
+        "colour": "blue",
+        "layer": "-4",
+        "name": "Крылатское",
+        "name:be": "Крылацкае",
+        "name:en": "Krylatskoye",
+        "name:ru": "Крылатское",
+        "name:uk": "Крилатське",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4082585,
+          55.7568353
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/253780238",
+      "properties": {
+        "@id": "node/253780238",
+        "colour": "blue",
+        "layer": "-2",
+        "name": "Славянский бульвар",
+        "name:be": "Славянскі бульвар",
+        "name:en": "Slavyansky Bulvar",
+        "name:ru": "Славянский бульвар",
+        "name:uk": "Слов’янський бульвар",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4707354,
+          55.7296453
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/255744331",
+      "properties": {
+        "@id": "node/255744331",
+        "alt_name:uk": "Новогірєєво",
+        "colour": "yellow",
+        "layer": "-4",
+        "name": "Новогиреево",
+        "name:be": "Навагірэева",
+        "name:en": "Novogireyevo",
+        "name:ru": "Новогиреево",
+        "name:uk": "Новогіреєво",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.8166274,
+          55.7517187
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/255744332",
+      "properties": {
+        "@id": "node/255744332",
+        "colour": "yellow",
+        "layer": "-2",
+        "name": "Перово",
+        "name:be": "Пярова",
+        "name:en": "Perovo",
+        "name:ru": "Перово",
+        "name:uk": "Перово",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7864568,
+          55.751225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/255744578",
+      "properties": {
+        "@id": "node/255744578",
+        "colour": "yellow",
+        "layer": "-4",
+        "name": "Шоссе Энтузиастов",
+        "name:be": "Шаша Энтузіястаў",
+        "name:cs": "Šosse Entuziastov",
+        "name:en": "Shosse Entuziastov",
+        "name:it": "Šosse Entuziastov",
+        "name:pl": "Szosse Entuziastow",
+        "name:pt": "Estação Chosse Entusiasstov",
+        "name:ru": "Шоссе Энтузиастов",
+        "name:uk": "Шосе Ентузіастів",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Шоссе Энтузиастов (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7498443,
+          55.757225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/255856078",
+      "properties": {
+        "@id": "node/255856078",
+        "colour": "lightblue",
+        "layer": "-4",
+        "name": "Международная",
+        "name:be": "Міжнародная",
+        "name:en": "Mezhdunarodnaya",
+        "name:ru": "Международная",
+        "name:uk": "Міжнародна",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5343766,
+          55.7482816
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/259785706",
+      "properties": {
+        "@id": "node/259785706",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Тёплый Стан",
+        "name:be": "Цёплы Стан",
+        "name:en": "Tyoply Stan",
+        "name:ru": "Тёплый Стан",
+        "name:uk": "Теплий стан",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5080944,
+          55.6186964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/259786804",
+      "properties": {
+        "@id": "node/259786804",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Калужская",
+        "name:be": "Калужская",
+        "name:en": "Kaluzhskaya",
+        "name:ru": "Калужская",
+        "name:uk": "Калузька",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5405847,
+          55.6572552
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/259786806",
+      "properties": {
+        "@id": "node/259786806",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Новые Черёмушки",
+        "name:be": "Новыя Чаромушкі",
+        "name:en": "Novye Cheryomushki",
+        "name:ru": "Новые Черёмушки",
+        "name:uk": "Нові Черьомушки",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5544462,
+          55.6701631
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/264162888",
+      "properties": {
+        "@id": "node/264162888",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Ясенево",
+        "name:be": "Ясенева",
+        "name:cs": "Jaseněvo",
+        "name:en": "Yasenevo",
+        "name:it": "Jasenevo",
+        "name:pl": "Jasieniewo",
+        "name:pt": "Estação Iassenevo",
+        "name:ru": "Ясенево",
+        "name:uk": "Ясенєво",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Ясенево (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5337173,
+          55.6062069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/265949954",
+      "properties": {
+        "@id": "node/265949954",
+        "colour": "red",
+        "layer": "-4",
+        "name": "Бульвар Рокоссовского",
+        "name:be": "Бульвар Ракасоўскага",
+        "name:en": "Bul'var Rokossovskogo",
+        "name:ru": "Бульвар Рокоссовского",
+        "name:uk": "Бульвар Рокоссовського",
+        "network": "Московский метрополитен",
+        "old_name": "Улица Подбельского",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.734442,
+          55.8145922
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/265949956",
+      "properties": {
+        "@id": "node/265949956",
+        "alt_name:uk": "Черкизівська",
+        "colour": "red",
+        "layer": "-4",
+        "name": "Черкизовская",
+        "name:be": "Чаркізаўская",
+        "name:en": "Cherkizovskaya",
+        "name:ru": "Черкизовская",
+        "name:uk": "Черкізовська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7449408,
+          55.8039866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/265949958",
+      "properties": {
+        "@id": "node/265949958",
+        "alt_name:en": "Preobrazhenskaya Ploschad",
+        "colour": "red",
+        "layer": "-4",
+        "name": "Преображенская площадь",
+        "name:be": "Прэабражэнская плошча",
+        "name:en": "Preobrazhenskaya Ploshchad",
+        "name:ru": "Преображенская площадь",
+        "name:uk": "Преображенська площа",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7155476,
+          55.7964038
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/266835841",
+      "properties": {
+        "@id": "node/266835841",
+        "colour": "green",
+        "layer": "-1",
+        "name": "Речной вокзал",
+        "name:be": "Рачны вакзал",
+        "name:en": "Rechnoy Vokzal",
+        "name:ru": "Речной вокзал",
+        "name:uk": "Річковий вокзал",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4762048,
+          55.8548609
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/266835844",
+      "properties": {
+        "@id": "node/266835844",
+        "colour": "green",
+        "layer": "-1",
+        "name": "Водный стадион",
+        "name:be": "Водны стадыён",
+        "name:en": "Vodny Stadion",
+        "name:ru": "Водный стадион",
+        "name:uk": "Водний стадіон",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4865846,
+          55.8400444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/266835845",
+      "properties": {
+        "@id": "node/266835845",
+        "colour": "green",
+        "layer": "-2",
+        "name": "Войковская",
+        "name:be": "Войкаўская",
+        "name:en": "Voykovskaya",
+        "name:ru": "Войковская",
+        "name:uk": "Войковська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4979002,
+          55.8190236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/266835846",
+      "properties": {
+        "@id": "node/266835846",
+        "colour": "green",
+        "layer": "-2",
+        "name": "Сокол",
+        "name:be": "Сокал",
+        "name:en": "Sokol",
+        "name:ru": "Сокол",
+        "name:uk": "Сокіл",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5150663,
+          55.8052039
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/266835847",
+      "properties": {
+        "@id": "node/266835847",
+        "colour": "green",
+        "layer": "-3",
+        "name": "Аэропорт",
+        "name:be": "Аэрапорт",
+        "name:en": "Aeroport",
+        "name:ru": "Аэропорт",
+        "name:uk": "Аеропорт",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5330195,
+          55.8003866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/266835848",
+      "properties": {
+        "@id": "node/266835848",
+        "colour": "green",
+        "layer": "-4",
+        "name": "Динамо",
+        "name:be": "Дынама",
+        "name:en": "Dinamo",
+        "name:ru": "Динамо",
+        "name:uk": "Динамо",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5581975,
+          55.7896301
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/267334996",
+      "properties": {
+        "@id": "node/267334996",
+        "alt_name:uk": "Сокільники",
+        "colour": "red",
+        "layer": "-4",
+        "name": "Сокольники",
+        "name:be": "Сакольнікі",
+        "name:en": "Sokolniki",
+        "name:ru": "Сокольники",
+        "name:uk": "Сокольники",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6800522,
+          55.7887275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/267335088",
+      "properties": {
+        "@id": "node/267335088",
+        "colour": "red",
+        "layer": "-3",
+        "name": "Комсомольская",
+        "name:be": "Камсамольская",
+        "name:en": "Komsomolskaya",
+        "name:ru": "Комсомольская",
+        "name:uk": "Комсомольська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6562832,
+          55.7753307
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/267335089",
+      "properties": {
+        "@id": "node/267335089",
+        "colour": "red",
+        "layer": "-4",
+        "name": "Красносельская",
+        "name:be": "Чырвонасельская",
+        "name:en": "Krasnoselskaya",
+        "name:ru": "Красносельская",
+        "name:uk": "Красносільська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6676678,
+          55.780348
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/267335315",
+      "properties": {
+        "@id": "node/267335315",
+        "alt_name:en": "Ohotny Ryad",
+        "colour": "red",
+        "layer": "-4",
+        "name": "Охотный Ряд",
+        "name:be": "Ахотны рад",
+        "name:de": "Ochotny Rjad",
+        "name:en": "Okhotny Ryad",
+        "name:ru": "Охотный Ряд",
+        "name:uk": "Мисливський ряд",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6162174,
+          55.7576858
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/267335316",
+      "properties": {
+        "@id": "node/267335316",
+        "colour": "red",
+        "layer": "-4",
+        "name": "Лубянка",
+        "name:be": "Лубянка",
+        "name:en": "Lubyanka",
+        "name:ru": "Лубянка",
+        "name:uk": "Луб’янка",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6277646,
+          55.7599123
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/267335317",
+      "properties": {
+        "@id": "node/267335317",
+        "colour": "red",
+        "layer": "-4",
+        "name": "Чистые пруды",
+        "name:be": "Чыстыя пруды",
+        "name:en": "Chistye Prudy",
+        "name:ru": "Чистые пруды",
+        "name:uk": "Чисті пруди",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6388551,
+          55.7658675
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/267335318",
+      "properties": {
+        "@id": "node/267335318",
+        "colour": "red",
+        "layer": "-4",
+        "name": "Красные Ворота",
+        "name:be": "Чырвоная Брама",
+        "name:en": "Krasnye Vorota",
+        "name:ru": "Красные Ворота",
+        "name:uk": "Красні ворота",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6484625,
+          55.7689996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/268521588",
+      "properties": {
+        "@id": "node/268521588",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Свиблово",
+        "name:be": "Свіблава",
+        "name:en": "Sviblovo",
+        "name:ru": "Свиблово",
+        "name:uk": "Свіблово",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6526719,
+          55.8551629
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/268521591",
+      "properties": {
+        "@id": "node/268521591",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Ботанический сад",
+        "name:be": "Батанічны сад",
+        "name:en": "Botanichesky Sad",
+        "name:ru": "Ботанический сад",
+        "name:uk": "Ботанічний сад",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6383238,
+          55.8451534
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/268521606",
+      "properties": {
+        "@id": "node/268521606",
+        "alt_name:en": "VDNHa",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "ВДНХ",
+        "name:be": "ВДНГ",
+        "name:cs": "VDNCh",
+        "name:de": "WDNCh",
+        "name:en": "VDNKh",
+        "name:es": "VDNJ",
+        "name:fr": "VDNKh",
+        "name:it": "VDNCh",
+        "name:pl": "WDNCh",
+        "name:pt": "Estação VDNKh",
+        "name:ru": "ВДНХ",
+        "name:sv": "VDNCh",
+        "name:tr": "WDNCh",
+        "name:uk": "ВДНГ",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "public_transport": "stop_position",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "transport": "subway",
+        "wheelchair": "no",
+        "wikipedia": "ru:ВДНХ (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6411767,
+          55.8213144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/276191013",
+      "properties": {
+        "@id": "node/276191013",
+        "colour": "yellow",
+        "layer": "-4",
+        "name": "Авиамоторная",
+        "name:be": "Авіяматорная",
+        "name:cs": "Aviamotornaja",
+        "name:en": "Aviamotornaya",
+        "name:it": "Aviamotornaja",
+        "name:pl": "Awiamotornaja",
+        "name:pt": "Estação Aviamotornaia",
+        "name:ru": "Авиамоторная",
+        "name:uk": "Авіамоторна",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Авиамоторная (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7200209,
+          55.7520069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/276191299",
+      "properties": {
+        "@id": "node/276191299",
+        "alt_name:en": "Ploschad Ilyicha",
+        "colour": "yellow",
+        "layer": "-4",
+        "name": "Площадь Ильича",
+        "name:be": "Плошча Ільіча",
+        "name:en": "Ploshchad Ilyicha",
+        "name:ru": "Площадь Ильича",
+        "name:uk": "Площа Ілліча",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6818989,
+          55.7465826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/276191577",
+      "properties": {
+        "@id": "node/276191577",
+        "colour": "yellow",
+        "layer": "-4",
+        "name": "Марксистская",
+        "name:be": "Марксісцкая",
+        "name:en": "Marksistskaya",
+        "name:ru": "Марксистская",
+        "name:uk": "Марксистська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6526757,
+          55.7413164
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/277499098",
+      "properties": {
+        "@id": "node/277499098",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Алексеевская",
+        "name:be": "Аляксееўская",
+        "name:en": "Alekseyevskaya",
+        "name:ru": "Алексеевская",
+        "name:uk": "Олексіївська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "public_transport": "stop_position",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "transport": "subway",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6387852,
+          55.8087762
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/277499099",
+      "properties": {
+        "@id": "node/277499099",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Рижская",
+        "name:be": "Рыжская",
+        "name:en": "Rizhskaya",
+        "name:ru": "Рижская",
+        "name:uk": "Ризька",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6362324,
+          55.7933296
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/277499848",
+      "properties": {
+        "@id": "node/277499848",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Проспект Мира",
+        "name:be": "Праспект Міру",
+        "name:en": "Prospekt Mira",
+        "name:ru": "Проспект Мира",
+        "name:uk": "Проспект Миру",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.632017,
+          55.7809058
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/277499849",
+      "properties": {
+        "@id": "node/277499849",
+        "alt_name:en": "Suharevskaya",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Сухаревская",
+        "name:be": "Сухараўская",
+        "name:en": "Sukharevskaya",
+        "name:ru": "Сухаревская",
+        "name:uk": "Сухарєвська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6315377,
+          55.7728615
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/277499850",
+      "properties": {
+        "@id": "node/277499850",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Тургеневская",
+        "name:be": "Тургенеўская",
+        "name:en": "Turgenevskaya",
+        "name:ru": "Тургеневская",
+        "name:uk": "Тургенєвська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6372935,
+          55.7661249
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/277499852",
+      "properties": {
+        "@id": "node/277499852",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Третьяковская",
+        "name:be": "Траццякоўская",
+        "name:en": "Tretyakovskaya",
+        "name:ru": "Третьяковская",
+        "name:uk": "Третяковська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6271132,
+          55.7410835
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/277499853",
+      "properties": {
+        "@id": "node/277499853",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Октябрьская",
+        "name:be": "Кастрычніцкая",
+        "name:de": "Oktjabrskaja",
+        "name:en": "Oktyabrskaya",
+        "name:ru": "Октябрьская",
+        "name:uk": "Жовтнева",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6111677,
+          55.7305821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/277499854",
+      "properties": {
+        "@id": "node/277499854",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Шаболовская",
+        "name:be": "Шабалаўская",
+        "name:cs": "Šabolovskaja",
+        "name:en": "Shabolovskaya",
+        "name:es": "Shábolovskaya",
+        "name:fr": "Chabolovskaïa",
+        "name:it": "Šabolovskaja",
+        "name:pl": "Szabołowskaja",
+        "name:pt": "Estação Chabolovskaia",
+        "name:ru": "Шаболовская",
+        "name:uk": "Шаболовська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Шаболовская (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6077788,
+          55.7199465
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/278692957",
+      "properties": {
+        "@id": "node/278692957",
+        "colour": "red",
+        "layer": "-4",
+        "name": "Кропоткинская",
+        "name:be": "Крапоткінская",
+        "name:en": "Kropotkinskaya",
+        "name:ru": "Кропоткинская",
+        "name:uk": "Кропоткінська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6038081,
+          55.745581
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/278692958",
+      "properties": {
+        "@id": "node/278692958",
+        "colour": "red",
+        "int_name": "Biblioteka Imeni Lenina",
+        "layer": "-3",
+        "name": "Библиотека имени Ленина",
+        "name:be": "Бібліятэка імя Леніна",
+        "name:de": "Lenin-Bibliothek",
+        "name:en": "Lenin Library",
+        "name:ru": "Библиотека имени Ленина",
+        "name:uk": "Бібліотека імені Леніна",
+        "network": "Московский метрополитен",
+        "old_name:de": "Lenin-Bibliothek",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6099648,
+          55.7511283
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/278692976",
+      "properties": {
+        "@id": "node/278692976",
+        "colour": "red",
+        "depth": "40",
+        "layer": "-4",
+        "name": "Парк Культуры",
+        "name:be": "Парк культуры",
+        "name:de": "Kulturpark",
+        "name:en": "Park Kultury",
+        "name:ru": "Парк Культуры",
+        "name:uk": "Парк Культури",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5942043,
+          55.7356254
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/278693055",
+      "properties": {
+        "@id": "node/278693055",
+        "colour": "red",
+        "layer": "-4",
+        "name": "Спортивная",
+        "name:be": "Спартыўная",
+        "name:en": "Sportivnaya",
+        "name:ru": "Спортивная",
+        "name:uk": "Спортивна",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5638022,
+          55.7233208
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/278693056",
+      "properties": {
+        "@id": "node/278693056",
+        "colour": "red",
+        "layer": "-4",
+        "name": "Фрунзенская",
+        "name:be": "Фрунзенская",
+        "name:en": "Frunzenskaya",
+        "name:ru": "Фрунзенская",
+        "name:uk": "Фрунзенська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5785049,
+          55.7269851
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/282411334",
+      "properties": {
+        "@id": "node/282411334",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Ленинский проспект",
+        "name:be": "Ленінскі праспект",
+        "name:en": "Leninsky Prospekt",
+        "name:ru": "Ленинский проспект",
+        "name:uk": "Ленінський проспект",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5861545,
+          55.7077144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/282413851",
+      "properties": {
+        "@id": "node/282413851",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Академическая",
+        "name:be": "Акадэмічная",
+        "name:en": "Akademicheskaya",
+        "name:ru": "Академическая",
+        "name:uk": "Академічна",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5731868,
+          55.6877068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/282414382",
+      "properties": {
+        "@id": "node/282414382",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Профсоюзная",
+        "name:be": "Прафсаюзная",
+        "name:en": "Profsoyuznaya",
+        "name:ru": "Профсоюзная",
+        "name:uk": "Профспілкова",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5626938,
+          55.6778336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/282416839",
+      "properties": {
+        "@id": "node/282416839",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Беляево",
+        "name:be": "Бяляева",
+        "name:en": "Belyayevo",
+        "name:ru": "Беляево",
+        "name:uk": "Беляєво",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "public_transport": "platform",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5254991,
+          55.6427132
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/291686160",
+      "properties": {
+        "@id": "node/291686160",
+        "alt_name:en": "Oktyabrskaya",
+        "colour": "brown",
+        "layer": "-4",
+        "name": "Октябрьская",
+        "name:be": "Кастрычніцкая",
+        "name:de": "Oktjabrskaja",
+        "name:en": "Oktyabrskaya",
+        "name:ru": "Октябрьская",
+        "name:uk": "Жовтнева",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6096583,
+          55.7297873
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/291687197",
+      "properties": {
+        "@id": "node/291687197",
+        "colour": "lightblue",
+        "layer": "-2",
+        "name": "Смоленская",
+        "name:be": "Смаленская",
+        "name:en": "Smolenskaya",
+        "name:ru": "Смоленская",
+        "name:uk": "Смоленьска",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5826441,
+          55.7487996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/291687455",
+      "properties": {
+        "@id": "node/291687455",
+        "colour": "green",
+        "layer": "-4",
+        "name": "Маяковская",
+        "name:be": "Маякоўская",
+        "name:en": "Mayakovskaya",
+        "name:ru": "Маяковская",
+        "name:uk": "Маяковська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.595449,
+          55.7700307
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/291689166",
+      "properties": {
+        "@id": "node/291689166",
+        "colour": "gray",
+        "layer": "-4",
+        "name": "Цветной бульвар",
+        "name:be": "Кветкавы бульвар",
+        "name:en": "Tsvetnoy Bulvar",
+        "name:ru": "Цветной бульвар",
+        "name:uk": "Квітковий бульвар",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6177087,
+          55.7708287
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/291712231",
+      "properties": {
+        "@id": "node/291712231",
+        "colour": "orange",
+        "layer": "-4",
+        "name": "Новоясеневская",
+        "name:be": "Новаясенеўская",
+        "name:en": "Novoyasenevskaya",
+        "name:ru": "Новоясеневская",
+        "name:uk": "Новоясенєвська",
+        "network": "Московский метрополитен",
+        "old_name": "Битцевский парк",
+        "old_name:be": "Бітцаўскі парк",
+        "old_name:uk": "Бітцевський парк",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5542998,
+          55.6008968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/292019726",
+      "properties": {
+        "@id": "node/292019726",
+        "colour": "green",
+        "layer": "-4",
+        "name": "Павелецкая",
+        "name:be": "Павялецкая",
+        "name:en": "Paveletskaya",
+        "name:ru": "Павелецкая",
+        "name:uk": "Павелецька",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6374601,
+          55.7305818
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/292019996",
+      "properties": {
+        "@id": "node/292019996",
+        "colour": "brown",
+        "layer": "-4",
+        "name": "Павелецкая",
+        "name:be": "Павелецкая",
+        "name:en": "Paveletskaya",
+        "name:ru": "Павелецкая",
+        "name:uk": "Павелецька",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6378319,
+          55.7322275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/292143794",
+      "properties": {
+        "@id": "node/292143794",
+        "colour": "green",
+        "layer": "-4",
+        "name": "Театральная",
+        "name:be": "Тэатральная",
+        "name:cs": "Těatralnaja",
+        "name:de": "Theater",
+        "name:en": "Theater",
+        "name:fr": "Teatralnaïa",
+        "name:it": "Teatral'naja",
+        "name:ko": "테아트랄나야 역",
+        "name:pl": "Teatralnaja",
+        "name:pt": "Estação Teatralhnaia",
+        "name:ru": "Театральная",
+        "name:sv": "Teatralnaja",
+        "name:uk": "Театральна",
+        "name:zh": "剧院站",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Театральная (станция метро, Москва)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6188537,
+          55.7577478
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/292143796",
+      "properties": {
+        "@id": "node/292143796",
+        "colour": "green",
+        "layer": "-4",
+        "name": "Новокузнецкая",
+        "name:be": "Новакузнецкая",
+        "name:en": "Novokuznetskaya",
+        "name:ru": "Новокузнецкая",
+        "name:uk": "Новокузнецька",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.629432,
+          55.7414001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/292144111",
+      "properties": {
+        "@id": "node/292144111",
+        "colour": "green",
+        "layer": "-4",
+        "name": "Тверская",
+        "name:be": "Цвярская",
+        "name:en": "Tverskaya",
+        "name:ru": "Тверская",
+        "name:uk": "Тверська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6057622,
+          55.7649769
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/292146578",
+      "properties": {
+        "@id": "node/292146578",
+        "colour": "green",
+        "layer": "-4",
+        "name": "Автозаводская",
+        "name:be": "Аўтазаводская",
+        "name:cs": "Avtozavodskaja",
+        "name:en": "Avtozavodskaya",
+        "name:fr": "Avtozavodskaïa",
+        "name:it": "Avtozavodskaja",
+        "name:pl": "Awtozawodzkaja",
+        "name:pt": "Estação Avtosavodskaia",
+        "name:ru": "Автозаводская",
+        "name:sv": "Avtozavodskaja",
+        "name:uk": "Автозаводська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Технопарк (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6576204,
+          55.7073793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/292147581",
+      "properties": {
+        "@id": "node/292147581",
+        "colour": "green",
+        "depth": "9",
+        "layer": "-2",
+        "name": "Коломенская",
+        "name:be": "Каломенская",
+        "name:en": "Kolomenskaya",
+        "name:ru": "Коломенская",
+        "name:uk": "Коломенська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6638965,
+          55.6784809
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/292147587",
+      "properties": {
+        "@id": "node/292147587",
+        "layer": "-2",
+        "name": "Каширская",
+        "name:be": "Кашырская",
+        "name:en": "Kashirskaya",
+        "name:ru": "Каширская",
+        "name:uk": "Каширська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "public_transport": "stop_position",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6489241,
+          55.6550729
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/292148161",
+      "properties": {
+        "@id": "node/292148161",
+        "colour": "green",
+        "construction": "yes",
+        "name": "Технопарк",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Технопарк (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6644083,
+          55.6936272
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/293799708",
+      "properties": {
+        "@id": "node/293799708",
+        "colour": "brown",
+        "layer": "-4",
+        "name": "Проспект Мира",
+        "name:be": "Праспект Міру",
+        "name:en": "Prospekt Mira",
+        "name:ru": "Проспект Мира",
+        "name:uk": "Проспект Миру",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.633016,
+          55.779559
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/294024698",
+      "properties": {
+        "@id": "node/294024698",
+        "colour": "brown",
+        "layer": "-4",
+        "name": "Добрынинская",
+        "name:be": "Дабрынінская",
+        "name:en": "Dobryninskaya",
+        "name:ru": "Добрынинская",
+        "name:uk": "Добринінська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6237142,
+          55.729148
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296045315",
+      "properties": {
+        "@id": "node/296045315",
+        "colour": "brown",
+        "layer": "-4",
+        "name": "Таганская",
+        "name:be": "Таганская",
+        "name:en": "Taganskaya",
+        "name:ru": "Таганская",
+        "name:uk": "Таганська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6510227,
+          55.7414247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296925926",
+      "properties": {
+        "@id": "node/296925926",
+        "alt_name:en": "Kahovskaya",
+        "colour": "darkgreen",
+        "layer": "-2",
+        "name": "Каховская",
+        "name:be": "Кахоўская",
+        "name:en": "Kakhovskaya",
+        "name:ru": "Каховская",
+        "name:uk": "Каховська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5981698,
+          55.6529571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296926132",
+      "properties": {
+        "@id": "node/296926132",
+        "colour": "darkgreen",
+        "layer": "-2",
+        "name": "Варшавская",
+        "name:be": "Варшаўская",
+        "name:en": "Varshavskaya",
+        "name:ru": "Варшавская",
+        "name:uk": "Варшавська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.619219,
+          55.6534029
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296932663",
+      "properties": {
+        "@id": "node/296932663",
+        "colour": "lightblue",
+        "layer": "1",
+        "name": "Улица Скобелевская",
+        "name:be": "Вуліца Скобелеўская",
+        "name:en": "Ulitsa Skobelevskaya",
+        "name:ru": "Улица Скобелевская",
+        "name:uk": "Вулиця Скобелевська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "wikipedia": "ru:Улица Скобелевская (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5545984,
+          55.5481606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296932668",
+      "properties": {
+        "@id": "node/296932668",
+        "colour": "lightblue",
+        "layer": "1",
+        "name": "Бульвар Адмирала Ушакова",
+        "name:be": "Бульвар адмірала Ушакова",
+        "name:en": "Bulvar Admirala Ushakova",
+        "name:ru": "Бульвар Адмирала Ушакова",
+        "name:uk": "Бульвар адмірала Ушакова",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "wikipedia": "ru:Бульвар Адмирала Ушакова (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5431878,
+          55.5454833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296932670",
+      "properties": {
+        "@id": "node/296932670",
+        "colour": "lightblue",
+        "layer": "1",
+        "name": "Улица Горчакова",
+        "name:be": "Вуліца Гарчакова",
+        "name:en": "Ulitsa Gorchakova",
+        "name:ru": "Улица Горчакова",
+        "name:uk": "Вулиця Горчакова",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "wikipedia": "ru:Улица Горчакова (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5306687,
+          55.5417384
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296932673",
+      "properties": {
+        "@id": "node/296932673",
+        "colour": "lightblue",
+        "layer": "1",
+        "name": "Бунинская аллея",
+        "name:be": "Бунінская алея",
+        "name:en": "Buninskaya Alleya",
+        "name:ru": "Бунинская аллея",
+        "name:uk": "Бунінська алея",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "wikipedia": "ru:Бунинская аллея (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5165046,
+          55.5381944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296938973",
+      "properties": {
+        "@id": "node/296938973",
+        "colour": "blue",
+        "layer": "-4",
+        "name": "Строгино",
+        "name:be": "Страгіно",
+        "name:en": "Strogino",
+        "name:ru": "Строгино",
+        "name:uk": "Строгіно",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "public_transport": "stop_position",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4031859,
+          55.8037346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296944258",
+      "properties": {
+        "@id": "node/296944258",
+        "colour": "lightgreen",
+        "layer": "-4",
+        "name": "Трубная",
+        "name:be": "Трубная",
+        "name:cs": "Trubnaja",
+        "name:en": "Trubnaya",
+        "name:it": "Trubnaja",
+        "name:pt": "Estação Trubnaia",
+        "name:ru": "Трубная",
+        "name:sv": "Trubnaja",
+        "name:uk": "Трубна",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Трубная (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6192676,
+          55.7691817
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296944266",
+      "properties": {
+        "@id": "node/296944266",
+        "colour": "lightgreen",
+        "layer": "-4",
+        "name": "Чкаловская",
+        "name:be": "Чкалаўская",
+        "name:cs": "Čkalovskaja",
+        "name:de": "Tschkalowskaja",
+        "name:en": "Chkalovskaya",
+        "name:it": "Čkalovskaja",
+        "name:pl": "Czkałowskaja",
+        "name:pt": "Estação Tchkalovskaia",
+        "name:ru": "Чкаловская",
+        "name:sv": "Tjkalovskaja",
+        "name:uk": "Чкаловська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6565119,
+          55.7568458
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296947177",
+      "properties": {
+        "@id": "node/296947177",
+        "colour": "lightgreen",
+        "layer": "-4",
+        "name": "Римская",
+        "name:be": "Рымская",
+        "name:cs": "Rimskaja",
+        "name:en": "Rimskaya",
+        "name:it": "Rimskaja",
+        "name:pl": "Rimskaja",
+        "name:pt": "Estação Rimskaia",
+        "name:ru": "Римская",
+        "name:uk": "Римська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Римская (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6831258,
+          55.746413
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296947185",
+      "properties": {
+        "@id": "node/296947185",
+        "colour": "lightgreen",
+        "layer": "-4",
+        "name": "Дубровка",
+        "name:be": "Дуброўка",
+        "name:cs": "Dubrovka",
+        "name:en": "Dubrovka",
+        "name:it": "Dubrovka",
+        "name:pl": "Dubrowka",
+        "name:pt": "Estação Dubrovka",
+        "name:ru": "Дубровка",
+        "name:uk": "Дубрівка",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Дубровка (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6755893,
+          55.7189008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296949274",
+      "properties": {
+        "@id": "node/296949274",
+        "alt_name:en": "Kozhuhovskaya",
+        "colour": "lightgreen",
+        "layer": "-2",
+        "name": "Кожуховская",
+        "name:be": "Кажухаўская",
+        "name:cs": "Kožuchovskaja",
+        "name:en": "Kozhukhovskaya",
+        "name:it": "Kožuchovskaja",
+        "name:pl": "Kożuchowskaja",
+        "name:pt": "Estação Kojukhovskaia",
+        "name:ru": "Кожуховская",
+        "name:uk": "Кожуховська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Кожуховская (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6845235,
+          55.7075314
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296949278",
+      "properties": {
+        "@id": "node/296949278",
+        "alt_name:uk": "Друкарі",
+        "colour": "lightgreen",
+        "layer": "-1",
+        "name": "Печатники",
+        "name:be": "Пячатнікі",
+        "name:cs": "Pečatniki",
+        "name:en": "Pechatniki",
+        "name:fi": "Petšatnikin metroasema",
+        "name:it": "Pečatniki",
+        "name:pt": "Estação Petchatniki",
+        "name:ru": "Печатники",
+        "name:uk": "Печатники",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Печатники (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7267743,
+          55.6933448
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296949283",
+      "properties": {
+        "@id": "node/296949283",
+        "colour": "lightgreen",
+        "layer": "-2",
+        "name": "Волжская",
+        "name:be": "Волжская",
+        "name:cs": "Volžskaja",
+        "name:en": "Volzhskaya",
+        "name:it": "Volžskaja",
+        "name:pt": "Estação Voljskaia",
+        "name:ru": "Волжская",
+        "name:uk": "Волзька",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Волжская (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7532713,
+          55.6907877
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296949285",
+      "properties": {
+        "@id": "node/296949285",
+        "colour": "lightgreen",
+        "layer": "-2",
+        "name": "Люблино",
+        "name:be": "Любліно",
+        "name:cs": "Ljublino",
+        "name:en": "Lyublino",
+        "name:it": "Ljublino",
+        "name:pl": "Lublino",
+        "name:pt": "Estação Liublino",
+        "name:ru": "Люблино",
+        "name:uk": "Любліно",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "turnstile": "yes",
+        "wikipedia": "ru:Люблино (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7618058,
+          55.6756376
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296949290",
+      "properties": {
+        "@id": "node/296949290",
+        "alt_name:en": "Mariino",
+        "alt_name:uk": "Мар’їне",
+        "colour": "lightgreen",
+        "layer": "-2",
+        "name": "Марьино",
+        "name:be": "Мар'іна",
+        "name:cs": "Marino",
+        "name:en": "Maryino",
+        "name:it": "Mar'ino",
+        "name:pl": "Marino",
+        "name:pt": "Estação Mariino",
+        "name:ru": "Марьино",
+        "name:uk": "Мар’їно",
+        "network": "Московский метрополитен",
+        "opening_hours": "05:35-01:00",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Марьино (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7431944,
+          55.6500225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296953126",
+      "properties": {
+        "@id": "node/296953126",
+        "alt_name:en": "Chehovskaya",
+        "colour": "gray",
+        "layer": "-4",
+        "name": "Чеховская",
+        "name:be": "Чэхаўская",
+        "name:en": "Chekhovskaya",
+        "name:ru": "Чеховская",
+        "name:uk": "Чеховська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6090284,
+          55.7649533
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296953128",
+      "properties": {
+        "@id": "node/296953128",
+        "colour": "gray",
+        "layer": "-5",
+        "name": "Боровицкая",
+        "name:be": "Баравіцкая",
+        "name:en": "Borovitskaya",
+        "name:ru": "Боровицкая",
+        "name:uk": "Боровицька",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6069917,
+          55.7509241
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296953130",
+      "properties": {
+        "@id": "node/296953130",
+        "alt_name:en": "Serpuhovskaya",
+        "colour": "gray",
+        "layer": "-4",
+        "name": "Серпуховская",
+        "name:be": "Серпухаўская",
+        "name:en": "Serpukhovskaya",
+        "name:ru": "Серпуховская",
+        "name:uk": "Серпуховська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6249458,
+          55.7270198
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296953131",
+      "properties": {
+        "@id": "node/296953131",
+        "colour": "gray",
+        "layer": "-2",
+        "name": "Тульская",
+        "name:be": "Тульская",
+        "name:en": "Tulskaya",
+        "name:ru": "Тульская",
+        "name:uk": "Тульська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6227133,
+          55.7089822
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296953132",
+      "properties": {
+        "@id": "node/296953132",
+        "colour": "gray",
+        "layer": "-2",
+        "name": "Нагатинская",
+        "name:be": "Нагацінская",
+        "name:en": "Nagatinskaya",
+        "name:ru": "Нагатинская",
+        "name:uk": "Нагатінська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6227483,
+          55.6830582
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296953133",
+      "properties": {
+        "@id": "node/296953133",
+        "colour": "gray",
+        "layer": "-2",
+        "name": "Нагорная",
+        "name:be": "Нагорная",
+        "name:en": "Nagornaya",
+        "name:ru": "Нагорная",
+        "name:uk": "Нагірна",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6099111,
+          55.6719843
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296953134",
+      "properties": {
+        "@id": "node/296953134",
+        "alt_name:en": "Nahimovsky Prospekt",
+        "colour": "gray",
+        "layer": "-2",
+        "name": "Нахимовский проспект",
+        "name:be": "Нахімаўскіі праспект",
+        "name:en": "Nakhimovsky Prospekt",
+        "name:ru": "Нахимовский проспект",
+        "name:uk": "Нахімовський проспект",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.605443,
+          55.6626636
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296953135",
+      "properties": {
+        "@id": "node/296953135",
+        "colour": "gray",
+        "layer": "-2",
+        "name": "Севастопольская",
+        "name:be": "Севастопальская",
+        "name:en": "Sevastopolskaya",
+        "name:ru": "Севастопольская",
+        "name:uk": "Севастопольська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.598314,
+          55.6520286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296953136",
+      "properties": {
+        "@id": "node/296953136",
+        "alt_name:uk": "Чортанівська",
+        "colour": "gray",
+        "layer": "-3",
+        "name": "Чертановская",
+        "name:be": "Чартанаўская",
+        "name:en": "Chertanovskaya",
+        "name:ru": "Чертановская",
+        "name:uk": "Чертанівська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6066299,
+          55.640263
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296953137",
+      "properties": {
+        "@id": "node/296953137",
+        "colour": "gray",
+        "layer": "-2",
+        "name": "Южная",
+        "name:be": "Паўднёвая",
+        "name:cs": "Južnaja",
+        "name:en": "Yuzhnaya",
+        "name:it": "Južnaja",
+        "name:ko": "유즈나야 역",
+        "name:pl": "Jużnaja",
+        "name:pt": "Estação Iujnaia",
+        "name:ru": "Южная",
+        "name:uk": "Південна",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Южная (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6090636,
+          55.6223678
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296953138",
+      "properties": {
+        "@id": "node/296953138",
+        "colour": "gray",
+        "layer": "-2",
+        "name": "Пражская",
+        "name:be": "Праская",
+        "name:cs": "Pražskaja",
+        "name:en": "Prazhskaya",
+        "name:it": "Pražskaja",
+        "name:ko": "프라시스카야 역",
+        "name:pl": "Prażskaja",
+        "name:pt": "Estação Prajskaia",
+        "name:ru": "Пражская",
+        "name:sk": "Pražskaja",
+        "name:uk": "Празька",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Пражская (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6044111,
+          55.6125623
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296953139",
+      "properties": {
+        "@id": "node/296953139",
+        "colour": "gray",
+        "layer": "-2",
+        "name": "Улица Академика Янгеля",
+        "name:be": "Вуліца Акадэміка Янгеля",
+        "name:en": "Ulitsa Akademika Yangelya",
+        "name:ru": "Улица Академика Янгеля",
+        "name:uk": "Вулиця Академіка Янгеля",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6009916,
+          55.59521
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296953140",
+      "properties": {
+        "@id": "node/296953140",
+        "colour": "gray",
+        "layer": "-2",
+        "name": "Аннино",
+        "name:be": "Аніна",
+        "name:en": "Annino",
+        "name:ru": "Аннино",
+        "name:uk": "Анніно",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5963663,
+          55.5825441
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296956167",
+      "properties": {
+        "@id": "node/296956167",
+        "colour": "gray",
+        "layer": "-4",
+        "name": "Тимирязевская",
+        "name:be": "Ціміразеўская",
+        "name:en": "Timiryazevskaya",
+        "name:ru": "Тимирязевская",
+        "name:uk": "Тимірязівська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Тимирязевская (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5758598,
+          55.8178155
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296956168",
+      "properties": {
+        "@id": "node/296956168",
+        "colour": "gray",
+        "layer": "-4",
+        "name": "Дмитровская",
+        "name:be": "Дзмітраўская",
+        "name:en": "Dmitrovskaya",
+        "name:ru": "Дмитровская",
+        "name:uk": "Дмитрівська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5815683,
+          55.8071611
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296956169",
+      "properties": {
+        "@id": "node/296956169",
+        "colour": "gray",
+        "layer": "-4",
+        "name": "Савёловская",
+        "name:be": "Савёлаўская",
+        "name:en": "Savyolovskaya",
+        "name:ru": "Савёловская",
+        "name:uk": "Савелівська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5881137,
+          55.7930087
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296956170",
+      "properties": {
+        "@id": "node/296956170",
+        "colour": "gray",
+        "layer": "-4",
+        "name": "Менделеевская",
+        "name:be": "Мендзялееўская",
+        "name:en": "Mendeleyevskaya",
+        "name:ru": "Менделеевская",
+        "name:uk": "Меделєєвська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6011125,
+          55.7809621
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296957238",
+      "properties": {
+        "@id": "node/296957238",
+        "colour": "gray",
+        "image": "http://commons.wikimedia.org/wiki/Category:Altufyevo",
+        "layer": "-2",
+        "name": "Алтуфьево",
+        "name:be": "Алтуф'ева",
+        "name:en": "Altufyevo",
+        "name:ru": "Алтуфьево",
+        "name:uk": "Алтуф’єво",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "website": "http://mosmetro.ru/stations/serpukhovsko_timiryazevskaya/altufievo/",
+        "wikipedia": "ru:Алтуфьево (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5873192,
+          55.8978497
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296957239",
+      "properties": {
+        "@id": "node/296957239",
+        "colour": "gray",
+        "image": "http://commons.wikimedia.org/wiki/Category:Bibirevo_%28Moscow_Metro%29",
+        "layer": "-2",
+        "name": "Бибирево",
+        "name:be": "Бібірава",
+        "name:en": "Bibirevo",
+        "name:ru": "Бибирево",
+        "name:uk": "Бібірево",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "website": "http://mosmetro.ru/stations/serpukhovsko_timiryazevskaya/bibirevo/",
+        "wikipedia": "ru:Бибирево (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6024384,
+          55.8836915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296957241",
+      "properties": {
+        "@id": "node/296957241",
+        "alt_name:uk": "Отрадне",
+        "colour": "gray",
+        "layer": "-2",
+        "name": "Отрадное",
+        "name:be": "Атраднае",
+        "name:en": "Otradnoye",
+        "name:ru": "Отрадное",
+        "name:uk": "Відрадне",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair:description": "Вокзала не существует уже давно, более 20 лет"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6048116,
+          55.8634532
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296959502",
+      "properties": {
+        "@id": "node/296959502",
+        "colour": "violet",
+        "layer": "-1",
+        "name": "Планерная",
+        "name:be": "Планерная",
+        "name:en": "Planernaya",
+        "name:ru": "Планерная",
+        "name:uk": "Планерна",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Планерная (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4363874,
+          55.860731
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296959504",
+      "properties": {
+        "@id": "node/296959504",
+        "colour": "violet",
+        "layer": "-2",
+        "name": "Тушинская",
+        "name:be": "Тушынская",
+        "name:en": "Tushinskaya",
+        "name:ru": "Тушинская",
+        "name:uk": "Тушинська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "public_transport": "stop_position",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Тушинская (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4368435,
+          55.826498
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296959505",
+      "properties": {
+        "@id": "node/296959505",
+        "alt_name:en": "Schukinskaya",
+        "colour": "violet",
+        "layer": "-2",
+        "name": "Щукинская",
+        "name:be": "Шчукінская",
+        "name:cs": "Ščukinskaja",
+        "name:en": "Shchukinskaya",
+        "name:it": "Ščukinskaja",
+        "name:pl": "Szczukinskaja",
+        "name:pt": "Estação Shchiukinskaia",
+        "name:ru": "Щукинская",
+        "name:uk": "Щукінська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Щукинская (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4643097,
+          55.8085823
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296959507",
+      "properties": {
+        "@id": "node/296959507",
+        "colour": "violet",
+        "layer": "-2",
+        "name": "Полежаевская",
+        "name:be": "Палежаеўская",
+        "name:en": "Polezhayevskaya",
+        "name:ru": "Полежаевская",
+        "name:uk": "Полежаєвська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5194078,
+          55.7775074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296959508",
+      "properties": {
+        "@id": "node/296959508",
+        "colour": "violet",
+        "layer": "-2",
+        "name": "Беговая",
+        "name:be": "Бегавая",
+        "name:en": "Begovaya",
+        "name:ru": "Беговая",
+        "name:uk": "Бігова",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5464401,
+          55.7735045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296959509",
+      "properties": {
+        "@id": "node/296959509",
+        "colour": "violet",
+        "layer": "-2",
+        "name": "Улица 1905 года",
+        "name:be": "Вуліца 1905 года",
+        "name:en": "Ulitsa 1905 Goda",
+        "name:ru": "Улица 1905 года",
+        "name:uk": "Вулиця 1905 року",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5615355,
+          55.7645028
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/296959510",
+      "properties": {
+        "@id": "node/296959510",
+        "colour": "violet",
+        "layer": "-4",
+        "name": "Баррикадная",
+        "name:be": "Барыкадная",
+        "name:en": "Barrikadnaya",
+        "name:ru": "Баррикадная",
+        "name:uk": "Барикадна",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5798606,
+          55.7609017
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/297148038",
+      "properties": {
+        "@id": "node/297148038",
+        "colour": "brown",
+        "layer": "-4",
+        "name": "Комсомольская",
+        "name:be": "Камсамольская",
+        "name:en": "Komsomolskaya",
+        "name:ru": "Комсомольская",
+        "name:uk": "Комсомольська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6545092,
+          55.7748736
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/297148175",
+      "properties": {
+        "@id": "node/297148175",
+        "colour": "brown",
+        "layer": "-4",
+        "name": "Курская",
+        "name:be": "Курская",
+        "name:en": "Kurskaya",
+        "name:ru": "Курская",
+        "name:uk": "Курська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "public_transport": "stop_position",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6591954,
+          55.757283
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/297291268",
+      "properties": {
+        "@id": "node/297291268",
+        "alt_name:uk": "Владикіне",
+        "colour": "gray",
+        "layer": "-2",
+        "name": "Владыкино",
+        "name:be": "Уладыкіна",
+        "name:en": "Vladykino",
+        "name:ru": "Владыкино",
+        "name:uk": "Владикіно",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5898506,
+          55.8472158
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/297335182",
+      "properties": {
+        "@id": "node/297335182",
+        "colour": "red",
+        "layer": "1",
+        "name": "Воробьёвы горы",
+        "name:be": "Вераб'ёвы Горы",
+        "name:da": "Spurvebakkerne",
+        "name:de": "Sperlingsberge",
+        "name:en": "Vorobyovy Gory",
+        "name:et": "Varblasemäed",
+        "name:hu": "Veréb-hegy",
+        "name:no": "Spurvehøyden",
+        "name:ru": "Воробьёвы горы",
+        "name:sv": "Sparvbergen",
+        "name:uk": "Воробйові гори",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5591032,
+          55.7103574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/297366493",
+      "properties": {
+        "@id": "node/297366493",
+        "colour": "brown",
+        "layer": "-4",
+        "name": "Новослободская",
+        "name:be": "Новаслабодская",
+        "name:en": "Novoslobodskaya",
+        "name:ru": "Новослободская",
+        "name:uk": "Новослобідська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6020458,
+          55.7795753
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/297773322",
+      "properties": {
+        "@id": "node/297773322",
+        "colour": "lightgreen",
+        "layer": "-4",
+        "name": "Крестьянская Застава",
+        "name:be": "Сялянская Застава",
+        "name:cs": "Kresťanskaja Zastava",
+        "name:en": "Krestyanskaya Zastava",
+        "name:it": "Krest'janskaja Zastava",
+        "name:pl": "Krestjanskaja zastawa",
+        "name:pt": "Estação Krestianskaia Zastava",
+        "name:ru": "Крестьянская Застава",
+        "name:uk": "Селянська застава",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Крестьянская застава (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6675064,
+          55.7333223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/300120212",
+      "properties": {
+        "@id": "node/300120212",
+        "colour": "green",
+        "layer": "-2",
+        "name": "Красногвардейская",
+        "name:be": "Чырвонагвардзейская",
+        "name:en": "Krasnogvardeyskaya",
+        "name:ru": "Красногвардейская",
+        "name:uk": "Червоногвардійська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7445335,
+          55.6137894
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/305486163",
+      "properties": {
+        "@id": "node/305486163",
+        "colour": "green",
+        "layer": "-2",
+        "name": "Домодедовская",
+        "name:be": "Дамадзедаўская",
+        "name:en": "Domodedovskaya",
+        "name:ru": "Домодедовская",
+        "name:uk": "Домодєдовська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7186583,
+          55.6108588
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/308993125",
+      "properties": {
+        "@id": "node/308993125",
+        "alt_name:en": "Orehovo",
+        "colour": "green",
+        "layer": "-2",
+        "name": "Орехово",
+        "name:be": "Арэхава",
+        "name:en": "Orekhovo",
+        "name:ru": "Орехово",
+        "name:uk": "Оріхове",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6945563,
+          55.6133951
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/308993196",
+      "properties": {
+        "@id": "node/308993196",
+        "colour": "green",
+        "layer": "-2",
+        "name": "Царицыно",
+        "name:be": "Царыцына",
+        "name:cs": "Caricyno",
+        "name:en": "Tsaritsyno",
+        "name:it": "Caricyno",
+        "name:pl": "Caricyno",
+        "name:pt": "Estação Tsaritsyno",
+        "name:ru": "Царицыно",
+        "name:sv": "Tsaritsino",
+        "name:uk": "Царицино",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Царицыно (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.669245,
+          55.6215189
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/308993566",
+      "properties": {
+        "@id": "node/308993566",
+        "colour": "green",
+        "layer": "-2",
+        "name": "Кантемировская",
+        "name:be": "Канцеміраўская",
+        "name:en": "Kantemirovskaya",
+        "name:ru": "Кантемировская",
+        "name:uk": "Кантемирівська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6565006,
+          55.6358004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/309741697",
+      "properties": {
+        "@id": "node/309741697",
+        "colour": "gray",
+        "layer": "-2",
+        "name": "Бульвар Дмитрия Донского",
+        "name:be": "Бульвар Дзмітрыя Данскога",
+        "name:en": "Bulvar Dmitriya Donskogo",
+        "name:ru": "Бульвар Дмитрия Донского",
+        "name:uk": "Бульвар Дмитра Донського",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5768339,
+          55.56931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/309741829",
+      "properties": {
+        "@id": "node/309741829",
+        "colour": "lightblue",
+        "layer": "-2",
+        "name": "Улица Старокачаловская",
+        "name:be": "Вуліца Старакачалаўская",
+        "name:en": "Ulitsa Starokachalovskaya",
+        "name:ru": "Улица Старокачаловская",
+        "name:uk": "Вулиця Старокачалівська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5770753,
+          55.5688378
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/309744779",
+      "properties": {
+        "@id": "node/309744779",
+        "colour": "brown",
+        "layer": "-4",
+        "name": "Краснопресненская",
+        "name:be": "Чырвонапрэсненская",
+        "name:en": "Krasnopresnenskaya",
+        "name:ru": "Краснопресненская",
+        "name:uk": "Червонопресненська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5773995,
+          55.7607561
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/309745114",
+      "properties": {
+        "@id": "node/309745114",
+        "colour": "brown",
+        "layer": "-4",
+        "name": "Киевская",
+        "name:be": "Кіеўская",
+        "name:en": "Kiyevskaya",
+        "name:ru": "Киевская",
+        "name:uk": "Київська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5657211,
+          55.7444886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/309745439",
+      "properties": {
+        "@id": "node/309745439",
+        "colour": "brown",
+        "layer": "-4",
+        "name": "Парк Культуры",
+        "name:be": "Парк культуры",
+        "name:de": "Kulturpark",
+        "name:en": "Park Kultury",
+        "name:ru": "Парк Культуры",
+        "name:uk": "Парк Культури",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5914321,
+          55.7358678
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/309748905",
+      "properties": {
+        "@id": "node/309748905",
+        "colour": "violet",
+        "layer": "-2",
+        "name": "Октябрьское Поле",
+        "name:be": "Кастрычніцкае поле",
+        "name:en": "Oktyabrskoye Pole",
+        "name:ru": "Октябрьское Поле",
+        "name:uk": "Жовтневе поле",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Октябрьское поле (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4937378,
+          55.7933364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/309750154",
+      "properties": {
+        "@id": "node/309750154",
+        "colour": "violet",
+        "layer": "-2",
+        "name": "Сходненская",
+        "name:be": "Сходненская",
+        "name:en": "Skhodnenskaya",
+        "name:ru": "Сходненская",
+        "name:uk": "Сходненська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Сходненская (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4397991,
+          55.8503173
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/309752486",
+      "properties": {
+        "@id": "node/309752486",
+        "colour": "red",
+        "layer": "-4",
+        "name": "Юго-Западная",
+        "name:be": "Паўднёва-Заходняя",
+        "name:cs": "Jugo-Zapadnaja",
+        "name:en": "Yugo-Zapadnaya",
+        "name:fr": "Iougo-Zapadnaïa",
+        "name:it": "Jugo-Zapadnaja",
+        "name:ko": "유고 자파드나야 역",
+        "name:pl": "Jugo-Zapadnaja",
+        "name:pt": "Estação Iugo-Zapadnaia",
+        "name:ru": "Юго-Западная",
+        "name:sv": "Jugo-Zapadnaja",
+        "name:uk": "Південно-Західна",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Юго-Западная (станция метро, Москва)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4830219,
+          55.6636035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/309752494",
+      "properties": {
+        "@id": "node/309752494",
+        "colour": "red",
+        "layer": "-4",
+        "name": "Университет",
+        "name:be": "Універсітэт",
+        "name:en": "Universitet",
+        "name:ru": "Университет",
+        "name:uk": "Університет",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5332997,
+          55.692752
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/312814742",
+      "properties": {
+        "@id": "node/312814742",
+        "colour": "gray",
+        "layer": "-4",
+        "name": "Петровско-Разумовская",
+        "name:be": "Пятроўска-Разумоўская",
+        "name:cs": "Petrovsko-Razumovskaja",
+        "name:en": "Petrovsko-Razumovskaya",
+        "name:it": "Petrovsko-Razumovskaja",
+        "name:ko": "페트롭스코 라주몹스카야 역",
+        "name:pl": "Pietrowsko-Razumowskaja",
+        "name:pt": "Estação Petrovsko-Rasumovskoie",
+        "name:ru": "Петровско-Разумовская",
+        "name:uk": "Петровсько-Разумовська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Петровско-Разумовская (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5740878,
+          55.8346887
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/312816773",
+      "properties": {
+        "@id": "node/312816773",
+        "colour": "gray",
+        "layer": "-4",
+        "name": "Полянка",
+        "name:be": "Палянка",
+        "name:en": "Polyanka",
+        "name:ru": "Полянка",
+        "name:uk": "Полянка",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6184126,
+          55.7371794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/333159878",
+      "properties": {
+        "@id": "node/333159878",
+        "colour": "lightgreen",
+        "layer": "-2",
+        "name": "Братиславская",
+        "name:be": "Братыслаўская",
+        "name:cs": "Bratislavskaja",
+        "name:en": "Bratislavskaya",
+        "name:it": "Bratislavskaja",
+        "name:pl": "Bratisławskaja",
+        "name:pt": "Estação Bratislavskaia",
+        "name:ru": "Братиславская",
+        "name:sk": "Bratislavskaja",
+        "name:uk": "Братиславська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Братиславская (станция метро, Москва)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7505301,
+          55.6598996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/349930322",
+      "properties": {
+        "@id": "node/349930322",
+        "colour": "red",
+        "layer": "-4",
+        "name": "Проспект Вернадского",
+        "name:be": "Праспект Вярнацкага",
+        "name:en": "Prospekt Vernadskogo",
+        "name:ru": "Проспект Вернадского",
+        "name:uk": "Проспект Вернадського",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5058395,
+          55.6772029
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/362156015",
+      "properties": {
+        "@id": "node/362156015",
+        "colour": "violet",
+        "layer": "-4",
+        "name": "Пушкинская",
+        "name:be": "Пушкiнская",
+        "name:de": "Puschkinskaja",
+        "name:en": "Pushkinskaya",
+        "name:ru": "Пушкинская",
+        "name:uk": "Пушкінська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6067478,
+          55.7654227
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/493290713",
+      "properties": {
+        "@id": "node/493290713",
+        "colour": "darkgreen",
+        "layer": "-2",
+        "name": "Каширская",
+        "name:be": "Кашырская",
+        "name:en": "Kashirskaya",
+        "name:ru": "Каширская",
+        "name:uk": "Каширська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "public_transport": "stop_position",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6486178,
+          55.6552112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/493292529",
+      "properties": {
+        "@id": "node/493292529",
+        "colour": "yellow",
+        "layer": "-4",
+        "name": "Третьяковская",
+        "name:be": "Траццякоўская",
+        "name:en": "Tretyakovskaya",
+        "name:ru": "Третьяковская",
+        "name:uk": "Третяковська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6271192,
+          55.7410073
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/493293874",
+      "properties": {
+        "@id": "node/493293874",
+        "alt_name:uk": "Китай-місто",
+        "colour": "violet",
+        "layer": "-4",
+        "name": "Китай-город",
+        "name:be": "Кітай-горад",
+        "name:en": "Kitay-gorod",
+        "name:pl": "Kitajgród",
+        "name:ru": "Китай-город",
+        "name:uk": "Китай-город",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6334116,
+          55.7555854
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/596129530",
+      "properties": {
+        "@id": "node/596129530",
+        "colour": "blue",
+        "layer": "-1",
+        "name": "Волоколамская",
+        "name:be": "Валакаламская",
+        "name:en": "Volokolamskaya",
+        "name:ru": "Волоколамская",
+        "name:uk": "Волоколамська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "public_transport": "stop_position",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.3820432,
+          55.8356938
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/596129560",
+      "properties": {
+        "@id": "node/596129560",
+        "colour": "blue",
+        "name": "Митино",
+        "name:be": "Міціна",
+        "name:en": "Mitino",
+        "name:pl": "Mitino",
+        "name:ru": "Митино",
+        "name:uk": "Мітіно",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Митино (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.3621826,
+          55.8458396
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/596129789",
+      "properties": {
+        "@id": "node/596129789",
+        "colour": "blue",
+        "name": "Мякинино",
+        "name:be": "Мякініна",
+        "name:en": "Myakinino",
+        "name:ru": "Мякинино",
+        "name:uk": "М’якініно",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "public_transport": "stop_position",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.3853347,
+          55.8250915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/666528523",
+      "properties": {
+        "@id": "node/666528523",
+        "colour": "lightgreen",
+        "layer": "-4",
+        "name": "Сретенский бульвар",
+        "name:be": "Срэценскі бульвар",
+        "name:cs": "Sretěnskij Bulvar",
+        "name:en": "Sretensky Bulvar",
+        "name:es": "Sretenski Bulvar",
+        "name:it": "Sretenskij Bul'var",
+        "name:pl": "Sretenskij Bulwar",
+        "name:pt": "Estação Sretenskii Bulhvar",
+        "name:ru": "Сретенский бульвар",
+        "name:uk": "Сретенський бульвар",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Сретенский бульвар (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6398306,
+          55.7668232
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/773136965",
+      "properties": {
+        "@id": "node/773136965",
+        "alt_name:en": "Mariina Roscha",
+        "colour": "lightgreen",
+        "name": "Марьина Роща",
+        "name:be": "Мар'іна Рошча",
+        "name:bg": "Метростанция Марина Рошча",
+        "name:en": "Maryina Roshcha",
+        "name:et": "Marjina Roštša",
+        "name:fr": "Marina Rochtcha",
+        "name:it": "Mar'ina Rošča",
+        "name:pt": "Estação Mariina Roshcha",
+        "name:ru": "Марьина Роща",
+        "name:sv": "Marina Rosjtja",
+        "name:uk": "Мар’їа Роща",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "wikipedia": "ru:Марьина роща (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6161563,
+          55.7950208
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/773136972",
+      "properties": {
+        "@id": "node/773136972",
+        "colour": "lightgreen",
+        "name": "Достоевская",
+        "name:be": "Дастаеўская",
+        "name:bg": "Метростанция Достоевская",
+        "name:de": "Dostojewskaja",
+        "name:en": "Dostoyevskaya",
+        "name:et": "Dostojevskaja",
+        "name:fr": "Dostoïevskaïa",
+        "name:it": "Dostoevskaja",
+        "name:pt": "Estação Dostoievskaia",
+        "name:ru": "Достоевская",
+        "name:sv": "Dostojevskaja",
+        "name:uk": "Достоєвська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "wikipedia": "ru:Достоевская (станция метро, Москва)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6148591,
+          55.7812854
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1157975976",
+      "properties": {
+        "@id": "node/1157975976",
+        "colour": "green",
+        "layer": "-4",
+        "name": "Белорусская",
+        "name:be": "Беларуская",
+        "name:en": "Belorusskaya",
+        "name:ru": "Белорусская",
+        "name:uk": "Білоруська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5834397,
+          55.7766573
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1158396469",
+      "properties": {
+        "@id": "node/1158396469",
+        "colour": "brown",
+        "layer": "-4",
+        "name": "Белорусская",
+        "name:be": "Беларуская",
+        "name:en": "Belorusskaya",
+        "name:ru": "Белорусская",
+        "name:uk": "Білоруська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5839502,
+          55.7762009
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1191237441",
+      "properties": {
+        "@id": "node/1191237441",
+        "colour": "lightblue",
+        "name": "Кунцевская",
+        "name:be": "Кунцаўская",
+        "name:en": "Kuntsevskaya",
+        "name:ru": "Кунцевская",
+        "name:uk": "Кунцевська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "public_transport": "stop_position",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4459574,
+          55.7308185
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1198621087",
+      "properties": {
+        "@id": "node/1198621087",
+        "alt_name:en": "Park Pobedy",
+        "colour": "blue",
+        "depth": "84",
+        "layer": "-4",
+        "name": "Парк Победы",
+        "name:be": "Парк Перамогі",
+        "name:de": "Siegespark",
+        "name:en": "Victory Park",
+        "name:ru": "Парк Победы",
+        "name:uk": "Парк Перемоги",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5173974,
+          55.7365784
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1221839292",
+      "properties": {
+        "@id": "node/1221839292",
+        "colour": "orange",
+        "layer": "-2",
+        "name": "Коньково",
+        "name:be": "Канькова",
+        "name:en": "Konkovo",
+        "name:ru": "Коньково",
+        "name:uk": "Коньково",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5190729,
+          55.6330883
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1248716467",
+      "properties": {
+        "@id": "node/1248716467",
+        "layer": "-2",
+        "name": "Каширская",
+        "name:be": "Кашырская",
+        "name:en": "Kashirskaya",
+        "name:ru": "Каширская",
+        "name:uk": "Каширська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "public_transport": "stop_position",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6491378,
+          55.6549517
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1272374180",
+      "properties": {
+        "@id": "node/1272374180",
+        "colour": "green",
+        "layer": "-2",
+        "name": "Каширская",
+        "name:be": "Кашырская",
+        "name:en": "Kashirskaya",
+        "name:ru": "Каширская",
+        "name:uk": "Каширська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "public_transport": "stop_position",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6488464,
+          55.6551004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1279716959",
+      "properties": {
+        "@id": "node/1279716959",
+        "colour": "lightblue",
+        "layer": "-2",
+        "name": "Улица Старокачаловская",
+        "name:be": "Вуліца Старакачалаўская",
+        "name:en": "Ulitsa Starokachalovskaya",
+        "name:ru": "Улица Старокачаловская",
+        "name:uk": "Вулиця Старокачалівська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5763664,
+          55.5689938
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1527999919",
+      "properties": {
+        "@id": "node/1527999919",
+        "alt_name:uk": "Борисове",
+        "colour": "lightgreen",
+        "layer": "-2",
+        "name": "Борисово",
+        "name:en": "Borisovo",
+        "name:pl": "Borisowo",
+        "name:pt": "Estação Borisovo",
+        "name:ru": "Борисово",
+        "name:sv": "Borisovo",
+        "name:uk": "Борисово",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Борисово (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7433366,
+          55.6331194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1527999927",
+      "properties": {
+        "@id": "node/1527999927",
+        "alt_name:uk": "Зябликове",
+        "colour": "lightgreen",
+        "layer": "-2",
+        "name": "Зябликово",
+        "name:be": "Зяблікава",
+        "name:en": "Zyablikovo",
+        "name:pl": "Ziablikowo",
+        "name:pt": "Estação Ziablikovo",
+        "name:ru": "Зябликово",
+        "name:sv": "Ziablikovo",
+        "name:uk": "Зябликово",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Зябликово (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.745177,
+          55.6123108
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1527999934",
+      "properties": {
+        "@id": "node/1527999934",
+        "alt_name:uk": "Шипилівська",
+        "colour": "lightgreen",
+        "layer": "-2",
+        "name": "Шипиловская",
+        "name:be": "Шыпілаўская",
+        "name:en": "Shipilovskaya",
+        "name:pl": "Szypiłowskaja",
+        "name:pt": "Estação Chipilovskaia",
+        "name:ru": "Шипиловская",
+        "name:sv": "Sjipilovskaja",
+        "name:uk": "Шипиловська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Шипиловская (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.743772,
+          55.621144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1890426555",
+      "properties": {
+        "@id": "node/1890426555",
+        "colour": "yellow",
+        "layer": "-4",
+        "name": "Новокосино",
+        "name:be": "Навакосіна",
+        "name:en": "Novokosino",
+        "name:ru": "Новокосино",
+        "name:uk": "Новокосино",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.864059,
+          55.7450752
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2080924763",
+      "properties": {
+        "@id": "node/2080924763",
+        "colour": "green",
+        "layer": "-2",
+        "name": "Алма-Атинская",
+        "name:be": "Алма-Ацінская",
+        "name:en": "Alma-Atinskaya",
+        "name:ru": "Алма-Атинская",
+        "name:uk": "Алма-Атиньска",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Алма-Атинская_(станция_метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7662722,
+          55.6327785
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2086260190",
+      "properties": {
+        "@id": "node/2086260190",
+        "colour": "blue",
+        "name": "Пятницкое шоссе",
+        "name:en": "Pyatnitskoye Shosse",
+        "name:ru": "Пятницкое шоссе",
+        "name:uk": "П'ятницьке шосе",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Пятницкое_шоссе_(станция_метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.354633,
+          55.8565339
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2525101862",
+      "properties": {
+        "@id": "node/2525101862",
+        "colour": "violet",
+        "layer": "-2",
+        "name": "Жулебино",
+        "name:en": "Zhulebino",
+        "name:ru": "Жулебино",
+        "name:uk": "Жулебіно",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.8560615,
+          55.685401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2525101863",
+      "properties": {
+        "@id": "node/2525101863",
+        "colour": "violet",
+        "name": "Лермонтовский проспект",
+        "name:en": "Lermontovsky prospekt",
+        "name:ru": "Лермонтовский проспект",
+        "name:uk": "Лермонтовський проспект",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.85189,
+          55.7014427
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2591395115",
+      "properties": {
+        "@id": "node/2591395115",
+        "colour": "lightblue",
+        "layer": "-2",
+        "name": "Лесопарковая",
+        "name:en": "Lesoparkovaya",
+        "name:ru": "Лесопарковая",
+        "name:uk": "Лісопаркова",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5775017,
+          55.582095
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2591402980",
+      "properties": {
+        "@id": "node/2591402980",
+        "colour": "lightblue",
+        "layer": "-2",
+        "name": "Битцевский парк",
+        "name:en": "Bitsevskiy park",
+        "name:ru": "Битцевский парк",
+        "name:uk": "Бітцевський парк",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5559526,
+          55.6003233
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2692857848",
+      "properties": {
+        "@id": "node/2692857848",
+        "colour": "blue",
+        "layer": "-4",
+        "name": "Измайловская",
+        "name:be": "Ізмайлаўская",
+        "name:en": "Izmaylovskaya",
+        "name:ru": "Измайловская",
+        "name:uk": "Ізмайлівська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7816023,
+          55.7877328
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2692882978",
+      "properties": {
+        "@id": "node/2692882978",
+        "colour": "blue",
+        "layer": "-4",
+        "name": "Первомайская",
+        "name:be": "Першамайская",
+        "name:en": "Pervomayskaya",
+        "name:ru": "Первомайская",
+        "name:uk": "Першотравнева",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7994658,
+          55.7946664
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2692905506",
+      "properties": {
+        "@id": "node/2692905506",
+        "colour": "blue",
+        "layer": "-4",
+        "name": "Щёлковская",
+        "name:be": "Шчолкаўская",
+        "name:cs": "Ščjolkovskaja",
+        "name:en": "Schelkovskaya",
+        "name:pl": "Szczołkowskaja",
+        "name:pt": "Estação Shchiolkovskaia",
+        "name:ru": "Щёлковская",
+        "name:uk": "Щолківська",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "wikipedia": "ru:Щёлковская (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7986591,
+          55.8093302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2950850833",
+      "properties": {
+        "@id": "node/2950850833",
+        "alt_name:en": "Park Pobedy",
+        "colour": "yellow",
+        "depth": "84",
+        "layer": "-4",
+        "name": "Парк Победы",
+        "name:be": "Парк Перамогі",
+        "name:de": "Siegespark",
+        "name:en": "Victory Park",
+        "name:ru": "Парк Победы",
+        "name:uk": "Парк Перемоги",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5177569,
+          55.7361507
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3046563958",
+      "properties": {
+        "@id": "node/3046563958",
+        "colour": "violet",
+        "name": "Спартак",
+        "name:en": "Spartak",
+        "name:ru": "Спартак",
+        "name:uk": "Спартак",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "public_transport": "stop_position",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Спартак (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4356177,
+          55.8182861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3224593379",
+      "properties": {
+        "@id": "node/3224593379",
+        "colour": "red",
+        "layer": "-4",
+        "name": "Тропарёво",
+        "name:en": "Troparyovo",
+        "name:ru": "Тропарёво",
+        "name:uk": "Тропарьово",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Тропарёво (станция метро, Москва)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.472545,
+          55.6459539
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3226428878",
+      "properties": {
+        "@id": "node/3226428878",
+        "colour": "yellow",
+        "layer": "-4",
+        "name": "Деловой центр",
+        "name:en": "Delovoy Center",
+        "name:ru": "Деловой центр",
+        "name:uk": "Діловий центр",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Деловой центр (станция метро, Калининско-Солнцевская линия)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5397544,
+          55.7491646
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3706464707",
+      "properties": {
+        "@id": "node/3706464707",
+        "colour": "violet",
+        "layer": "-2",
+        "name": "Котельники",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wikipedia": "ru:Котельники (станция метро)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.8578917,
+          55.6743957
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3743138199",
+      "properties": {
+        "@id": "node/3743138199",
+        "alt_name:en": "Park Pobedy",
+        "colour": "blue",
+        "depth": "84",
+        "layer": "-4",
+        "name": "Парк Победы",
+        "name:be": "Парк Перамогі",
+        "name:de": "Siegespark",
+        "name:en": "Victory Park",
+        "name:ru": "Парк Победы",
+        "name:uk": "Парк Перемоги",
+        "network": "Московский метрополитен",
+        "operator": "ГУП «Московский метрополитен»",
+        "railway": "station",
+        "station": "subway",
+        "transport": "subway",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5173845,
+          55.7365571
+        ]
+      }
+    }
+  ]
+}
