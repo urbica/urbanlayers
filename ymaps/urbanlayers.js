@@ -199,7 +199,7 @@ var jsonData, filteredData, zonesJson, observationsJson, filteredFeatures = []; 
           balloonContent: balloonContent
           }, {
             iconLayout: 'default#image',
-            iconImageHref: 'observation2.svg',
+            iconImageHref: 'dot.svg',
             iconImageSize: [25, 22],
             iconImageOffset: [-10, -10]
           });

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title></title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='d3.min.js'></script>
+<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v2.0.0/turf.min.js'></script>
+<script src='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
+<style>
+  * { font-family: Helvetica, sans-serif, Arial; }
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+  #panel { position:absolute; top: 10px; right:10px; width: 250px; background: #fff; z-index: 777;
+    background: #fff; /* Rectangle 3: */
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.22);
+    max-height: 500px;
+    overflow-y: auto;
+  }
+  #legend {
+      font-size: 13px;
+      position: absolute; z-index: 5679; left: 50%; bottom: 20px; width: 350px; padding: 10px; text-align: center; margin-left: -175px; line-height: 20px;
+      background: #fff; /* Rectangle 3: */
+      box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.22);
+  }
+  .legend-item { display: inline; }
+  .legend-bullet { display: block; float: left; width: 16px; height: 16px; margin-right: 5px; }
+  .legend-caption { display: block; float: left; line-height: 20px; margin-right: 20px; }
+  #lfoot { background: #FF55AA; opacity: 0.8; }
+  #lbike { background: #FFAA55; opacity: 0.8; }
+  .item { padding: 5px; border-bottom: 1px solid #ccc; line-height: 28px; font-size: 15px; }
+  .caption { font-size: 13px; color: #999; display: block; }
+  .value { display: block; float: right; line-height: 28px; height: 28px; }
+
+  .total {}
+  .label { color: #fff; display: inline-block; background: rgba(0,0,0,0.7); height: 28px; width: 28px;
+           margin-left: -14px; margin-top: -14px; line-height: 24px; text-align: center; border-radius: 18px; border: 2px solid rgba(255,255,255,0.9); }
+
+
+</style>
+</head>
+<body>
+<div id='map'></div>
+<div id='panel'>Загружается..</div>
+<div id='legend'>
+  <div class='legend-item'>
+    <div class='legend-bullet' id='lfoot'></div>
+    <div class='legend-caption'>10 минут пешком</div>
+  </div>
+  <div class='legend-item'>
+    <div class='legend-bullet' id='lbike'></div>
+    <div class='legend-caption'>10 минут на велосипеде</div>
+</div>
+
+</div>
+
+
+<script>
+
+
+var data = [], dataF = [],
+    stations,
+    cnt = 0, //stations count
+    cells = [];
+
+var panel = d3.select("#panel");
+
+
+L.mapbox.accessToken = 'pk.eyJ1IjoibWluaWthcm1hIiwiYSI6IkRjTUFYdGsifQ.30RhErOKbQvLJ1kOnAl73A';
+var map = L.mapbox.map('map', 'mapbox.light')
+    .setView([54.1914511,37.6119104], 14);
+
+var grid = L.mapbox.featureLayer()
+    .on('click', function(e) {
+      getCell(e.layer.feature.properties.id)
+    })
+    .addTo(map);
+
+var areasF = L.mapbox.featureLayer().addTo(map);
+var areasB = L.mapbox.featureLayer().addTo(map);
+var routesLines = L.mapbox.featureLayer().addTo(map);
+var points = turf.featurecollection([]);
+var stationPoints = L.mapbox.featureLayer()
+    .addTo(map);
+
+var tagged;
+
+
+function updateStations() {
+
+  stations.features.forEach(function(f,i) {
+    f.properties['stationID'] = (i+1);
+    f.properties['icon'] = {
+    "className": "label", // class name to style
+    "html": (i+1), // add html content inside the marker
+    "iconSize": null // size of icon, use null to set the size in CSS
+    };
+  });
+
+//  stationPoints.setGeoJSON(stations);
+
+  stationPoints.clearLayers();
+
+  points = stations;
+
+  L.geoJson(stations, {
+	  style: function (feature) {
+	  },
+	  onEachFeature: function (feature, layer) {
+
+    layer.setIcon(L.divIcon(layer.feature.properties.icon));
+    layer.options.draggable = true;
+    layer.bindPopup(layer.feature.properties['Name']);
+    layer.on('dragend', function(e) {
+
+      var c = e.target.getLatLng();
+      stations.features.forEach(function(s) {
+        if(s.properties['stationID'] == e.target.feature.properties['stationID']) {
+          s.geometry.coordinates = [c.lng,c.lat];
+        }
+      });
+      updateStations();
+      update();
+    });
+    layer.on('click', function(e) {
+      console.log(e);
+    });
+	}
+  }).addTo(stationPoints);
+
+
+//  update();
+
+}
+
+L.mapbox.featureLayer()
+  .loadURL('stations.geojson')
+  .on('ready', function(e) {
+    stations = e.target.getGeoJSON();
+    updateStations();
+    console.log('stations loaded');
+    loadMatrix();
+
+  });
+
+
+function loadMatrix() {
+d3.tsv("matrix/bike_matrix.csv", function(d,i) {
+  //pushing the data into matrix
+  if(!data[+d.src]) { data[+d.src] = []; }
+  data[d.src][d.dst] = +d.time;
+
+  },
+   function(d){
+      console.log('matrix data imported');
+      loadMatrixFoot();
+	   }
+  );
+}
+
+
+function loadMatrixFoot() {
+d3.tsv("matrix/foot_matrix.csv", function(d,i) {
+  //pushing the data into matrix
+  if(!dataF[+d.src]) { dataF[+d.src] = []; }
+  dataF[d.src][d.dst] = +d.time;
+
+  },
+   function(d){
+      console.log('matrix data imported');
+      loadGrid();
+	   }
+  );
+}
+
+function loadGrid() {
+  L.mapbox.featureLayer()
+    .loadURL('grid.geojson')
+    .on('ready', function(e) {
+      grid = e.target.getGeoJSON();
+
+      update();
+    });
+}
+
+
+//adding event on click
+map.on('click', function(e) {
+  console.log(e);
+  stations.features.push(turf.point([e.latlng.lng,e.latlng.lat]));
+  updateStations();
+  update();
+});
+
+function update() {
+
+//  areas.setGeoJSON(turf.featurecollection([]));
+  panel.html("");
+
+  //upper panel
+  var itm = panel.append("div").attr("class", "item");
+  var value = itm.append("div").attr("class", "value");
+  itm.append("div").attr("class", "title").text("Общий охват (пешком):");
+
+
+
+  var polysFoot = turf.featurecollection([]),
+      polysBike = turf.featurecollection([]),
+      stationData = [],
+      sname = '',
+      sPoints = turf.featurecollection([]),
+      cellsFoot = [],
+      cellsBike = [],
+      cellsFootPopulation = [], cellsBikePopulation = [],
+      populationByFoot = 0, populationByBike = 0,
+      poly,spline,splineGeometry;
+
+      stations.features.forEach(function(s) {
+        console.log(s);
+        //var l = [s.geometry.coordinates[0],s.geometry.coordinates[1]];
+        //sPoints.features.push(turf.point([37.5901723,54.198154700]));
+//        sPoints.features.push(turf.point([s.geometry.coordinates[0],s.geometry.coordinates[1]]));
+      });
+
+//      sPoints = stationPoints.getGeoJSON();
+      tagged = turf.tag(stations, grid, 'id', 'id');
+
+  //    tagged = turf.featurecollection([]);
+      tagged.features.forEach(function(t) {
+
+      var src = t.properties['id'],
+        pointsFoot = turf.featurecollection([]),
+        pointsBike = turf.featurecollection([]),
+        pFoot, pBike;
+
+    stationData[src] = {
+      id: src,
+      cellsByBike: [],
+      cellsByFoot: [],
+      populationByBike: 0,
+      populationByFoot: 0
+    };
+
+    for(dst in data[src]) {
+      if(data[src][dst] <= 10) {
+
+        stationData[src].cellsByBike.push(dst);
+
+        if(!cellsBike[dst]) {
+          cellsBike[dst] = true;
+        }
+        if (grid.features[dst].properties['Population']>0) {
+          if(!cellsBikePopulation[dst]) {
+            cellsBikePopulation[dst] = grid.features[dst].properties['Population'];
+            populationByBike += grid.features[dst].properties['Population'];
+          }
+          stationData[src].populationByBike += grid.features[dst].properties['Population'];
+        }
+      }
+    }
+
+    for(dst in dataF[src]) {
+      if(dataF[src][dst] <= 10) {
+        stationData[src].cellsByFoot.push(dst);
+
+        if(!cellsFoot[dst]) { cellsFoot[dst] = true; }
+
+        if (grid.features[dst].properties['Population']>0) {
+          if(!cellsFootPopulation[dst]) {
+            cellsFootPopulation[dst] = grid.features[dst].properties['Population'];
+            populationByFoot += grid.features[dst].properties['Population'];
+          }
+          stationData[src].populationByFoot += grid.features[dst].properties['Population'];
+        }
+      }
+    }
+
+  sname = t.properties['Name'] ? t.properties['Name'] : '';
+  panel.append("div").attr("class", "item").html("<div class='value'>"+stationData[src].populationByFoot+"</div><div class='title'>Station #" + t.properties.stationID + "</div>");
+
+
+
+  });
+
+  //adding polygons
+
+  for(f in cellsFoot) {
+    polysFoot.features.push({
+      type: "Feature",
+      geometry: grid.features[f].geometry,
+      properties: {
+        population: grid.features[f].properties['Population'],
+        id: grid.features[f].properties['id'],
+        'fill-opacity': 0.6,
+        'fill': '#ff0055',
+        'stroke-width': 0
+      }
+    });
+  };
+
+  for(b in cellsBike) {
+    polysBike.features.push({
+      type: "Feature",
+      geometry: grid.features[b].geometry,
+      properties: {
+        population: grid.features[f].properties['Population'],
+        id: grid.features[f].properties['id'],
+        'fill-opacity': 0.6,
+        'fill': '#ffAA55',
+        'stroke-width': 0
+      }
+    });
+  };
+
+
+  console.log(stationData);
+  console.log('by foot: ' + populationByFoot);
+  console.log('by bike: ' + populationByBike);
+
+  value.text(populationByFoot);
+
+  areasB.setGeoJSON(polysBike);
+  areasF.setGeoJSON(polysFoot);
+
+}
+
+
+
+</script>
+</body>
+</html>

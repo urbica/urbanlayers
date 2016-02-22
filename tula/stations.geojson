@@ -1,0 +1,17 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "Name": "Administration", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": -1, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 37.6138347, 54.1932511, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Sovetskaya", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": -1, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 37.6247299, 54.190406, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Lenina", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": -1, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 37.6114583, 54.1881084, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Smirnova", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": -1, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 37.6215971, 54.1851483, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Kaminskogo", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": -1, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 37.6046669, 54.1922201, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Frunze", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": -1, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 37.5919104, 54.1914511, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Krasnoarmeiski", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": -1, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 37.5901723, 54.198154700000011, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Vokzal", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": -1, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 37.5792772, 54.1991651, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Komintern", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": -1, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 37.5940454, 54.201051, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Leiteizena", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": -1, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 37.6013947, 54.1971944, 0.0 ] } }
+]
+}
