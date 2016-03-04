@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<title>bike stations</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<style>
+  #content { background: #000; width: 3000px; height: 1000px; }
+
+  #tooltip {
+  	font-size: 24px;
+  	color: #fff;
+  	font-family: Helvetica, Arial, Sans-Serif;
+  	background: rgba(30,30,30,0.5);
+  	color: #f0f0f0;
+  	padding: 5px;
+  	max-width: 250px;
+  	font-size: 12px;
+  	position: absolute;
+  	z-index: 100666;
+  }
+
+  #panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1010;
+    width: 120px;
+    display: block;
+    height: 100%;
+    overflow-y: auto;
+
+  }
+
+  #header {
+    position: absolute;
+    left: 100px;
+    top: 50px;
+    z-index: 1010;
+    width: 120px;
+    color: #fff;
+    font-size: 24px;
+    display: block;
+  }
+
+  .item {
+    background: #333;
+    margin: 5px;
+    padding: 2px;
+    color: #ddd;
+    display: inline-block;
+        cursor: pointer;
+  }
+
+</style>
+</head>
+<body>
+<div id="header"></div>
+<div id="panel"></div>
+<div id="tooltip"></div>
+<div id="content"></div>
+<script src="d3.min.js"></script>
+
+<script>
+
+var data = [], dataDiff = [], dataOut = [], dataIn = [];
+var xstep = 8;
+var xFormat = d3.time.format("X%Y.%m.%d.%H.%M.%S");
+var format = d3.time.format("%Y-%m-%d %H:%M:%S");
+var startTime = format.parse("2015-10-08 00:00:00"),
+    startTimeMs = startTime.getTime();
+
+var tooltip = d3.select("#tooltip");
+var panel = d3.select("#panel");
+var header = d3.select("#header");
+
+//id,station_id,status,available_bike_count,available_dock_count,created_at,station_summary_id
+
+var svg = d3.select("#content").append("svg")
+    .attr("width", 3000)
+    .attr("height", 1000);
+
+//setting the area
+var rect = svg.append("svg:g")
+	.attr("width", 3000)
+	.attr("height", 1000)
+	.attr("id", "rect");
+
+var circles = svg.append("svg:g")
+  	.attr("width", 3000)
+  	.attr("height", 1000)
+  	.attr("id", "circles");
+
+var line = d3.svg.line()
+      .x(function(d,i) { return i*xstep; })
+      .y(function(d,i) { return (300 - d*xstep); })
+      .interpolate("linear");
+
+function getX(dt) {
+  var x = (dt.getTime() - startTimeMs)/(1000*60);
+  return x;
+}
+
+function stroke(s) {
+  var r = Math.random()*360;
+  //return d3.hsl((i = (r*3) % 360), 1, .5);
+//  console.log(s);
+//  console.log(d3.hsl(s/500,0.5,0.5));
+  return d3.hsl((s/500),0.5,0.5);
+}
+
+function drawGraph(data,sid,stroke,opacity) {
+
+  rect.append("svg:path")
+    .attr("fill", "none")
+    .style("stroke", stroke)
+    .style("opacity", opacity)
+    .style("stroke-width", 1)
+    .attr("id", "s"+sid)
+    .attr("d", function() {
+    return line(data) })
+    .on("mouseover", function(e) {
+      console.log('station: ' + sid);
+     d3.select("#s"+sid).style("stroke-width", 4).style("opacity", 0.8).style("stroke", "#fff");
+    })
+    .on("mouseout", function() {
+      d3.select("#s"+sid).style("stroke-width", 1).style("opacity", opacity).style("stroke", stroke);
+    });
+
+
+  circles.selectAll("#circles")
+    .data(data)
+    .enter()
+    .append("circle", "circles")
+    .attr("cx", function(d,i) { return i*xstep; })
+    .attr("cy", function(d) { return (300 - d*xstep); })
+    .attr("fill", stroke)
+    .attr("r", 2)
+    .style("opacity", 0.5)
+    .style("stroke-width", 0)
+    .on("mouseover", function(d) {
+/*            tooltip.html('station: ' + d.station + '<br/>time: ' + d.created + '</br>' + 'bikes: ' + d.bikes + ' offset: ' + d.offsetBikes)
+                .style("opacity", .9)
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+                console.log(d);
+                */
+            })
+    .on("mouseout", function(d) {
+//            tooltip.style("opacity", 0);
+       });
+
+
+
+  }
+
+function getNormalized() {
+  rect.text("");
+  circles.text("");
+  d3.csv("Normalized/newdata.csv", function(csv) {
+      //console.log(csv);
+    csv.forEach(function(r) {
+      data[r.sid] = []; //setting array
+      for(k in r) {
+        if(k !== 'sid') {
+          data[r.sid].push(r[k]);
+        }
+      }
+    });
+    getDiff();
+  });
+}
+
+
+
+function getDiff() {
+  d3.csv("Normalized/diff.csv", function(csvDiff) {
+    //console.log(csv);
+    csvDiff.forEach(function(r) {
+      dataDiff[r.sid] = []; //setting array
+      for(k in r) {
+        if(k !== 'sid') {
+          dataDiff[r.sid].push(r[k]);
+        }
+      }
+    });
+    getOutgoing();
+  });
+}
+
+function getOutgoing() {
+  d3.csv("Normalized/outgoing.csv", function(csv) {
+    //console.log(csv);
+    csv.forEach(function(r) {
+      dataOut[r.sid] = []; //setting array
+      for(k in r) {
+        if(k !== 'sid') {
+          dataOut[r.sid].push(r[k]);
+        }
+      }
+    });
+    getIncoming();
+  });
+}
+
+function getIncoming() {
+  d3.csv("Normalized/outgoing.csv", function(csv) {
+    //console.log(csv);
+    csv.forEach(function(r) {
+      dataIn[r.sid] = []; //setting array
+      for(k in r) {
+        if(k !== 'sid') {
+          dataIn[r.sid].push(r[k]);
+        }
+      }
+    });
+    getPanel();
+  });
+}
+
+
+//start
+getNormalized();
+
+function getPanel() {
+  panel.text("");
+  for(k in data) {
+    panel.append("div")
+      .text(k)
+      .attr("class", "item")
+      .attr("id", k)
+      .on("click", function(e) {
+        var h = d3.select(this).attr("id");
+        //console.log(e.target.attr("id"));
+        console.log(h);
+        draw(h);
+      });
+
+  }
+
+}
+
+function draw(i) {
+
+rect.text("");
+circles.text("");
+header.text(i);
+
+drawGraph(data[i],i,"#F5A623",0.5);
+drawGraph(dataDiff[i],i,"#4A90E2",0.5);
+drawGraph(dataOut[i],i,"#50E3C2",0.5);
+drawGraph(dataOut[i],i,"#C81E17",0.3);
+
+//for(k in data) {
+//      drawGraph(data[k],k,"#F5A623",0.1);
+//      drawGraph(dataDiff[k],k,"#4A90E2",0.1);
+//}
+}
+
+</script>
+</body>
+</html>
