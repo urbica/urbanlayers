@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Load GeoJSON from a URL</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='d3.min.js'></script>
+<script src='turf.min.js'></script>
+<script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
+<style>
+  * { font-family: Arial, sans-serif; }
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+  #legend { z-index: 101010; padding: 10px; position: absolute; text-align: center;
+    color: #eee; bottom: 20px; left: 50%; margin-left: -150px; width: 300px; background: rgba(0,0,0,0.75); }
+  #out { background: red; }
+  #merged { background: purple; }
+  #in { background: blue; }
+
+  .items { text-align: center; }
+  .item { display: inline-block; }
+  .bullet { display: inline-block; margin: 3px 3px 0px 10px;  width: 10px; height: 10px; border-radius: 7px; }
+  .label { display: inline-block; }
+  .caption { line-height: 20px; text-align: center; }
+
+
+</style>
+</head>
+<body>
+<div id='header'></div>
+
+<!--
+<div id='legend'>
+  <div class='items'>
+    <div class='item'><div class='bullet' id='out'></div><div class='label'>out</div></div>
+    <div class='item'><div class='bullet' id='merged'></div><div class='label'>merged</div></div>
+    <div class='item'><div class='bullet' id='in'></div><div class='label'>in</div></div>
+  </div>
+  <div class='caption'>August 18 20:00 - August 19 08:00 (2014)</div>
+  </div>
+-->
+
+<div id='map'></div>
+
+<script>
+L.mapbox.accessToken = 'pk.eyJ1IjoibWluaWthcm1hIiwiYSI6IkRjTUFYdGsifQ.30RhErOKbQvLJ1kOnAl73A';
+var map = L.mapbox.map('map', 'mapbox.dark')
+    .setView([40.706,-74.004], 12);
+
+
+//var style = {
+//      'marker-color': '#ff7800',
+//      'marker-symbol': 'library'
+//    };
+
+
+//end_lat: "40.751575"
+//end_lon: "-73.99419"
+//id: "883"
+//start_address: "E 16 St & Irving Pl"
+//start_id: "475"
+//start_lat: "40.73524276"
+//start_lon: "-73.98758561"
+
+
+var trips = L.mapbox.featureLayer().addTo(map);
+var balancing = L.mapbox.featureLayer().addTo(map);
+var circles = L.mapbox.featureLayer().addTo(map);
+
+L.mapbox.featureLayer()
+  .loadURL('stations.geojson')
+  .on('ready', function(e) {
+    var source = e.target.getGeoJSON();
+
+    L.geoJson(source, {
+      pointToLayer: function(feature,latlon) {
+        return L.circleMarker(latlon, { radius: 5, fillColor: '#c0c0c0', stroke: false, fillOpacity: 0.5 })
+      }
+    })
+    .addTo(circles);
+
+  });
+
+  L.mapbox.featureLayer()
+    .loadURL('trips.geojson')
+    .on('ready', function(e) {
+      var source = e.target.getGeoJSON();
+
+      source.features.forEach(function(f) {
+        f.properties['color'] = 'blue';
+        f.properties['opacity'] = f.properties['count']/700;
+        f.properties['weight'] = f.properties['count']/100;
+      });
+
+      L.geoJson(source, {
+        //pointToLayer: L.mapbox.marker.style,
+        onEachFeature: function(feature, layer) {
+              layer.bindPopup(feature.properties.start_id + ' → ' + feature.properties.end_id + ' : ' + feature.properties.count);
+        },
+        style: function(feature) { return feature.properties; }
+      })
+      .addTo(balancing);
+    });
+
+
+      L.mapbox.featureLayer()
+        .loadURL('balancing.geojson')
+        .on('ready', function(e) {
+          var source = e.target.getGeoJSON();
+
+          source.features.forEach(function(f) {
+            f.properties['color'] = 'red';
+            f.properties['opacity'] = f.properties['count']/700;
+            f.properties['weight'] = f.properties['count']/100;
+          });
+
+          L.geoJson(source, {
+            //pointToLayer: L.mapbox.marker.style,
+            onEachFeature: function(feature, layer) {
+              layer.bindPopup(feature.properties.start_id + ' → ' + feature.properties.end_id + ' : ' + feature.properties.count);
+            },
+            style: function(feature) { return feature.properties; }
+          })
+          .addTo(balancing);
+        });
+
+
+
+</script>
+</body>
+</html>
