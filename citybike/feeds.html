@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<title>bike stations</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<style>
+  #content { background: #000; width: 3000px; height: 1000px; }
+
+  #tooltip {
+  	font-size: 24px;
+  	color: #fff;
+  	font-family: Helvetica, Arial, Sans-Serif;
+  	background: rgba(30,30,30,0.5);
+  	color: #f0f0f0;
+  	padding: 5px;
+  	max-width: 250px;
+  	font-size: 12px;
+  	position: absolute;
+  	z-index: 100666;
+  }
+
+  #panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1010;
+    width: 120px;
+    display: block;
+    height: 100%;
+    overflow-y: auto;
+
+  }
+
+  #header {
+    position: absolute;
+    left: 100px;
+    top: 50px;
+    z-index: 1010;
+    width: 120px;
+    color: #fff;
+    font-size: 24px;
+    display: block;
+  }
+
+  .item {
+    background: #333;
+    margin: 5px;
+    padding: 2px;
+    color: #ddd;
+    display: inline-block;
+        cursor: pointer;
+  }
+
+</style>
+</head>
+<body>
+<div id="header"></div>
+<div id="panel"></div>
+<div id="tooltip"></div>
+<div id="content"></div>
+<script src="d3.min.js"></script>
+
+<script>
+
+var heydt_data = [], openbus_data = [], normalized_data = [];
+var xstep = 8;
+var format = d3.time.format("%Y-%m-%d %H:%M:%S");
+var xformat = d3.time.format("X%Y.%m.%d.%H.%M.%S");
+var timeformat = d3.time.format("%H:%M");
+var startTime = format.parse("2015-10-08 00:00:00"),
+    startTimeMs = startTime.getTime();
+
+var tooltip = d3.select("#tooltip");
+var panel = d3.select("#panel");
+var header = d3.select("#header");
+
+//id,station_id,status,available_bike_count,available_dock_count,created_at,station_summary_id
+
+var svg = d3.select("#content").append("svg")
+    .attr("width", 3000)
+    .attr("height", 1000);
+
+//setting the area
+var rect = svg.append("svg:g")
+	.attr("width", 3000)
+	.attr("height", 1000)
+	.attr("id", "rect");
+
+var circles = svg.append("svg:g")
+  	.attr("width", 3000)
+  	.attr("height", 1000)
+  	.attr("id", "circles");
+
+var line = d3.svg.line()
+      .x(function(d,i) {
+        return d[0]/1.5; })
+      .y(function(d,i) { return (300 - d[1]*5); })
+      .interpolate("linear");
+
+function getX(n) {
+  if(n) { return (n.getTime() - startTimeMs)/(1000*60); }
+    else {
+      return 0;
+    }
+}
+
+function stroke(s) {
+  var r = Math.random()*360;
+  //return d3.hsl((i = (r*3) % 360), 1, .5);
+//  console.log(s);
+//  console.log(d3.hsl(s/500,0.5,0.5));
+  return d3.hsl((s/500),0.5,0.5);
+}
+
+function drawGraph(data,sid,stroke,opacity) {
+  rect.append("svg:path")
+    .attr("fill", "none")
+    .style("stroke", stroke)
+    .style("opacity", opacity)
+    .style("stroke-width", 1)
+    .attr("id", "s"+sid)
+    .attr("d", function() {
+    return line(data) })
+    .on("mouseover", function(e) {
+      console.log('station: ' + sid);
+     d3.select("#s"+sid).style("stroke-width", 4).style("opacity", 0.8).style("stroke", "#fff");
+    })
+    .on("mouseout", function() {
+      d3.select("#s"+sid).style("stroke-width", 1).style("opacity", opacity).style("stroke", stroke);
+    });
+
+
+  circles.selectAll("#circles")
+    .data(data)
+    .enter()
+    .append("circle", "circles")
+    .attr("cx", function(d,i) { return d[0]/1.5; })
+    .attr("cy", function(d) { return (300 - d[1]*5); })
+    .attr("fill", stroke)
+    .attr("r", 3)
+    .style("opacity", 0.5)
+    .style("stroke-width", 0)
+    .on("mouseover", function(d) {
+          tooltip.html('bikes: ' + d[1] + '<br/>time: ' + timeformat(d[2]))
+                .style("opacity", .9)
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+                console.log(d);
+
+            })
+    .on("mouseout", function(d) {
+//            tooltip.style("opacity", 0);
+       });
+
+
+
+  }
+
+
+function heydt_matrix() {
+    rect.text("");
+    circles.text("");
+    d3.csv("feeds/heydt_matrix.csv", function(csv) {
+        //console.log(csv);
+      csv.forEach(function(r) {
+        heydt_data[r.sid] = []; //setting array
+        for(k in r) {
+          if(k !== 'sid' && k !== 'id') {
+//            console.log(format.parse(k));
+            heydt_data[r.sid].push([+getX(format.parse(k)),+r[k],format.parse(k)]);
+          }
+        }
+      });
+      //console.log(heydt_data);
+      normalized();
+    });
+  }
+
+
+  function normalized() {
+      rect.text("");
+      circles.text("");
+      d3.csv("feeds/normalized.csv", function(csv) {
+          //console.log(csv);
+        csv.forEach(function(r) {
+
+          normalized_data[r.sid] = []; //setting array
+          console.log(r);
+          for(k in r) {
+            if(k !== 'sid' && k !== 'id') {
+  //            console.log(format.parse(k));
+              normalized_data[r.sid].push([+getX(xformat.parse(k)),+r[k],xformat.parse(k)]);
+            }
+          }
+        });
+        //console.log(normalized_data);
+        openbus_matrix();
+      });
+    }
+
+  function openbus_matrix() {
+      rect.text("");
+      circles.text("");
+      d3.csv("feeds/openbus_matrix.csv", function(csv) {
+          //console.log(csv);
+        csv.forEach(function(r) {
+          openbus_data[r.sid] = []; //setting array
+          for(k in r) {
+            if(k !== 'sid' && k !== 'id') {
+  //            console.log(format.parse(k));
+              openbus_data[r.sid].push([+getX(format.parse(k)),+r[k],format.parse(k)]);
+            }
+          }
+        });
+        //console.log(openbus_data);
+        getPanel();
+      });
+    }
+
+
+//start
+//getNormalized();
+heydt_matrix();
+
+function getPanel() {
+
+  //first draw
+  //draw(116);
+
+  console.log('s');
+  panel.text("");
+  //console.log(heydt_data);
+  for(k in heydt_data) {
+    panel.append("div")
+      .text(k)
+      .attr("class", "item")
+      .attr("id", k)
+      .on("click", function(e) {
+        var h = d3.select(this).attr("id");
+        //console.log(e.target.attr("id"));
+        console.log(h);
+        draw(h);
+      });
+
+  }
+
+}
+
+function draw(i) {
+
+rect.text("");
+circles.text("");
+header.text(i);
+
+drawGraph(heydt_data[i],i,"#F5A623",0.5);
+drawGraph(openbus_data[i],i,"#50E3C2",0.5);
+drawGraph(normalized_data[i],i,"#FF53C2",0.5);
+
+//for(k in data) {
+//drawGraph(heydt_data[k],k,"#F5A623",0.5);
+//drawGraph(heydt_data[k],k,"#50E3C2",0.5);
+//}
+}
+
+</script>
+</body>
+</html>
