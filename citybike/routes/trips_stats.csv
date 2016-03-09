@@ -1,0 +1,10 @@
+												
+trips												
+total	duration	mondays	tuesdays	wednesdays	thursdays	fridays	saturdays	sundays	night	morning	day	evening
+9937969	968	1473986	1502117	1587106	1544714	1499409	1169043	1161594	271292	3004835	3964166	2697676
+		0.15	0.15	0.16	0.16	0.15	0.12	0.12	0.03	0.3	0.4	0.27
+												
+balanced												
+total	gap	mondays	tuesdays	wednesdays	thursdays	fridays	saturdays	sundays	night	morning	day	evening
+1288364	8.84	179655	191174	199643	197186	186346	169363	164997	335817	282534	349879	320134
+		0.14	0.15	0.15	0.15	0.14	0.13	0.13	0.26	0.22	0.27	0.25
