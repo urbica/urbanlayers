@@ -1,0 +1,82 @@
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Urban data layers</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src ='varshava.js'></script>
+<link href='urbanlayers.css' rel='stylesheet' />
+<script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-heat/v0.1.3/leaflet-heat.js'></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/turf/v2.0.2/turf.min.js'></script>
+
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+</head>
+<body>
+<div id='map'></div>
+<!-- <div id='menu'></div> -->
+<!-- <div id='modes'></div> -->
+<!-- <div id='locations'></div> -->
+
+
+<script>
+
+//var start = [37.771247, 55.726543]; //восход
+//var start = [37.500531,55.820162]; //варшава
+
+//base config statements
+var geojsonData,
+    currentLayer,
+    currentModeId = 'markers';
+
+var locations = [
+    { name: 'Варшава', latLng: [55.820162, 37.500531] },
+    { name: 'Восход', latLng: [55.726543, 37.771247] }
+]
+
+var layersMenu = d3.select("#menu"),
+    modesMenu = d3.select("#modes"),
+    locationsMenu = d3.select("#locations");
+//37.569/55.753/10
+//map initialisation
+L.mapbox.accessToken = 'pk.eyJ1IjoibWluaWthcm1hIiwiYSI6IkRjTUFYdGsifQ.30RhErOKbQvLJ1kOnAl73A';
+  var map = L.mapbox.map('map', 'mapbox.light')
+    .setView([55.753,37.569], 10);
+
+//L.mapbox.tileLayer('minikarma.89f1804e').addTo(map);
+
+var clusterGroup = new L.MarkerClusterGroup().addTo(map);
+  //map.addLayer(clusterGroup);
+
+  var gridLayer = L.mapbox.featureLayer().addTo(map);
+  var circlesLayer = L.mapbox.featureLayer().addTo(map);
+  var clusterLayer = L.mapbox.featureLayer().addTo(map);
+  var heatFeatureLayer = L.mapbox.featureLayer().addTo(map);
+  var markersLayer = L.mapbox.featureLayer().addTo(map);
+  var heatMap;
+
+
+    d3.json('data/cinema_points.geojson', function(collection) {
+          collection.features.forEach(function(feature) {
+            feature.properties['marker-symbol'] = 'cinema';
+            feature.properties['marker-color'] = '#00aacc';
+            feature.properties['marker-size'] = 'small';
+          });
+
+          L.geoJson(collection, {
+            pointToLayer: L.mapbox.marker.style,
+            onEachFeature: function (feature, layer) {
+              layer.bindPopup(feature.properties.name);
+            }
+          })
+          .addTo(map);
+  });
+
+</script>
+</body>
+</html>
