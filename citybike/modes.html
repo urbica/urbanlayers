@@ -9,7 +9,7 @@
 <script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
 <style>
-  * { font-family: Arial, sans-serif; }
+  * { font-family: Arial, sans-serif; font-size: 12px;}
   body { margin:0; padding:0; }
   #map { position: absolute; top:0; bottom:0; width:100%; }
   #legend { z-index: 101010; padding: 10px; position: absolute; text-align: center;
@@ -21,7 +21,7 @@
   .label { display: inline-block; }
   .caption { line-height: 20px; text-align: center; }
   #modes { position: absolute; display: block; z-index: 101010; right: 0; top: 0; background: rgba(0, 0, 0, 0.5); }
-  #modes div { display: inline-block; height: 30px; line-height: 30px; padding: 5px; cursor: pointer; color: #fff;  }
+  #modes div { font-size: 15px; display: inline-block; height: 30px; line-height: 30px; padding: 5px; cursor: pointer; color: #fff;  }
   .mode {  }
   .mode-selected { background: rgba(0,200,200,0.7);  }
 
@@ -41,7 +41,7 @@
     <div class='item'><div class='bullet' style='background: #f7f7f7;'></div><div class='label'>Thursday</div></div>
     <div class='item'><div class='bullet' style='background: #998ec3;'></div><div class='label'>Friday</div></div>
     <div class='item'><div class='bullet' style='background: #5e3c99;'></div><div class='label'>Saturday</div></div>
-    <div class='item'><div class='bullet' style='background: #5e3c99;'></div><div class='label'>Sunday</div></div>
+    <div class='item'><div class='bullet' style='background: #5e3c99;'></div><div class='label'>Sunday</div></div><br/>
     <div class='item'><div class='bullet' style='background: #5e3c99;'></div><div class='label'>Night</div></div>
     <div class='item'><div class='bullet' style='background: #fdb863;'></div><div class='label'>Morning</div></div>
     <div class='item'><div class='bullet' style='background: #e66101;'></div><div class='label'>Day</div></div>
@@ -58,7 +58,7 @@
 
 
 var colors = {
-  total: '#000',
+  total: '#f0f0f0',
   mondays: '#b35806',
   tuesdays: '#f1a340',
   wednesdays: '#fee0b6',
@@ -74,7 +74,7 @@ var colors = {
 
 days = [ 'mondays', 'tuesdays', 'wednesdays', 'thursdays', 'fridays', 'saturdays', 'sundays']
 times = ['night', 'morning', 'day', 'evening'];
-var modes = ['total', 'trips-days','trips-time','balancing-days','balancing-time'];
+var modes = ['total-trips', 'total-balanced', 'trips-days', 'balancing-days','trips-time', 'balancing-time'];
 
 var m = 'total';
 var modesPanel = d3.select("#modes");
@@ -139,7 +139,8 @@ function getMode(mode) {
   var data, prms = [];
   var x = 1;
 
-  if(mode == 'total') { data = tripsData; prms = days; x = 1;  }
+  if(mode == 'total-trips') { data = tripsData; prms = ['total']; x = 0.3;  }
+  if(mode == 'total-balanced') { data = balancedData; prms = ['total']; x = 0.3;  }
   if(mode == 'trips-days') { data = tripsData; prms = days;  x = 0.5; }
   if(mode == 'trips-time') { data = tripsData; prms = times; x = 0.5;}
   if(mode == 'balancing-days') { data = balancedData; prms = days; }
