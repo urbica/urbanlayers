@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Load GeoJSON from a URL</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='d3.min.js'></script>
+<!-- <script src='turf.min.js'></script> -->
+<script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
+<style>
+  * { font-family: Arial, sans-serif; }
+  body { margin:0; padding:0; }
+  #map { position: absolute; top:0; bottom:0; width:100%; }
+  #legend { z-index: 101010; padding: 10px; position: absolute; text-align: center;
+    color: #eee; bottom: 20px; left: 50%; margin-left: -150px; width: 300px; background: rgba(0,0,0,0.75); }
+
+  .items { text-align: center; }
+  .item { display: inline-block; }
+  .bullet { display: inline-block; margin: 3px 3px 0px 10px;  width: 10px; height: 10px; border-radius: 7px; }
+  .label { display: inline-block; }
+  .caption { line-height: 20px; text-align: center; }
+  #modes { position: absolute; display: block; z-index: 101010; right: 0; top: 0; background: rgba(0, 0, 0, 0.5); }
+  #modes div { display: inline-block; height: 30px; line-height: 30px; padding: 5px; cursor: pointer; color: #fff;  }
+  .mode {  }
+  .mode-selected { background: rgba(0,200,200,0.7);  }
+
+
+
+</style>
+</head>
+<body>
+  <div id='modes'></div>
+<div id='header'></div>
+
+<div id='legend'>
+  <div class='items'>
+    <div class='item'><div class='bullet' style='background: #b35806;'></div><div class='label'>Monday</div></div>
+    <div class='item'><div class='bullet' style='background: #f1a340;'></div><div class='label'>Tuesday</div></div>
+    <div class='item'><div class='bullet' style='background: #fee0b6;'></div><div class='label'>Wednesday</div></div>
+    <div class='item'><div class='bullet' style='background: #f7f7f7;'></div><div class='label'>Thursday</div></div>
+    <div class='item'><div class='bullet' style='background: #998ec3;'></div><div class='label'>Friday</div></div>
+    <div class='item'><div class='bullet' style='background: #5e3c99;'></div><div class='label'>Saturday</div></div>
+    <div class='item'><div class='bullet' style='background: #5e3c99;'></div><div class='label'>Sunday</div></div>
+    <div class='item'><div class='bullet' style='background: #5e3c99;'></div><div class='label'>Night</div></div>
+    <div class='item'><div class='bullet' style='background: #fdb863;'></div><div class='label'>Morning</div></div>
+    <div class='item'><div class='bullet' style='background: #e66101;'></div><div class='label'>Day</div></div>
+<div class='item'><div class='bullet' style='background: #b2abd2;'></div><div class='label'>Evening</div></div>
+  </div>
+</div>
+
+<div id='modes'></div>
+<div id='map'></div>
+
+<script>
+
+
+
+
+var colors = {
+  total: '#000',
+  mondays: '#b35806',
+  tuesdays: '#f1a340',
+  wednesdays: '#fee0b6',
+  thursdays: '#f7f7f7',
+  fridays: '#998ec3',
+  saturdays: '#542788',
+  sundays: '#542788',
+  night: '#5e3c99',
+  morning: '#fdb863',
+  day: '#e66101',
+  evening: '#b2abd2'
+}
+
+days = [ 'mondays', 'tuesdays', 'wednesdays', 'thursdays', 'fridays', 'saturdays', 'sundays']
+times = ['night', 'morning', 'day', 'evening'];
+var modes = ['total', 'trips-days','trips-time','balancing-days','balancing-time'];
+
+var m = 'total';
+var modesPanel = d3.select("#modes");
+
+modes.forEach(function (md) {
+  modesPanel.append("div")
+    .attr("class", "mode")
+    .attr("id", function() { return md; })
+    .on("click", function() {
+      getMode(d3.select(this).attr("id"));
+      //console.log();
+    })
+    .text(md);
+});
+
+L.mapbox.accessToken = 'pk.eyJ1IjoibWluaWthcm1hIiwiYSI6IkRjTUFYdGsifQ.30RhErOKbQvLJ1kOnAl73A';
+var map = L.mapbox.map('map', 'mapbox.dark')
+    .setView([40.706,-74.004], 12);
+
+var tripsData, balancingData;
+
+var trips = L.mapbox.featureLayer().addTo(map),
+    balanced = L.mapbox.featureLayer().addTo(map),
+    circles = L.mapbox.featureLayer();//.addTo(map);
+
+L.mapbox.featureLayer()
+  .loadURL('stations.geojson')
+  .on('ready', function(e) {
+    var source = e.target.getGeoJSON();
+    L.geoJson(source, {
+      pointToLayer: function(feature,latlon) {
+        return L.circleMarker(latlon, { radius: 5, fillColor: '#c0c0c0', stroke: false, fillOpacity: 0.5 })
+      }
+    })
+    .addTo(circles);
+  });
+
+  L.mapbox.featureLayer()
+    .loadURL('routes/trips.geojson')
+    .on('ready', function(e) {
+      tripsData = e.target.getGeoJSON();
+
+      L.mapbox.featureLayer()
+        .loadURL('routes/balanced.geojson')
+        .on('ready', function(e) {
+          balancedData = e.target.getGeoJSON();
+
+          //id done
+          getMode(m);
+
+        });
+    });
+
+function getMode(mode) {
+  //console.log(mode);
+  modes.forEach(function(md) { d3.select("#"+md).attr("class","mode"); });
+  d3.select("#"+mode).attr("class","mode-selected");
+
+  trips.clearLayers();
+
+  var c = '#333';
+  var data, prms = [];
+  var x = 1;
+
+  if(mode == 'total') { data = tripsData; prms = days; x = 1;  }
+  if(mode == 'trips-days') { data = tripsData; prms = days;  x = 0.5; }
+  if(mode == 'trips-time') { data = tripsData; prms = times; x = 0.5;}
+  if(mode == 'balancing-days') { data = balancedData; prms = days; }
+  if(mode == 'balancing-time') { data = balancedData; prms = times; }
+
+  data.features.forEach(function(f) {
+    var v = 0;
+    prms.forEach(function(d) {
+      if(f.properties[d] >= v) {
+        v = f.properties[d];
+        f.properties['color'] = colors[d];
+        f.properties['opacity'] = x*0.5;
+        f.properties['weight'] = x*Math.sqrt(f.properties[d])/10;
+      }
+    });
+  });
+
+  L.geoJson(data, {
+    //pointToLayer: L.mapbox.marker.style,
+    onEachFeature: function(feature, layer) {
+          layer.on('click', function() { console.log(feature.properties); });
+          layer.bindPopup(feature.properties.start_id + ' → ' + feature.properties.end_id + ' : ' + feature.properties.count);
+    },
+    style: function(feature) { return feature.properties; }
+  })
+  .addTo(trips);
+
+  m = mode;
+
+}
+
+</script>
+</body>
+</html>
