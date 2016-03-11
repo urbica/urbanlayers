@@ -93,6 +93,14 @@ function getMode(mode) {
 
       var v1,v2;
 
+      console.log(feature);
+
+      var popup = 'Station: ' + feature.properties.citibike_id + ' ' + feature.properties.label
+                  + 'Trips Out: ' + feature.properties.outgoing_trips + '<br/>'
+                  + 'Trips In: ' + feature.properties.incoming_trips + '<br/>'
+                  + 'Trips In: ' + feature.properties.incoming_trips + '<br/>'
+                  + 'Trips In: ' + feature.properties.incoming_trips + '<br/>';
+
       if(mode == 'tripsIn-tripsOut') {
         v1 = feature.properties.incoming_trips;
         v2 = feature.properties.outgoing_trips;
@@ -131,7 +139,9 @@ function getMode(mode) {
                 //  { name: 'muni', value: feature.properties.muni, style: { fillStyle: 'rgba(215,53,53,.9)', strokeStyle: 'rgba(215,53,53,.9)', lineWidth: 1 }  }
               ]
           }
-      ).addTo(stations);
+      )
+      .bindPopup(popup)
+      .addTo(stations);
 
       var label = L.divIcon({
         className: 'divIcon',
@@ -139,7 +149,9 @@ function getMode(mode) {
         html: percentage
       });
 
-      L.marker([feature.geometry.coordinates[1],feature.geometry.coordinates[0]],{icon: label}).addTo(stationsLabels);
+      L.marker([feature.geometry.coordinates[1],feature.geometry.coordinates[0]],{icon: label})
+        .bindPopup(popup)
+        .addTo(stationsLabels);
 
 
     }
