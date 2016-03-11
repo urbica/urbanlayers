@@ -98,8 +98,8 @@ function getMode(mode) {
       var popup = 'Station: ' + feature.properties.citibike_id + ' ' + feature.properties.label
                   + 'Trips Out: ' + feature.properties.outgoing_trips + '<br/>'
                   + 'Trips In: ' + feature.properties.incoming_trips + '<br/>'
-                  + 'Trips In: ' + feature.properties.incoming_trips + '<br/>'
-                  + 'Trips In: ' + feature.properties.incoming_trips + '<br/>';
+                  + 'Trips In: ' + feature.properties.incoming_balancing + '<br/>'
+                  + 'Trips In: ' + feature.properties.outgoing_balancing + '<br/>';
 
       if(mode == 'tripsIn-tripsOut') {
         v1 = feature.properties.incoming_trips;
