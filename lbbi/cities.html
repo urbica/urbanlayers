@@ -3,19 +3,26 @@
 <head>
     <title>msp</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="jquery.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="d3.slider.css" />
+
     <link rel="stylesheet" href="leaflet/leaflet.css" />
     <link rel="stylesheet" href="leaflet/draw/leaflet.draw.css" />
+    <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+    <script src="semantic/semantic.min.js"></script>
     <script src="turf.min.js" charset="utf-8"></script>
     <script src="http://api-maps.yandex.ru/2.0/?load=package.map&lang=ru-RU" type="text/javascript"></script>
     <script src="leaflet/leaflet.js" type="text/javascript"></script>
     <script src="leaflet/leaflet-heat.js" type="text/javascript"></script>
     <script src="leaflet/draw/leaflet.draw.js" type="text/javascript"></script>
 
+
     <script src="leaflet/yandex.js" type="text/javascript"></script>
     <script src="leaflet/leaflet-canvasicon.js"></script>
     <script type="text/javascript" src="leaflet/leaflet-piechart.js"></script>
 
     <script src="d3.min.js" type="text/javascript"></script>
+        <script src="d3.slider.js"></script>
 
     <style type="text/css">
 
@@ -27,19 +34,20 @@
             width: 100%;
             height: 100%;
         }
+        .popup { font-size: 16px; line-height: 25px; }
         .label { border-radius: 20px; color: white; font-size: 13px; display: inline-block; text-align: center; line-height: 22px; padding: 0px 10px; left: -15px;  top: -10px; background: rgba(0,0,0,0.5); }
-        .label-cities { border-radius: 20px; color: white; font-size: 13px; display: inline-block; text-align: center; line-height: 22px; padding: 0px 10px; left: -15px;  top: -10px; background: rgba(0,0,0,0.5); }
+        .label-cities { color: white; font-size: 11px; display: inline-block; text-align: center; line-height: 22px; left: -30px; width: 60px; text-align: center; top: -10px; background: rgba(0,0,0,0.5); }
+        .label-cities-names { border-radius: 20px; color: white; font-size: 13px; display: inline-block; text-align: center; line-height: 22px; padding: 0px 10px; left: -15px;  top: -10px; background: rgba(0,0,0,0.5); }
         .labelRegion { z-index: 1010101; color: black; font-size: 13px; display: inline-block; height: 40px; width: 40px; border-radius: 20px; background: #ffffff; text-align: center; line-height: 40px; left: -20px;  top: -20px; }
         #header {
-            background: #FFFFFF; box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.40);
             display: block; position: absolute; z-index: 10000; top: 0; left: 0; height: 50px; line-height: 50px; width: 100%;
         }
         #login { float: right; line-height: 50px; height: 50px; margin-right: 20px; }
         #title { padding-left: 20px; font-size: 20px; }
         #panel { display: block;
                   position: absolute; z-index: 5602;
-                  top: 70px;
-                  left: 20px;
+                  top: 60px;
+                  left: 10px;
                   width: 360px;
                   max-width: 100%;
                   min-height: 80px;
@@ -53,24 +61,31 @@
           #modes { display: flex; border-bottom: 0.5px solid #cce2ff}
           #modes div { cursor: pointer; display: inline-block; width: 50%; line-height: 40px; text-align: center; }
           #mode-data { }
+          #panel-header { font-size: 22px; padding: 10px; }
           #mode-calculation { background: #cce2ff; }
           .layer-all { padding: 10px 5px 5px 9px; cursor: pointer; }
           .layer { padding: 10px 5px 5px 30px; cursor: pointer; }
-          .layer-selected { padding: 10px 5px 5px 30px; font-weight: bold; cursor: default; }
+          .layer-group { padding: 10px 5px 5px 10px; cursor: pointer; font-weight: bold; }
+          .layer-selected { background: url('bullet.svg') 15px 15px no-repeat; padding: 10px 5px 5px 30px; font-weight: 400; cursor: default; }
           .layer:hover { background: #cce2ff; }
-
+          #searchbar { position: absolute; z-index: 44500; left: 10px; top: 10px; }
+          #dropdown { position: absolute; z-index: 44500; right: 140px; top: 10px; background: #fff; border-radius: 3px; padding: 10px;}
+          #user { position: absolute; z-index: 44500; right: 10px; top: 10px; background: #fff; border-radius: 3px; padding: 10px;}
+          #slider { margin-left: -30px; }
 
     </style>
 </head>
 <body>
-<div id="header"><div id='login'><a href='sdsds'>Иван Иванов</a></div><div id='title'>Маркетинговый навигатор</div></div>
+
+<div class="ui left action right icon input" id='searchbar'><button class="ui blue icon button burger"><i class="sidebar icon"> </i></button><i class="search icon"> </i><input type="text" class="AppHeaderView__searchHeaderInput___1cxH1" placeholder="Поиск по карте"></div>
+<div class="ItemsDropDown__dropdown___3wsxp ui search dropdown item " id='dropdown'><i class="icon info circle"></i><input type="hidden" name="category" value="90"><input class="search" autocomplete="off" tabindex="0"><div class="text ItemsDropDown__text___2ToyF">Москва</div><div class="menu transition hidden" tabindex="-1"><div class="item selected" data-value="80">Архангельск</div><div class="item" data-value="82">Астрахань</div><div class="item" data-value="109">Барнаул</div><div class="item" data-value="110">Белгород</div><div class="item" data-value="112">Благовещенск</div><div class="item" data-value="113">Брянск</div><div class="item" data-value="114">Великий Новгород</div><div class="item" data-value="83">Владивосток</div><div class="item" data-value="115">Владимир</div><div class="item" data-value="116">Волгоград</div><div class="item" data-value="111">Волжский</div><div class="item" data-value="118">Вологда</div><div class="item" data-value="84">Воронеж</div><div class="item" data-value="117">Екатеринбург</div><div class="item" data-value="121">Иваново</div><div class="item" data-value="122">Ижевск</div><div class="item" data-value="75">Иркутск</div><div class="item" data-value="81">Йошкар-Ола</div><div class="item" data-value="123">Казань</div><div class="item" data-value="125">Калининград</div><div class="item" data-value="108">Калуга</div><div class="item" data-value="124">Кемерово</div><div class="item" data-value="79">Киров</div><div class="item" data-value="85">Комсомольск-на-Амуре</div><div class="item" data-value="86">Кострома</div><div class="item" data-value="126">Краснодар</div><div class="item" data-value="88">Красноярск</div><div class="item" data-value="127">Курган</div><div class="item" data-value="89">Курск</div><div class="item" data-value="87">Липецк</div><div class="item" data-value="128">Магнитогорск</div><div class="item" data-value="129">Махачкала</div><div class="item active" data-value="90">Москва</div><div class="item" data-value="119">Мурманск</div><div class="item" data-value="91">Набережные Челны</div><div class="item" data-value="73">Нижний Новгород</div><div class="item" data-value="78">Нижний Тагил</div><div class="item" data-value="92">Новокузнецк</div><div class="item" data-value="93">Новороссийск</div><div class="item" data-value="131">Новосибирск</div><div class="item" data-value="120">Омск</div><div class="item" data-value="130">Оренбург</div><div class="item" data-value="94">Орёл</div><div class="item" data-value="95">Пенза</div><div class="item" data-value="96">Пермь</div><div class="item" data-value="132">Петрозаводск</div><div class="item" data-value="133">Псков</div><div class="item" data-value="74">Ростов-на-Дону</div><div class="item" data-value="97">Рязань</div><div class="item" data-value="98">Самара</div><div class="item" data-value="99">Санкт-Петербург</div><div class="item" data-value="100">Саранск</div><div class="item" data-value="101">Саратов</div><div class="item" data-value="102">Смоленск</div><div class="item" data-value="103">Сочи</div><div class="item" data-value="135">Ставрополь</div><div class="item" data-value="134">Стерлитамак</div><div class="item" data-value="136">Тамбов</div><div class="item" data-value="137">Тверь</div><div class="item" data-value="138">Тольятти</div><div class="item" data-value="139">Томск</div><div class="item" data-value="104">Тула</div><div class="item" data-value="105">Тюмень</div><div class="item" data-value="77">Улан - Удэ</div><div class="item" data-value="141">Ульяновск</div><div class="item" data-value="106">Уфа</div><div class="item" data-value="107">Хабаровск</div><div class="item" data-value="76">Чебоксары</div><div class="item" data-value="142">Челябинск</div><div class="item" data-value="140">Чита</div><div class="item" data-value="143">Ярославль</div></div><i class="dropdown icon"></i></div>
+<div class="ItemsDropDown__dropdown___3wsxp ui search dropdown item " id='user'><div class="text ItemsDropDown__text___2ToyF">Иван Петров</div><i class="dropdown icon"></i></div>
 <div id="panel">
-  <div id="modes">
-    <div id='mode-data'>Данные</div>
-    <div id='mode-calculation'>Расчёт</div>
+  <div id="panel-header">
+    Cтатистика по городам
   </div>
   <div id="layersContent">
-    <div class='layer-all'><a href="#">←&nbsp;Все слои</a></div>
+<!--     <div class='layer-all'><a href="#">←&nbsp;Все слои</a></div> -->
   </div>
 </div>
 <div id="map"></div>
@@ -133,6 +148,7 @@ var yndx = new L.Yandex();
 var competitors = L.layerGroup([]),
     population = L.layerGroup([]),
     cities = L.layerGroup([]),
+    cities_msp = L.layerGroup([]),
     transport = L.layerGroup([]),
     districts = L.layerGroup([]),
     districtsLabels = L.layerGroup([]),
@@ -163,32 +179,47 @@ var baseMaps = {
 
 var overlayMaps = { };
 
-L.control.layers(baseMaps, overlayMaps).addTo(map);
+//L.control.layers(baseMaps, overlayMaps).addTo(map);
 
 var temathicLayers = [
-  { id: 'cities', label: 'Население', layer: cities },
-  { id: 'competitors', label: 'Конкуренты', layer: competitors },
-  { id: 'population', label: 'Население', layer: population },
+  { id: 'cities_msp', label: 'Города Бизнес-навигатора МСП', layer: cities_msp },
+  { id: 'main', label: 'Социально-демографические показатели', group: true },
+  { id: 'cities', label: 'Демография', layer: cities, slider: 'pop-slider' },
+  { id: 'competitors', label: 'Уровень жизни', layer: competitors },
+  { id: 'population', label: 'Образование', layer: population },
   { id: 'workers', label: 'Активное население (работающие)', layer: population },
-  { id: 'transport', label: 'Общественный транспорт', layer: transport },
-  { id: 'realty_rent', label: 'Коммерческая недвижимость (аренда)', layer: transport },
-  { id: 'realty_sale', label: 'Коммерческая недвижимость (продажа)', layer: transport },
+  { id: 'transport', label: 'Здравоохранение', layer: transport },
+  { id: 'transport', label: 'Жилищные условия', layer: transport },
+  { id: 'support', label: 'Поддержка бизнеса', group: true },
   { id: 'msp_centers', label: 'Центры поддержки субъектов МСП', layer: population },
   { id: 'gosuslugi_centers', label: 'Центры госуслуг', layer: population },
   { id: 'innovate_centers', label: 'Инновационные центры', layer: population }
 ];
 
-var currentLayer = 'population';
-
+var currentLayer = 'cities_msp';
 
 var layersMenu = d3.select("#layersContent");
 temathicLayers.forEach(function(l) {
-  var layer = layersMenu.append("div").attr("class", (l.id == currentLayer) ? "layer-selected" : "layer").attr("id", l.id);
-  layer.append("div").attr("class", "caption").text(l.label);
 
-  layer.on('click', function(e) {
-    showLayer(l.id);
-  });
+  var layer;
+  if(l.group) {
+    layer = layersMenu.append("div").attr("class", "layer-group").attr("id", l.id);
+    layer.append("div").attr("class", "caption").text(l.label);
+  } else {
+  layer = layersMenu.append("div").attr("class", (l.id == currentLayer) ? "layer-selected" : "layer").attr("id", l.id);
+  layer.append("div").attr("class", "caption").text(l.label);
+    layer.on('click', function(e) {
+      showLayer(l.id);
+    });
+  }
+
+  if(l.slider && l.id == "cities") {
+      console.log('slider' + l.id);
+      layer.append("div").text("Фильтровать по численности населения:").style("margin-top", "10px").style("margin-bottom", "10px");
+      var slider = d3.slider().min(0).max(15000000).ticks(5).showRange(true).value(2000000);
+      layer.append("div").attr("id", "slider").call(slider);
+  }
+
 
 });
 
@@ -266,6 +297,8 @@ d3.json('data/kazan_poi_osm.geojson', function(data) {
       var radius = 12;
       if(r> 0.33) radius = 20;
       if(r> 0.66) radius = 30;
+    //  L.circleMarker([feature.geometry.coordinates[1],feature.geometry.coordinates[0]], {radius: 10, fillColor: '#0F77F1', stroke: true, color: '#FFFFFF', weight: 5, fillOpacity: 1 }).addTo(poiAll);
+      //L.circleMarker([feature.geometry.coordinates[1],feature.geometry.coordinates[0]], {radius: radius, fillColor: '#0F77F1', stroke: false, fillOpacity: 0.2 }).addTo(poiAllCircles);
     }
   });
 
@@ -306,9 +339,12 @@ function getPopulationCircleCities(p) {
 d3.json("data/cities.geojson", function(data) {
   data.features.forEach(function(f) {
 
-    var popup = '<b>' + f.properties.NAME +
+    var popup = '<div class=popup><b>' + f.properties.NAME +
       '</b><br/>Население:&nbsp;' + f.properties.osm_population +
-      '<br/><a href="#">Бизнес-навигатор Казань</a><br/><a href="#">Статистика по городу</a>';
+      '</b><br/>Женщины:&nbsp;50.56%' +
+      '</b><br/>Мужчины:&nbsp;49.44%' +
+      '</b><br/>Уровень доходов:&nbsp;34 000 руб/мес' +
+      '<br/><a href="#">Бизнес-навигатор Казань</a><br/><a href="#">Статистика по городу</a></div>';
 
 
     L.circleMarker([f.geometry.coordinates[1],f.geometry.coordinates[0]], {
@@ -321,16 +357,39 @@ d3.json("data/cities.geojson", function(data) {
     .bindPopup(popup)
     .addTo(cities);
 
+
+
     var label = L.divIcon({
       className: 'label-cities',
       iconSize:null,
       html: formatNumber(f.properties.osm_population)
     });
 
+    var labelName = L.divIcon({
+      className: 'label-cities-names',
+      iconSize:null,
+      html: f.properties.NAME
+    });
+    /*
+    L.circleMarker([f.geometry.coordinates[1],f.geometry.coordinates[0]], {
+      radius: 10,
+      //radius: Math.sqrt(layer.feature.properties.capacity)*4,
+      fillColor: "#f3f",
+      stroke: false,
+      fillOpacity: 0.8
+    })
+    .bindPopup(popup)
+    .addTo(cities_msp);
+    */
 
     L.marker([f.geometry.coordinates[1],f.geometry.coordinates[0]],{icon: label})
       .bindPopup(popup)
       .addTo(cities);
+
+      L.marker([f.geometry.coordinates[1],f.geometry.coordinates[0]],{icon: labelName})
+        .bindPopup(popup)
+        .addTo(cities_msp);
+
 
   });
 });
