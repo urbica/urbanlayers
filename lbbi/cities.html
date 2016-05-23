@@ -313,7 +313,7 @@ function getPoiDistricts(input,districts,layer, color) {
   L.geoJson(output_districts,
     {
       style: function(feature) {
-          return { color: #ffffff, fillColor: color, opacity: 0.2, fillOpacity: getOpacity(feature.properties.count/max), weight: 1,  };
+          return { color: '#ffffff', fillColor: color, opacity: 0.2, fillOpacity: getOpacity(feature.properties.count/max), weight: 1,  };
       },
       onEachFeature: function (f, layer) {
 
