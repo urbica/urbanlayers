@@ -38,6 +38,8 @@
         .label { border-radius: 20px; color: white; font-size: 13px; display: inline-block; text-align: center; line-height: 22px; padding: 0px 10px; left: -15px;  top: -10px; background: rgba(0,0,0,0.5); }
         .label-cities { color: white; font-size: 11px; display: inline-block; text-align: center; line-height: 22px; left: -30px; width: 60px; text-align: center; top: -10px; background: rgba(0,0,0,0.5); }
         .label-cities-names { border-radius: 20px; color: white; font-size: 13px; display: inline-block; text-align: center; line-height: 22px; padding: 0px 10px; left: -15px;  top: -10px; background: rgba(0,0,0,0.5); }
+        .label-disctricts-metric { color: black; font-size: 12px; font-weight: bold; display: inline-block; text-align: center; left: -30px; padding: 5px; text-align: center; top: -10px; }
+
         .labelRegion { z-index: 1010101; color: black; font-size: 13px; display: inline-block; height: 40px; width: 40px; border-radius: 20px; background: #ffffff; text-align: center; line-height: 40px; left: -20px;  top: -20px; }
         #header {
             display: block; position: absolute; z-index: 10000; top: 0; left: 0; height: 50px; line-height: 50px; width: 100%;
@@ -51,6 +53,7 @@
                   width: 360px;
                   max-width: 100%;
                   min-height: 80px;
+                  max-height: 450px;
                   overflow-y: auto;
                   background: #fff;
                   box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.50);
@@ -151,6 +154,11 @@ var competitors = L.layerGroup([]),
     cities_msp = L.layerGroup([]),
     transport = L.layerGroup([]),
     districts = L.layerGroup([]),
+    kazan_food = L.layerGroup([]),
+    kazan_medicine = L.layerGroup([]),
+    kazan_veterinary = L.layerGroup([]),
+    kazan_tourism = L.layerGroup([]),
+    kazan_population = L.layerGroup([]),
     districtsLabels = L.layerGroup([]),
     districtsPies = L.layerGroup([]);
 
@@ -184,12 +192,18 @@ var overlayMaps = { };
 var temathicLayers = [
   { id: 'cities_msp', label: 'Города Бизнес-навигатора МСП', layer: cities_msp },
   { id: 'main', label: 'Социально-демографические показатели', group: true },
-  { id: 'cities', label: 'Демография', layer: cities, slider: 'pop-slider' },
+  { id: 'cities', label: 'Демография', layer: cities //, slider: 'pop-slider'
+  },
   { id: 'competitors', label: 'Уровень жизни', layer: competitors },
   { id: 'population', label: 'Образование', layer: population },
   { id: 'workers', label: 'Активное население (работающие)', layer: population },
   { id: 'transport', label: 'Здравоохранение', layer: transport },
   { id: 'transport', label: 'Жилищные условия', layer: transport },
+  { id: 'support', label: 'Обеспеченность по районам (Казань)', group: true },
+  { id: 'kazan_food', label: 'Общественное питание', layer: kazan_food },
+  { id: 'kazan_tourism', label: 'Туризм', layer: kazan_tourism },
+  { id: 'kazan_medicine', label: 'Медицина', layer: kazan_medicine },
+  { id: 'kazan_veterinary', label: 'Ветеринарные услуги', layer: kazan_veterinary },
   { id: 'support', label: 'Поддержка бизнеса', group: true },
   { id: 'msp_centers', label: 'Центры поддержки субъектов МСП', layer: population },
   { id: 'gosuslugi_centers', label: 'Центры госуслуг', layer: population },
@@ -210,11 +224,11 @@ temathicLayers.forEach(function(l) {
   layer.append("div").attr("class", "caption").text(l.label);
     layer.on('click', function(e) {
       showLayer(l.id);
+      checkZoom();
     });
   }
 
   if(l.slider && l.id == "cities") {
-      console.log('slider' + l.id);
       layer.append("div").text("Фильтровать по численности населения:").style("margin-top", "10px").style("margin-bottom", "10px");
       var slider = d3.slider().min(0).max(15000000).ticks(5).showRange(true).value(2000000);
       layer.append("div").attr("id", "slider").call(slider);
@@ -259,15 +273,81 @@ function formatNumber(n) {
   } else {
     o = s;
   }
-
   if(s.length>6) {
     o =  s.substring(0,(s.length-6)) + "&nbsp;" + s.substring(s.length,(s.length-6));
     o =  o.substring(0,(o.length-3)) + "&nbsp;" + o.substring(o.length,(o.length-3));
   }
-
   return o;
   } else { return ' '; }
 }
+
+//POI layers
+d3.json('data/kazan_population.geojson', function(kazan_d) {
+  getPoiDistricts('data/kazan_food.geojson',kazan_d,kazan_food, '#ff0000');
+  getPoiDistricts('data/kazan_medicine.geojson',kazan_d,kazan_medicine, '#ff0000');
+  getPoiDistricts('data/kazan_tourism.geojson',kazan_d,kazan_tourism, '#9955ff');
+  getPoiDistricts('data/kazan_veterinary.geojson',kazan_d,kazan_veterinary, '#00aa00');
+
+
+});
+
+function getPoiDistricts(input,districts,layer, color) {
+  d3.json(input, function(points) {
+
+  var tagged = turf.tag(points, districts, '@id', '@id');
+  var output_districts = turf.featurecollection([]);
+  var filtered, total = 0, max = 0;
+
+  districts.features.forEach(function(poly,i) {
+    //filtering points on cell
+    filtered = turf.filter(tagged, '@id', poly.properties['@id']);
+        total += filtered.features.length;
+        max = (filtered.features.length > max) ? filtered.features.length : max;
+        poly.properties['count'] = filtered.features.length;
+        poly.properties['type'] = 'poly';
+        poly.properties['metric'] = Math.round((filtered.features.length/poly.properties['population'])*100000)/100;
+        output_districts.features.push(poly);
+  });
+  console.log(output_districts);
+  console.log('total points: ' + total);
+  L.geoJson(output_districts,
+    {
+      style: function(feature) {
+          return { color: #ffffff, fillColor: color, opacity: 0.2, fillOpacity: getOpacity(feature.properties.count/max), weight: 1,  };
+      },
+      onEachFeature: function (f, layer) {
+
+        var popup = '<b>' + f.properties.name + '</b><br/>' + f.properties.metric + ' организаций на тыс. человек<br/>Население: ' + f.properties.population + '</br>Организаций: ' + f.properties.count;
+
+        var label = L.divIcon({
+          className: 'label-disctricts-metric',
+          iconSize:null,
+          html: f.properties.name + '<br/>' + f.properties.metric + '&nbsp;организаций&nbsp;на&nbsp;тыс'
+        });
+
+        var centroid = turf.centroid(f);
+
+        L.marker([centroid.geometry.coordinates[1],centroid.geometry.coordinates[0]],{icon: label})
+          .bindPopup(popup)
+          .addTo(layer);
+
+        layer.bindPopup(popup);
+        layer.on('click', function() { console.log(f.properties);})
+      }
+      }).addTo(layer);
+  });
+}
+
+function getOpacity(m) {
+  var o = 0;
+  if(m < 0.25) { o = 0.2; }
+  if(m >= 0.25 && m < 0.5) { o = 0.4; }
+  if(m >= 0.5 && m < 0.75) { o = 0.6; }
+  if(m >= 0.75) { o = 0.8; }
+  return o;
+}
+
+
 
 //public transport
 d3.json('data/kazan_stop.geojson', function(data) {
@@ -325,7 +405,6 @@ d3.json("data/kazan_house_2.geojson", function(data) {
 });
 
 function getPopulationCircleCities(p) {
-  console.log(p);
   var r = 2;
   if(p< 300000) r = 4;
   if(p >= 300000 && p < 500000) r = 8;
@@ -408,7 +487,6 @@ d3.json("data/kazan_districts_pop.geojson", function(data) {
       });
       var pos = turf.centroid(feature);
       var popup = feature.properties.name + '&nbsp;(' + formatNumber(feature.properties.houses*2.7) + '&nbsp;жителей)';
-      console.log(feature);
       layer.bindPopup(popup);
       L.marker([pos.geometry.coordinates[1],pos.geometry.coordinates[0]],{icon: label})
         .bindPopup(popup)
@@ -426,18 +504,21 @@ function format(q) {
 }
 
 map.on('zoomend', function(e) {
-  //checkZoom();
+  checkZoom();
 });
 
 function checkZoom() {
-  if(map.getZoom()>12) {
-    population.addTo(map);
-    map.removeLayer(districts);
-    map.removeLayer(districtsLabels);
+  if(map.getZoom()>11) {
+    d3.selectAll(".label-disctricts-metric ").style("display", "inline-block");
+
+//    population.addTo(map);
+//    map.removeLayer(districts);
+//    map.removeLayer(districtsLabels);
   } else {
-    districts.addTo(map);
-    districtsLabels.addTo(map);
-    map.removeLayer(population);
+        d3.selectAll(".label-disctricts-metric ").style("display", "none");
+//    districts.addTo(map);
+//    districtsLabels.addTo(map);
+//    map.removeLayer(population);
   }
 }
 
